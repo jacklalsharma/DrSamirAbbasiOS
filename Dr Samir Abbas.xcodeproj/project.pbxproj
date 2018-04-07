@@ -13,8 +13,29 @@
 		75655FDD207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75655FDB207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld */; };
 		75655FDF207930CB00D5B6FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75655FDE207930CB00D5B6FC /* Assets.xcassets */; };
 		75655FE2207930CB00D5B6FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75655FE0207930CB00D5B6FC /* LaunchScreen.storyboard */; };
-		75655FED207930CB00D5B6FC /* Dr_Samir_AbbasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FEC207930CB00D5B6FC /* Dr_Samir_AbbasTests.swift */; };
-		75655FF8207930CB00D5B6FC /* Dr_Samir_AbbasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FF7207930CB00D5B6FC /* Dr_Samir_AbbasUITests.swift */; };
+		7565600C2079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560062079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework */; };
+		7565600D2079345D00D5B6FC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560072079345D00D5B6FC /* Alamofire.framework */; };
+		7565600E2079345D00D5B6FC /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560082079345D00D5B6FC /* Material.framework */; };
+		7565600F2079345D00D5B6FC /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560092079345D00D5B6FC /* Motion.framework */; };
+		756560102079345D00D5B6FC /* TangramKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7565600A2079345D00D5B6FC /* TangramKit.framework */; };
+		756560112079345D00D5B6FC /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7565600B2079345D00D5B6FC /* NVActivityIndicatorView.framework */; };
+		756560122079346400D5B6FC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560072079345D00D5B6FC /* Alamofire.framework */; };
+		756560132079346400D5B6FC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 756560072079345D00D5B6FC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756560142079346400D5B6FC /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560082079345D00D5B6FC /* Material.framework */; };
+		756560152079346400D5B6FC /* Material.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 756560082079345D00D5B6FC /* Material.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756560162079346400D5B6FC /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560092079345D00D5B6FC /* Motion.framework */; };
+		756560172079346400D5B6FC /* Motion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 756560092079345D00D5B6FC /* Motion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756560182079346400D5B6FC /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7565600B2079345D00D5B6FC /* NVActivityIndicatorView.framework */; };
+		756560192079346400D5B6FC /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7565600B2079345D00D5B6FC /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7565601A2079346400D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756560062079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework */; };
+		7565601B2079346400D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 756560062079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7565601C2079346400D5B6FC /* TangramKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7565600A2079345D00D5B6FC /* TangramKit.framework */; };
+		7565601D2079346400D5B6FC /* TangramKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7565600A2079345D00D5B6FC /* TangramKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756560212079352700D5B6FC /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756560202079352700D5B6FC /* BaseVC.swift */; };
+		756560242079358800D5B6FC /* DialogBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756560232079358800D5B6FC /* DialogBox.swift */; };
+		75656026207935A600D5B6FC /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656025207935A600D5B6FC /* Style.swift */; };
+		75656028207935C300D5B6FC /* ContructDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656027207935C300D5B6FC /* ContructDialog.swift */; };
+		7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565602920794A4A00D5B6FC /* NavigationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +55,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7565601E2079346400D5B6FC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7565601D2079346400D5B6FC /* TangramKit.framework in Embed Frameworks */,
+				7565601B2079346400D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */,
+				756560132079346400D5B6FC /* Alamofire.framework in Embed Frameworks */,
+				756560152079346400D5B6FC /* Material.framework in Embed Frameworks */,
+				756560192079346400D5B6FC /* NVActivityIndicatorView.framework in Embed Frameworks */,
+				756560172079346400D5B6FC /* Motion.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		75655FD1207930CB00D5B6FC /* Dr Samir Abbas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr Samir Abbas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75655FD4207930CB00D5B6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,11 +84,18 @@
 		75655FE1207930CB00D5B6FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75655FE3207930CB00D5B6FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75655FE8207930CB00D5B6FC /* Dr Samir AbbasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dr Samir AbbasTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75655FEC207930CB00D5B6FC /* Dr_Samir_AbbasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dr_Samir_AbbasTests.swift; sourceTree = "<group>"; };
-		75655FEE207930CB00D5B6FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75655FF3207930CB00D5B6FC /* Dr Samir AbbasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dr Samir AbbasUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75655FF7207930CB00D5B6FC /* Dr_Samir_AbbasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dr_Samir_AbbasUITests.swift; sourceTree = "<group>"; };
-		75655FF9207930CB00D5B6FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		756560062079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
+		756560072079345D00D5B6FC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		756560082079345D00D5B6FC /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
+		756560092079345D00D5B6FC /* Motion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Motion.framework; path = Carthage/Build/iOS/Motion.framework; sourceTree = "<group>"; };
+		7565600A2079345D00D5B6FC /* TangramKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TangramKit.framework; path = Carthage/Build/iOS/TangramKit.framework; sourceTree = "<group>"; };
+		7565600B2079345D00D5B6FC /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		756560202079352700D5B6FC /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		756560232079358800D5B6FC /* DialogBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBox.swift; sourceTree = "<group>"; };
+		75656025207935A600D5B6FC /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		75656027207935C300D5B6FC /* ContructDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContructDialog.swift; sourceTree = "<group>"; };
+		7565602920794A4A00D5B6FC /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +103,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7565600C2079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
+				7565600D2079345D00D5B6FC /* Alamofire.framework in Frameworks */,
+				7565600E2079345D00D5B6FC /* Material.framework in Frameworks */,
+				7565600F2079345D00D5B6FC /* Motion.framework in Frameworks */,
+				756560182079346400D5B6FC /* NVActivityIndicatorView.framework in Frameworks */,
+				756560122079346400D5B6FC /* Alamofire.framework in Frameworks */,
+				7565601C2079346400D5B6FC /* TangramKit.framework in Frameworks */,
+				7565601A2079346400D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
+				756560142079346400D5B6FC /* Material.framework in Frameworks */,
+				756560102079345D00D5B6FC /* TangramKit.framework in Frameworks */,
+				756560112079345D00D5B6FC /* NVActivityIndicatorView.framework in Frameworks */,
+				756560162079346400D5B6FC /* Motion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,9 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				75655FD3207930CB00D5B6FC /* Dr Samir Abbas */,
-				75655FEB207930CB00D5B6FC /* Dr Samir AbbasTests */,
-				75655FF6207930CB00D5B6FC /* Dr Samir AbbasUITests */,
 				75655FD2207930CB00D5B6FC /* Products */,
+				756560052079345C00D5B6FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +157,8 @@
 		75655FD3207930CB00D5B6FC /* Dr Samir Abbas */ = {
 			isa = PBXGroup;
 			children = (
+				756560222079357C00D5B6FC /* Utils */,
+				7565601F2079351800D5B6FC /* ViewControllers */,
 				75655FD4207930CB00D5B6FC /* AppDelegate.swift */,
 				75655FD6207930CB00D5B6FC /* ViewController.swift */,
 				75655FD8207930CB00D5B6FC /* Main.storyboard */,
@@ -110,22 +170,36 @@
 			path = "Dr Samir Abbas";
 			sourceTree = "<group>";
 		};
-		75655FEB207930CB00D5B6FC /* Dr Samir AbbasTests */ = {
+		756560052079345C00D5B6FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				75655FEC207930CB00D5B6FC /* Dr_Samir_AbbasTests.swift */,
-				75655FEE207930CB00D5B6FC /* Info.plist */,
+				756560072079345D00D5B6FC /* Alamofire.framework */,
+				756560082079345D00D5B6FC /* Material.framework */,
+				756560092079345D00D5B6FC /* Motion.framework */,
+				7565600B2079345D00D5B6FC /* NVActivityIndicatorView.framework */,
+				756560062079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework */,
+				7565600A2079345D00D5B6FC /* TangramKit.framework */,
 			);
-			path = "Dr Samir AbbasTests";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		75655FF6207930CB00D5B6FC /* Dr Samir AbbasUITests */ = {
+		7565601F2079351800D5B6FC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				75655FF7207930CB00D5B6FC /* Dr_Samir_AbbasUITests.swift */,
-				75655FF9207930CB00D5B6FC /* Info.plist */,
+				756560202079352700D5B6FC /* BaseVC.swift */,
+				7565602920794A4A00D5B6FC /* NavigationVC.swift */,
 			);
-			path = "Dr Samir AbbasUITests";
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		756560222079357C00D5B6FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				756560232079358800D5B6FC /* DialogBox.swift */,
+				75656025207935A600D5B6FC /* Style.swift */,
+				75656027207935C300D5B6FC /* ContructDialog.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +212,7 @@
 				75655FCD207930CB00D5B6FC /* Sources */,
 				75655FCE207930CB00D5B6FC /* Frameworks */,
 				75655FCF207930CB00D5B6FC /* Resources */,
+				7565601E2079346400D5B6FC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,8 +338,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				75655FDD207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld in Sources */,
+				75656026207935A600D5B6FC /* Style.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
+				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
+				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
+				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
+				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +352,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75655FED207930CB00D5B6FC /* Dr_Samir_AbbasTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +359,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75655FF8207930CB00D5B6FC /* Dr_Samir_AbbasUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,9 +509,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Dr Samir Abbas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dr.SamirAbbas.Dr-Samir-Abbas";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dr.SamirAbbas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,9 +527,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Dr Samir Abbas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dr.SamirAbbas.Dr-Samir-Abbas";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dr.SamirAbbas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

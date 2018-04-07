@@ -1,0 +1,4 @@
+github "CosmicMind/Material" == 2.13.6
+github "ninjaprox/NVActivityIndicatorView"
+github "youngsoft/TangramKit"
+github "Alamofire/Alamofire" == 4.5
