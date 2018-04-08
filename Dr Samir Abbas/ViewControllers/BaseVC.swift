@@ -13,8 +13,11 @@ import  TangramKit
 
 class BaseVC : UIViewController{
     var menuButton: IconButton!
+    var Spinner : LBZSpinner!
+    var notification : IconButton!
     
-    func getToolbar(title : String, isBackMenu : Bool, isMarginBottom : Bool = false) -> Card{
+    func getToolbar(title : String, isBackMenu : Bool, isMarginBottom : Bool = false, addSpinner : Bool = false
+        , showNotification : Bool = false) -> Card{
         var image = UIImage(named: "ic_nav.png")
         image = image?.resize(toHeight: 30)
         image = image?.resize(toWidth: 30)
@@ -38,6 +41,17 @@ class BaseVC : UIViewController{
         toolbar.detailLabel.textAlignment = .left
         toolbar.detailLabel.textColor = Color.grey.base
         //toolbar.tg_top.equal(5)
+        if(addSpinner == true){
+            toolbar.addSubview(getSpinner())
+        }
+        
+        if(showNotification == true){
+            var image = UIImage(named: "ic_notification.png")
+            image = image?.resize(toHeight: 40)
+            image = image?.resize(toWidth: 40)
+            notification = IconButton(image: image, tintColor: Style.Transparent)
+            toolbar.rightViews.append(notification)
+        }
         
         let card = Card()
         card.tg_width.equal(Screen.bounds.width)
@@ -46,7 +60,7 @@ class BaseVC : UIViewController{
         card.toolbar = toolbar
         card.toolbarEdgeInsetsPreset = .square3
         card.toolbarEdgeInsets.bottom = 5
-        card.toolbarEdgeInsets.right = 8
+        card.toolbarEdgeInsets.right = 0
         card.toolbarEdgeInsets.left = 0
         //
         if(isMarginBottom){
@@ -54,6 +68,15 @@ class BaseVC : UIViewController{
             card.tg_bottom.equal(8)
         }
         return card;
+    }
+    
+    func getSpinner() -> LBZSpinner{
+        Spinner = LBZSpinner(frame: CGRect(x: 50,y: 3 ,width: 180,height: 45))
+        Spinner.decoratedSpinner(Style.AccentColor, lineColor: Style.Transparent, text: "Choose value")
+        Spinner.tg_centerY.equal(0)
+        let listCode = ["Books","Video","Streaming","Download","Upload"]
+        Spinner.updateList(listCode)
+        return Spinner
     }
     
 
