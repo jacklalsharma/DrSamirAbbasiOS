@@ -40,6 +40,7 @@
 		7565602F2079EF8E00D5B6FC /* BookAppointmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565602E2079EF8E00D5B6FC /* BookAppointmentVC.swift */; };
 		75656031207A249B00D5B6FC /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656030207A249B00D5B6FC /* DTTextField.swift */; };
 		75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656032207A359200D5B6FC /* SpecialityCell.swift */; };
+		75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656034207A7FD700D5B6FC /* TimeSlotVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		7565602E2079EF8E00D5B6FC /* BookAppointmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppointmentVC.swift; sourceTree = "<group>"; };
 		75656030207A249B00D5B6FC /* DTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		75656032207A359200D5B6FC /* SpecialityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityCell.swift; sourceTree = "<group>"; };
+		75656034207A7FD700D5B6FC /* TimeSlotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				756560202079352700D5B6FC /* BaseVC.swift */,
 				7565602920794A4A00D5B6FC /* NavigationVC.swift */,
 				7565602E2079EF8E00D5B6FC /* BookAppointmentVC.swift */,
+				75656034207A7FD700D5B6FC /* TimeSlotVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				75656031207A249B00D5B6FC /* DTTextField.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
+				75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */,
 				75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */,
 				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,

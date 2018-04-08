@@ -68,7 +68,8 @@ class ViewController: UIViewController {
     
     @objc
     func arabic(){
-        
+        let time = TimeSlotVC()
+        present(time, animated: true, completion: nil)
     }
 }
 
