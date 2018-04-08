@@ -15,10 +15,17 @@ class BaseVC : UIViewController{
     var menuButton: IconButton!
     
     func getToolbar(title : String, isBackMenu : Bool, isMarginBottom : Bool = false) -> Card{
+        var image = UIImage(named: "ic_nav.png")
+        image = image?.resize(toHeight: 30)
+        image = image?.resize(toWidth: 30)
+        
         if(isBackMenu == true){
-            menuButton = IconButton(image: Icon.cm.arrowBack, tintColor: Color.grey.base)
+            image = UIImage(named: "ic_back_arrow.png")
+            image = image?.resize(toHeight: 30)
+            image = image?.resize(toWidth: 30)
+            menuButton = IconButton(image: image, tintColor: Style.Transparent)
         }else{
-            menuButton = IconButton(image: Icon.cm.menu, tintColor: Color.grey.base)
+            menuButton = IconButton(image: image, tintColor: Style.Transparent)
         }
         
         let toolbar = Toolbar(leftViews: [menuButton])

@@ -36,6 +36,8 @@
 		75656026207935A600D5B6FC /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656025207935A600D5B6FC /* Style.swift */; };
 		75656028207935C300D5B6FC /* ContructDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656027207935C300D5B6FC /* ContructDialog.swift */; };
 		7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565602920794A4A00D5B6FC /* NavigationVC.swift */; };
+		7565602D2079EF6300D5B6FC /* LBZSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565602C2079EF6300D5B6FC /* LBZSpinner.swift */; };
+		7565602F2079EF8E00D5B6FC /* BookAppointmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565602E2079EF8E00D5B6FC /* BookAppointmentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		75656025207935A600D5B6FC /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		75656027207935C300D5B6FC /* ContructDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContructDialog.swift; sourceTree = "<group>"; };
 		7565602920794A4A00D5B6FC /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
+		7565602C2079EF6300D5B6FC /* LBZSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBZSpinner.swift; sourceTree = "<group>"; };
+		7565602E2079EF8E00D5B6FC /* BookAppointmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppointmentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 		75655FD3207930CB00D5B6FC /* Dr Samir Abbas */ = {
 			isa = PBXGroup;
 			children = (
+				7565602B2079EF4100D5B6FC /* CustomViews */,
 				756560222079357C00D5B6FC /* Utils */,
 				7565601F2079351800D5B6FC /* ViewControllers */,
 				75655FD4207930CB00D5B6FC /* AppDelegate.swift */,
@@ -188,6 +193,7 @@
 			children = (
 				756560202079352700D5B6FC /* BaseVC.swift */,
 				7565602920794A4A00D5B6FC /* NavigationVC.swift */,
+				7565602E2079EF8E00D5B6FC /* BookAppointmentVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +206,14 @@
 				75656027207935C300D5B6FC /* ContructDialog.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7565602B2079EF4100D5B6FC /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7565602C2079EF6300D5B6FC /* LBZSpinner.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75655FDD207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld in Sources */,
+				7565602D2079EF6300D5B6FC /* LBZSpinner.swift in Sources */,
 				75656026207935A600D5B6FC /* Style.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
@@ -345,6 +360,7 @@
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
 				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
 				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
+				7565602F2079EF8E00D5B6FC /* BookAppointmentVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
