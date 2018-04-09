@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */; };
 		754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D2207B7A0700F59C9C /* CalendarDate.swift */; };
+		754A35D8207B884100F59C9C /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D7207B884100F59C9C /* DPBaseEmbedViewController.swift */; };
+		754A35DA207B886500F59C9C /* DPCenterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D9207B886500F59C9C /* DPCenterContentViewController.swift */; };
+		754A35DC207B889000F59C9C /* DPCOnst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35DB207B889000F59C9C /* DPCOnst.swift */; };
+		754A35DE207B88A200F59C9C /* DPDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35DD207B88A200F59C9C /* DPDrawerViewController.swift */; };
+		754A35E0207B88E000F59C9C /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35DF207B88E000F59C9C /* DPDropShadowView.swift */; };
+		754A35E2207B88FA00F59C9C /* DPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35E1207B88FA00F59C9C /* DPEnum.swift */; };
+		754A35E4207B892300F59C9C /* DPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35E3207B892300F59C9C /* DPExtension.swift */; };
+		754A35E6207B893700F59C9C /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35E5207B893700F59C9C /* DPLeftContentViewController.swift */; };
+		754A35E8207B895100F59C9C /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35E7207B895100F59C9C /* DPLeftMenuViewController.swift */; };
+		754A35EA207B897800F59C9C /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35E9207B897800F59C9C /* DPLeftPageViewController.swift */; };
+		754A35EC207B89B500F59C9C /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35EB207B89B500F59C9C /* DPMenuButton.swift */; };
+		754A35EE207B89C600F59C9C /* DPRightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35ED207B89C600F59C9C /* DPRightContentViewController.swift */; };
+		754A35F0207B89F800F59C9C /* DPRightMenuViewCOntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35EF207B89F800F59C9C /* DPRightMenuViewCOntroller.swift */; };
+		754A35F2207B8A0C00F59C9C /* DPRightPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F1207B8A0C00F59C9C /* DPRightPageViewController.swift */; };
+		754A35F4207B8A2F00F59C9C /* DPSlideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F3207B8A2F00F59C9C /* DPSlideMenuManager.swift */; };
+		754A35F6207B8A5100F59C9C /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F5207B8A5100F59C9C /* ScreenType.swift */; };
 		75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD4207930CB00D5B6FC /* AppDelegate.swift */; };
 		75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD6207930CB00D5B6FC /* ViewController.swift */; };
 		75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75655FD8207930CB00D5B6FC /* Main.storyboard */; };
@@ -84,6 +100,22 @@
 /* Begin PBXFileReference section */
 		754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalScrollView.swift; sourceTree = "<group>"; };
 		754A35D2207B7A0700F59C9C /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
+		754A35D7207B884100F59C9C /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
+		754A35D9207B886500F59C9C /* DPCenterContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCenterContentViewController.swift; sourceTree = "<group>"; };
+		754A35DB207B889000F59C9C /* DPCOnst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCOnst.swift; sourceTree = "<group>"; };
+		754A35DD207B88A200F59C9C /* DPDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPDrawerViewController.swift; sourceTree = "<group>"; };
+		754A35DF207B88E000F59C9C /* DPDropShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPDropShadowView.swift; sourceTree = "<group>"; };
+		754A35E1207B88FA00F59C9C /* DPEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPEnum.swift; sourceTree = "<group>"; };
+		754A35E3207B892300F59C9C /* DPExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPExtension.swift; sourceTree = "<group>"; };
+		754A35E5207B893700F59C9C /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
+		754A35E7207B895100F59C9C /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
+		754A35E9207B897800F59C9C /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
+		754A35EB207B89B500F59C9C /* DPMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
+		754A35ED207B89C600F59C9C /* DPRightContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPRightContentViewController.swift; sourceTree = "<group>"; };
+		754A35EF207B89F800F59C9C /* DPRightMenuViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPRightMenuViewCOntroller.swift; sourceTree = "<group>"; };
+		754A35F1207B8A0C00F59C9C /* DPRightPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPRightPageViewController.swift; sourceTree = "<group>"; };
+		754A35F3207B8A2F00F59C9C /* DPSlideMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPSlideMenuManager.swift; sourceTree = "<group>"; };
+		754A35F5207B8A5100F59C9C /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 		75655FD1207930CB00D5B6FC /* Dr Samir Abbas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr Samir Abbas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75655FD4207930CB00D5B6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75655FD6207930CB00D5B6FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +189,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		754A35D6207B882400F59C9C /* DPSlideMenuKit */ = {
+			isa = PBXGroup;
+			children = (
+				754A35D7207B884100F59C9C /* DPBaseEmbedViewController.swift */,
+				754A35D9207B886500F59C9C /* DPCenterContentViewController.swift */,
+				754A35DB207B889000F59C9C /* DPCOnst.swift */,
+				754A35DD207B88A200F59C9C /* DPDrawerViewController.swift */,
+				754A35DF207B88E000F59C9C /* DPDropShadowView.swift */,
+				754A35E1207B88FA00F59C9C /* DPEnum.swift */,
+				754A35E3207B892300F59C9C /* DPExtension.swift */,
+				754A35E5207B893700F59C9C /* DPLeftContentViewController.swift */,
+				754A35E7207B895100F59C9C /* DPLeftMenuViewController.swift */,
+				754A35E9207B897800F59C9C /* DPLeftPageViewController.swift */,
+				754A35EB207B89B500F59C9C /* DPMenuButton.swift */,
+				754A35ED207B89C600F59C9C /* DPRightContentViewController.swift */,
+				754A35EF207B89F800F59C9C /* DPRightMenuViewCOntroller.swift */,
+				754A35F1207B8A0C00F59C9C /* DPRightPageViewController.swift */,
+				754A35F3207B8A2F00F59C9C /* DPSlideMenuManager.swift */,
+				754A35F5207B8A5100F59C9C /* ScreenType.swift */,
+			);
+			path = DPSlideMenuKit;
+			sourceTree = "<group>";
+		};
 		75655FC8207930CB00D5B6FC = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +234,7 @@
 		75655FD3207930CB00D5B6FC /* Dr Samir Abbas */ = {
 			isa = PBXGroup;
 			children = (
+				754A35D6207B882400F59C9C /* DPSlideMenuKit */,
 				754A35D1207B79F700F59C9C /* Models */,
 				7565602B2079EF4100D5B6FC /* CustomViews */,
 				756560222079357C00D5B6FC /* Utils */,
@@ -374,20 +430,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A35EE207B89C600F59C9C /* DPRightContentViewController.swift in Sources */,
 				75655FDD207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld in Sources */,
+				754A35E4207B892300F59C9C /* DPExtension.swift in Sources */,
 				7565602D2079EF6300D5B6FC /* LBZSpinner.swift in Sources */,
 				75656026207935A600D5B6FC /* Style.swift in Sources */,
+				754A35F2207B8A0C00F59C9C /* DPRightPageViewController.swift in Sources */,
+				754A35E8207B895100F59C9C /* DPLeftMenuViewController.swift in Sources */,
 				75656031207A249B00D5B6FC /* DTTextField.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
+				754A35D8207B884100F59C9C /* DPBaseEmbedViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
+				754A35DC207B889000F59C9C /* DPCOnst.swift in Sources */,
 				75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */,
+				754A35DE207B88A200F59C9C /* DPDrawerViewController.swift in Sources */,
 				754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */,
 				75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */,
+				754A35EC207B89B500F59C9C /* DPMenuButton.swift in Sources */,
 				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
+				754A35EA207B897800F59C9C /* DPLeftPageViewController.swift in Sources */,
 				754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
+				754A35F0207B89F800F59C9C /* DPRightMenuViewCOntroller.swift in Sources */,
+				754A35E0207B88E000F59C9C /* DPDropShadowView.swift in Sources */,
 				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
 				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
+				754A35E6207B893700F59C9C /* DPLeftContentViewController.swift in Sources */,
+				754A35DA207B886500F59C9C /* DPCenterContentViewController.swift in Sources */,
+				754A35E2207B88FA00F59C9C /* DPEnum.swift in Sources */,
+				754A35F6207B8A5100F59C9C /* ScreenType.swift in Sources */,
+				754A35F4207B8A2F00F59C9C /* DPSlideMenuManager.swift in Sources */,
 				7565602F2079EF8E00D5B6FC /* BookAppointmentVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

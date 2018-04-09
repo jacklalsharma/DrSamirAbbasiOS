@@ -9,7 +9,7 @@
 import Foundation
 
 class CalendarDate {
-    var day : String = "1"
-    var month : String = "1"
-    var year : String = "1"
+    var day : String = "10"
+    var month : String = "10"
+    var year : String = "10"
 }
