@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */; };
+		754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D2207B7A0700F59C9C /* CalendarDate.swift */; };
 		75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD4207930CB00D5B6FC /* AppDelegate.swift */; };
 		75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD6207930CB00D5B6FC /* ViewController.swift */; };
 		75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75655FD8207930CB00D5B6FC /* Main.storyboard */; };
@@ -80,6 +82,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalScrollView.swift; sourceTree = "<group>"; };
+		754A35D2207B7A0700F59C9C /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		75655FD1207930CB00D5B6FC /* Dr Samir Abbas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr Samir Abbas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75655FD4207930CB00D5B6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75655FD6207930CB00D5B6FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		754A35D1207B79F700F59C9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				754A35D2207B7A0700F59C9C /* CalendarDate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		75655FC8207930CB00D5B6FC = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +179,7 @@
 		75655FD3207930CB00D5B6FC /* Dr Samir Abbas */ = {
 			isa = PBXGroup;
 			children = (
+				754A35D1207B79F700F59C9C /* Models */,
 				7565602B2079EF4100D5B6FC /* CustomViews */,
 				756560222079357C00D5B6FC /* Utils */,
 				7565601F2079351800D5B6FC /* ViewControllers */,
@@ -221,6 +234,7 @@
 				7565602C2079EF6300D5B6FC /* LBZSpinner.swift */,
 				75656030207A249B00D5B6FC /* DTTextField.swift */,
 				75656032207A359200D5B6FC /* SpecialityCell.swift */,
+				754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -367,8 +381,10 @@
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
 				75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */,
+				754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */,
 				75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */,
 				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
+				754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
 				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
 				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
