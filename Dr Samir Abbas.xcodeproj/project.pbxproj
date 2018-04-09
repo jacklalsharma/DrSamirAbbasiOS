@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F5048A536CFCD5B41233568 /* Pods_Dr_Samir_Abbas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF76ADCF5045325056E6B3C /* Pods_Dr_Samir_Abbas.framework */; };
+		753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B8401207BD16C0001A0F6 /* MasterVC.swift */; };
 		754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */; };
 		754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D2207B7A0700F59C9C /* CalendarDate.swift */; };
 		754A35D8207B884100F59C9C /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D7207B884100F59C9C /* DPBaseEmbedViewController.swift */; };
@@ -25,6 +27,7 @@
 		754A35F2207B8A0C00F59C9C /* DPRightPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F1207B8A0C00F59C9C /* DPRightPageViewController.swift */; };
 		754A35F4207B8A2F00F59C9C /* DPSlideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F3207B8A2F00F59C9C /* DPSlideMenuManager.swift */; };
 		754A35F6207B8A5100F59C9C /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F5207B8A5100F59C9C /* ScreenType.swift */; };
+		754A35F8207BACE400F59C9C /* LeftSlideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */; };
 		75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD4207930CB00D5B6FC /* AppDelegate.swift */; };
 		75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD6207930CB00D5B6FC /* ViewController.swift */; };
 		75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75655FD8207930CB00D5B6FC /* Main.storyboard */; };
@@ -59,6 +62,8 @@
 		75656031207A249B00D5B6FC /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656030207A249B00D5B6FC /* DTTextField.swift */; };
 		75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656032207A359200D5B6FC /* SpecialityCell.swift */; };
 		75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656034207A7FD700D5B6FC /* TimeSlotVC.swift */; };
+		75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6838E207BD475004B90EE /* SlideMenuController.swift */; };
+		75F68391207BDB15004B90EE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68390207BDB15004B90EE /* MenuCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2EF76ADCF5045325056E6B3C /* Pods_Dr_Samir_Abbas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dr_Samir_Abbas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		753B8401207BD16C0001A0F6 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
 		754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalScrollView.swift; sourceTree = "<group>"; };
 		754A35D2207B7A0700F59C9C /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		754A35D7207B884100F59C9C /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +123,7 @@
 		754A35F1207B8A0C00F59C9C /* DPRightPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPRightPageViewController.swift; sourceTree = "<group>"; };
 		754A35F3207B8A2F00F59C9C /* DPSlideMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPSlideMenuManager.swift; sourceTree = "<group>"; };
 		754A35F5207B8A5100F59C9C /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
+		754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSlideMenuVC.swift; sourceTree = "<group>"; };
 		75655FD1207930CB00D5B6FC /* Dr Samir Abbas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr Samir Abbas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75655FD4207930CB00D5B6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75655FD6207930CB00D5B6FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +150,10 @@
 		75656030207A249B00D5B6FC /* DTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		75656032207A359200D5B6FC /* SpecialityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityCell.swift; sourceTree = "<group>"; };
 		75656034207A7FD700D5B6FC /* TimeSlotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotVC.swift; sourceTree = "<group>"; };
+		75F6838E207BD475004B90EE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		75F68390207BDB15004B90EE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		95E2750F69CD8B4D97C72CBD /* Pods-Dr Samir Abbas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr Samir Abbas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.release.xcconfig"; sourceTree = "<group>"; };
+		D3900E1F8F6ED0D60D355D6B /* Pods-Dr Samir Abbas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr Samir Abbas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +173,7 @@
 				756560102079345D00D5B6FC /* TangramKit.framework in Frameworks */,
 				756560112079345D00D5B6FC /* NVActivityIndicatorView.framework in Frameworks */,
 				756560162079346400D5B6FC /* Motion.framework in Frameworks */,
+				3F5048A536CFCD5B41233568 /* Pods_Dr_Samir_Abbas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +194,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		155553DACE70721B7AE63BB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3900E1F8F6ED0D60D355D6B /* Pods-Dr Samir Abbas.debug.xcconfig */,
+				95E2750F69CD8B4D97C72CBD /* Pods-Dr Samir Abbas.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		754A35D1207B79F700F59C9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +240,7 @@
 				75655FD3207930CB00D5B6FC /* Dr Samir Abbas */,
 				75655FD2207930CB00D5B6FC /* Products */,
 				756560052079345C00D5B6FC /* Frameworks */,
+				155553DACE70721B7AE63BB6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +282,7 @@
 				7565600B2079345D00D5B6FC /* NVActivityIndicatorView.framework */,
 				756560062079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework */,
 				7565600A2079345D00D5B6FC /* TangramKit.framework */,
+				2EF76ADCF5045325056E6B3C /* Pods_Dr_Samir_Abbas.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -270,6 +294,8 @@
 				7565602920794A4A00D5B6FC /* NavigationVC.swift */,
 				7565602E2079EF8E00D5B6FC /* BookAppointmentVC.swift */,
 				75656034207A7FD700D5B6FC /* TimeSlotVC.swift */,
+				754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */,
+				753B8401207BD16C0001A0F6 /* MasterVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -291,6 +317,8 @@
 				75656030207A249B00D5B6FC /* DTTextField.swift */,
 				75656032207A359200D5B6FC /* SpecialityCell.swift */,
 				754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */,
+				75F6838E207BD475004B90EE /* SlideMenuController.swift */,
+				75F68390207BDB15004B90EE /* MenuCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -302,10 +330,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75655FFC207930CB00D5B6FC /* Build configuration list for PBXNativeTarget "Dr Samir Abbas" */;
 			buildPhases = (
+				AF58416907E3264A2E92B6E9 /* [CP] Check Pods Manifest.lock */,
 				75655FCD207930CB00D5B6FC /* Sources */,
 				75655FCE207930CB00D5B6FC /* Frameworks */,
 				75655FCF207930CB00D5B6FC /* Resources */,
 				7565601E2079346400D5B6FC /* Embed Frameworks */,
+				2179FA9BB1315BF959AA2088 /* [CP] Embed Pods Frameworks */,
+				6C9324E9AF89853285B79D09 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -425,6 +456,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2179FA9BB1315BF959AA2088 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C9324E9AF89853285B79D09 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF58416907E3264A2E92B6E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dr Samir Abbas-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		75655FCD207930CB00D5B6FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -439,6 +524,7 @@
 				754A35E8207B895100F59C9C /* DPLeftMenuViewController.swift in Sources */,
 				75656031207A249B00D5B6FC /* DTTextField.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
+				753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */,
 				754A35D8207B884100F59C9C /* DPBaseEmbedViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
 				754A35DC207B889000F59C9C /* DPCOnst.swift in Sources */,
@@ -450,12 +536,15 @@
 				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
 				754A35EA207B897800F59C9C /* DPLeftPageViewController.swift in Sources */,
 				754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */,
+				75F68391207BDB15004B90EE /* MenuCell.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
+				75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */,
 				754A35F0207B89F800F59C9C /* DPRightMenuViewCOntroller.swift in Sources */,
 				754A35E0207B88E000F59C9C /* DPDropShadowView.swift in Sources */,
 				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
 				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
 				754A35E6207B893700F59C9C /* DPLeftContentViewController.swift in Sources */,
+				754A35F8207BACE400F59C9C /* LeftSlideMenuVC.swift in Sources */,
 				754A35DA207B886500F59C9C /* DPCenterContentViewController.swift in Sources */,
 				754A35E2207B88FA00F59C9C /* DPEnum.swift in Sources */,
 				754A35F6207B8A5100F59C9C /* ScreenType.swift in Sources */,
@@ -622,6 +711,7 @@
 		};
 		75655FFD207930CB00D5B6FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3900E1F8F6ED0D60D355D6B /* Pods-Dr Samir Abbas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -640,6 +730,7 @@
 		};
 		75655FFE207930CB00D5B6FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95E2750F69CD8B4D97C72CBD /* Pods-Dr Samir Abbas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

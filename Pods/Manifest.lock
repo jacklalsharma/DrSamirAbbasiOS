@@ -1,0 +1,12 @@
+PODS:
+  - KYDrawerController (2.0.4)
+
+DEPENDENCIES:
+  - KYDrawerController
+
+SPEC CHECKSUMS:
+  KYDrawerController: cf5839877c442132123e9d482f458821026defdf
+
+PODFILE CHECKSUM: 32874fa9b9da4874e9bb2b230822ab6df6e0ac15
+
+COCOAPODS: 1.4.0

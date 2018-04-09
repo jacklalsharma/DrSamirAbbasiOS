@@ -9,9 +9,11 @@
 import Foundation
 import Material
 import TangramKit
-
+import KYDrawerController
 
 class NavigationVC : BaseVC {
+    
+    var slideMenu : SlideMenuController! 
     
     override
     func viewDidLoad() {
@@ -68,13 +70,9 @@ class NavigationVC : BaseVC {
         img.tg_top.equal(10)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = UILabel()
-        bookLabel.tg_width.equal(.wrap)
-        bookLabel.tg_height.equal(.wrap)
-        bookLabel.text = "Book An Appointment"
+        let bookLabel = getUILabel(text: "Book An Appointment", size: 19, textColor: Style.TextColor)
         bookLabel.tg_centerX.equal(0)
-        bookLabel.tg_top.equal(8)
-        bookLabel.textColor = Style.TextColor
+        bookLabel.tg_top.equal(12)
         
         let bookBtn = FlatButton(title: "", titleColor: .white)
         bookBtn.tg_width.equal(UIScreen.main.bounds.width - 40)
@@ -108,6 +106,8 @@ class NavigationVC : BaseVC {
         
         relative.addSubview(l1)
         relative.addSubview(l2)
+        
+        menuButton.addTarget(self, action: #selector(toggleMenu), for: .touchUpInside)
     }
     
     @objc
@@ -157,9 +157,7 @@ class NavigationVC : BaseVC {
         img.tg_top.equal(20)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = UILabel()
-        bookLabel.tg_width.equal(.wrap)
-        bookLabel.tg_height.equal(.wrap)
+        let bookLabel = getUILabel(text: "", size: 16, textColor: Style.TextColor)
         
         bookLabel.tg_centerX.equal(0)
         bookLabel.tg_top.equal(4)
@@ -195,5 +193,26 @@ class NavigationVC : BaseVC {
         return bookAppt
     }
     
+    func getUILabel(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
+        let label = UILabel()
+        let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: size)]
+        let attributedString = NSMutableAttributedString(string: text, attributes:attrs)
+        label.tg_width.equal(.wrap)
+        label.tg_height.equal(.wrap)
+        label.textColor = textColor
+        label.attributedText = attributedString
+        return label
+    }
+    
+    @objc
+    func toggleMenu(){
+        if(slideMenu != nil){
+            if(slideMenu.isLeftOpen()){
+                slideMenu.closeLeft()
+            }else{
+                slideMenu.openLeft()
+            }
+        }
+    }
     
 }

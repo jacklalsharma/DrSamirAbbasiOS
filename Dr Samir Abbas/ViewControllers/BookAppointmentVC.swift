@@ -41,14 +41,26 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         let search = DTTextField()
         search.tg_width.equal(UIScreen.main.bounds.width - 40)
         search.tg_height.equal(48)
-        search.tg_top.equal(20)
         search.placeholder = "Search a doctor"
         search.textAlignment = .center
         search.floatPlaceholderColor = Style.AccentColor
         search.floatPlaceholderActiveColor = Style.AccentColor
         search.cornerRadiusPreset = CornerRadiusPreset.cornerRadius1
         search.tg_centerX.equal(0)
-        relative.addSubview(search)
+        
+        let searchLayout = TGRelativeLayout()
+        searchLayout.tg_width.equal(UIScreen.main.bounds.width - 40)
+        searchLayout.tg_height.equal(48)
+        searchLayout.addSubview(search)
+        searchLayout.tg_centerX.equal(0)
+        searchLayout.tg_top.equal(20)
+
+        let searchIcon = getUIImageView(sizeX: 20, sizeY: 20)
+        searchIcon.image = getUIImage(image: "search_icon.png", resizeX: 20, resizeY: 20)
+        searchIcon.tg_centerY.equal(0)
+        searchIcon.tg_left.equal(10)
+        searchLayout.addSubview(searchIcon)
+        relative.addSubview(searchLayout)
         
         
         let bookLabel = UILabel()
@@ -105,10 +117,24 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     
     //the method returning size of the list
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10.0
+    }
+    
+    func getUIImageView(sizeX : Int, sizeY : Int) -> UIImageView{
+        let image = UIImageView()
+        image.tg_width.equal(sizeX)
+        image.tg_height.equal(sizeY)
+        return image
+    }
+    
+    func getUIImage(image : String, resizeX : CGFloat, resizeY : CGFloat) -> UIImage{
+        var left = UIImage(named: image)
+        left = left?.resize(toHeight: resizeX)
+        left = left?.resize(toWidth: resizeY)
+        return left!
     }
 }

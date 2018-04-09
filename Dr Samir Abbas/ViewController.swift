@@ -62,13 +62,14 @@ class ViewController: UIViewController {
     
     @objc
     func english(){
-        let nav = NavigationVC()
+        let nav = MasterVC()
         present(nav, animated: true, completion: nil)
     }
     
     @objc
     func arabic(){
-        let time = TimeSlotVC()
+        //let time = TimeSlotVC()
+        let time = MasterVC()
         present(time, animated: true, completion: nil)
     }
 }
