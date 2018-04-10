@@ -11,11 +11,11 @@ import UIKit
 import Material
 import  TangramKit
 
+
 class BaseVC : UIViewController{
     var menuButton: IconButton!
     var Spinner : LBZSpinner!
     var notification : IconButton!
-    
     func getToolbar(title : String, isBackMenu : Bool, isMarginBottom : Bool = false, addSpinner : Bool = false
         , showNotification : Bool = false) -> Card{
         var image = UIImage(named: "ic_nav.png")
@@ -42,7 +42,8 @@ class BaseVC : UIViewController{
         toolbar.detailLabel.textColor = Color.grey.base
         //toolbar.tg_top.equal(5)
         if(addSpinner == true){
-            toolbar.addSubview(getSpinner())
+            //toolbar.addSubview(getSpinner())
+            toolbar.title = ""
         }
         
         if(showNotification == true){
@@ -67,11 +68,12 @@ class BaseVC : UIViewController{
             //card.tg_top.equal(8)
             card.tg_bottom.equal(8)
         }
+        
         return card;
     }
     
     func getSpinner() -> LBZSpinner{
-        Spinner = LBZSpinner(frame: CGRect(x: 50,y: 3 ,width: 180,height: 45))
+        Spinner = LBZSpinner(frame: CGRect(x: 50,y: 3 ,width: UIScreen.main.bounds.width - 100 ,height: Style.Height45))
         Spinner.decoratedSpinner(Style.AccentColor, lineColor: Style.Transparent, text: "Choose value")
         Spinner.tg_centerY.equal(0)
         let listCode = ["Books","Video","Streaming","Download","Upload"]

@@ -134,7 +134,8 @@ class NavigationVC : BaseVC {
     
     @objc
     func gallery(){
-        
+        let gallery = GalleryVC()
+        present(gallery, animated: true, completion: nil)
     }
     
     func getSquareButton(position : Int) -> TGRelativeLayout{

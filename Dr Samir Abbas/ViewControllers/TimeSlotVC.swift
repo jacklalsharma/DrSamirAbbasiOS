@@ -193,8 +193,6 @@ class TimeSlotVC : BaseVC {
         horizontalScrollView.uniformItemSize = CGSize(width: Style.Width45, height: Style.Height45)
         //horizontalScrollView.setItemsMarginOnce()
         
-        
-        
         for index in 0...30{
             horizontalScrollView.addItem(getVehicleCell(data : calendarDate, tag : index))
         }

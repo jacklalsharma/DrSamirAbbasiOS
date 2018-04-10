@@ -1,12 +1,18 @@
 PODS:
+  - FSPagerView (0.7.1)
   - KYDrawerController (2.0.4)
+  - UIDropDown (1.1.1)
 
 DEPENDENCIES:
+  - FSPagerView
   - KYDrawerController
+  - UIDropDown
 
 SPEC CHECKSUMS:
+  FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
+  UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
 
-PODFILE CHECKSUM: 32874fa9b9da4874e9bb2b230822ab6df6e0ac15
+PODFILE CHECKSUM: fa6a30e545a4550d69ae90328c3ffec3f0289c99
 
 COCOAPODS: 1.4.0

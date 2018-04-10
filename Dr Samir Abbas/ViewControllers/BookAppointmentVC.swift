@@ -38,15 +38,10 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         relative.addSubview(strip)
         //....
         
-        let search = DTTextField()
+        let search = RaisedButton(title: "Search a doctor", titleColor: Style.TextColor)
         search.tg_width.equal(UIScreen.main.bounds.width - 40)
         search.tg_height.equal(Style.Height48)
-        search.placeholder = "Search a doctor"
-        search.textAlignment = .center
-        search.floatPlaceholderColor = Style.AccentColor
-        search.floatPlaceholderActiveColor = Style.AccentColor
-        search.cornerRadiusPreset = CornerRadiusPreset.cornerRadius1
-        search.tg_centerX.equal(0)
+        search.addTarget(self, action: #selector(searchDoctor), for: .touchUpInside)
         
         let searchLayout = TGRelativeLayout()
         searchLayout.tg_width.equal(UIScreen.main.bounds.width - 40)
@@ -139,5 +134,11 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         left = left?.resize(toHeight: resizeX)
         left = left?.resize(toWidth: resizeY)
         return left!
+    }
+    
+    @objc
+    func searchDoctor(){
+        let searchDoctor = SearchDoctorVC()
+        self.present(searchDoctor, animated: true, completion: nil)
     }
 }

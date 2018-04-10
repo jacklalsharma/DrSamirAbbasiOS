@@ -7,54 +7,131 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05ED5B55D8AAD30623AEB9B36430D576 /* KYEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5392F98C5F2DC079D2C9D80D640670 /* KYEmbedMainControllerSegue.swift */; };
-		5FC40F18DBFFCACF3FA032B58571B781 /* KYDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF4BFB4F4575DCB87450652B5F3632 /* KYDrawerController-dummy.m */; };
-		62B449845871F8DA880D40BE4935EC56 /* KYDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFB2A3EF54DFBF46160634C55194AAAA /* KYDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD875BCD993EB7CD3FB369B273FEE4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		6EC769B0271EA72A69F71AD1A2CA9D2C /* Pods-Dr Samir Abbas-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DFB557F259A73364C59CA9AC7711E /* Pods-Dr Samir Abbas-dummy.m */; };
-		74EBEC8F9277C0056FF08F806E75EB4F /* KYDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4679AFBE979F4608FE3050B5487962B4 /* KYDrawerController.swift */; };
-		B6B44385643108D23CE7AC01FEF0B688 /* Pods-Dr Samir Abbas-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9AD53B40384121639F67015F7CA8044 /* Pods-Dr Samir Abbas-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F3DDC6788E43DD1AF24DB8FE9ABBF5A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		FE020C0F86B9EBDE87399EC0136682FE /* KYEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EAC3A867D43F85DC1723D02B9C5F8A /* KYEmbedDrawerControllerSegue.swift */; };
+		017A4EC1B38AB50FC4CB46643A0A77F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		03BBD899B92EFE0E171DEF7B4A7DDE8B /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1612D34674D987ECB00425C935C61F /* FSPagerView.swift */; };
+		05ED5B55D8AAD30623AEB9B36430D576 /* KYEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6102D700E07E8916DBC7AED3B66541A6 /* KYEmbedMainControllerSegue.swift */; };
+		075CC243674F7187A841C287CA081280 /* FSPagerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1758995809F7DFA94D8171E583BF5 /* FSPagerView-dummy.m */; };
+		20B02E4F504ACA3522D6FB3B3188B5A4 /* UIDropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CD2BC31D5DC3145C7B9258A395D3E /* UIDropDown-dummy.m */; };
+		2CA93E7F6C4F34E7BFB0DC43D6AE828E /* UIDropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D2EA0225CB616373C8AAD8F1DF4501 /* UIDropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		357D7C84290EBD2CF71498C07886F110 /* FSPagerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CAA882C5BA0F54CFCF61B9C82E38EF /* FSPagerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5832B6C6DF42450FCAB70E67F464E040 /* FSPagerViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B797C8FB8DA60F093367547D284E8A /* FSPagerViewLayoutAttributes.swift */; };
+		5FC40F18DBFFCACF3FA032B58571B781 /* KYDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EEE35465EBE3D298052B492E6A6343 /* KYDrawerController-dummy.m */; };
+		62B449845871F8DA880D40BE4935EC56 /* KYDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A289AD880325ADFD71131B3E6E5B0E65 /* KYDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		638D4086C988445EEC88BF66F3B5D3B9 /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475C7579BE8BF18ED679F8C270A06CCA /* FSPageViewTransformer.swift */; };
+		6AD875BCD993EB7CD3FB369B273FEE4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		6DF94461346150F35B7BFC276C394C05 /* Pods-Dr Samir Abbas-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DFB557F259A73364C59CA9AC7711E /* Pods-Dr Samir Abbas-dummy.m */; };
+		6F16E3CF88BBD2BAE86F1B09EA55311A /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEFF242FF9B4ECD5C9E07A154AC777 /* FSPagerCollectionView.swift */; };
+		71699DD9B7D6F4BB3A07F6D8E5484E8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		74EBEC8F9277C0056FF08F806E75EB4F /* KYDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44D035BFE4ED5CC0E2B6589625937E /* KYDrawerController.swift */; };
+		75EB7AA3771DD0841C6C9D6078D97906 /* Pods-Dr Samir Abbas-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9AD53B40384121639F67015F7CA8044 /* Pods-Dr Samir Abbas-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		766C44B923C22D6143C77BAC15E2B7F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		79E391C6A3429405FB63474CF7218DE3 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3728DA246C2DB636709CB3224779098 /* FSPagerViewCell.swift */; };
+		838BD1D2FCD856E3E7AAD63C498E9A92 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B4C111F50837530C89F4FA2426823D /* FSPageControl.swift */; };
+		C0A86AA65F460228A7466C2D6C970050 /* UIDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C46614BF7BF5C3BC2ED2B1064C676A1 /* UIDropDown.swift */; };
+		DE83BD1A62BD79C30B377D365E8A9800 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		FE020C0F86B9EBDE87399EC0136682FE /* KYEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EAEB77D0C67942562578F5FA704F10 /* KYEmbedDrawerControllerSegue.swift */; };
+		FED3B2A51B9910D524980ACD078DE5AC /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202A7E0E6A350AF2181E6141D221BC3 /* FSPageViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4E15208BDADE5683655946F864FFACCC /* PBXContainerItemProxy */ = {
+		10042BE9D234799BF2312163D4998220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E0BFC2C9CB4FD15762BE320D9012EC;
+			remoteInfo = UIDropDown;
+		};
+		305BE44B15576EDDF7694053CE7B3DB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7AF8670FDECF80EFCAA3D04318C4B4D1;
 			remoteInfo = KYDrawerController;
 		};
+		CF5E0BE8F03A68D2C56F01C50D78506E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED279AFE7EA745A57B7B9F35AD5F2C9F;
+			remoteInfo = FSPagerView;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048449283C163CEBE55F937E47F297D9 /* FSPagerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSPagerView.xcconfig; sourceTree = "<group>"; };
+		0C44D035BFE4ED5CC0E2B6589625937E /* KYDrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYDrawerController.swift; path = KYDrawerController/Classes/KYDrawerController.swift; sourceTree = "<group>"; };
+		0C46614BF7BF5C3BC2ED2B1064C676A1 /* UIDropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIDropDown.swift; path = UIDropDown/UIDropDown.swift; sourceTree = "<group>"; };
+		1922692A55CBD33601128482F0E69BB7 /* KYDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		1AD1758995809F7DFA94D8171E583BF5 /* FSPagerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSPagerView-dummy.m"; sourceTree = "<group>"; };
 		1F7E18390D6E35CE46D3F593D07677AC /* Pods-Dr Samir Abbas.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Dr Samir Abbas.modulemap"; sourceTree = "<group>"; };
-		3473440A213F973952223205AE2E5910 /* KYDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYDrawerController.xcconfig; sourceTree = "<group>"; };
+		26FEFF242FF9B4ECD5C9E07A154AC777 /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerCollectionView.swift; path = Sources/FSPagerCollectionView.swift; sourceTree = "<group>"; };
+		33F1F8035A8429469E782CE558F5F307 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		371DFB557F259A73364C59CA9AC7711E /* Pods-Dr Samir Abbas-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Dr Samir Abbas-dummy.m"; sourceTree = "<group>"; };
-		4679AFBE979F4608FE3050B5487962B4 /* KYDrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYDrawerController.swift; path = KYDrawerController/Classes/KYDrawerController.swift; sourceTree = "<group>"; };
-		4790C8BDCE800ACC6EE2A4BE8F988FE9 /* Pods_Dr_Samir_Abbas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dr_Samir_Abbas.framework; path = "Pods-Dr Samir Abbas.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3731B223EDD190ED0387178E2994F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		475C7579BE8BF18ED679F8C270A06CCA /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageViewTransformer.swift; path = Sources/FSPageViewTransformer.swift; sourceTree = "<group>"; };
+		4D1612D34674D987ECB00425C935C61F /* FSPagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerView.swift; path = Sources/FSPagerView.swift; sourceTree = "<group>"; };
 		560E79116ED577253167654A97F8E6E6 /* Pods-Dr Samir Abbas-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dr Samir Abbas-acknowledgements.plist"; sourceTree = "<group>"; };
-		5E4F861D797B776733583592FECEC6D8 /* KYDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-prefix.pch"; sourceTree = "<group>"; };
-		60FF4BFB4F4575DCB87450652B5F3632 /* KYDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYDrawerController-dummy.m"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6F5392F98C5F2DC079D2C9D80D640670 /* KYEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedMainControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
+		583AB34F03B3C4C4E23F7AEBD168F292 /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSPagerView.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7CD2BC31D5DC3145C7B9258A395D3E /* UIDropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIDropDown-dummy.m"; sourceTree = "<group>"; };
+		6102D700E07E8916DBC7AED3B66541A6 /* KYEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedMainControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
+		630AED6359CDA75BF8032AADCCDE8B83 /* Pods_Dr_Samir_Abbas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dr_Samir_Abbas.framework; path = "Pods-Dr Samir Abbas.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A26A2BF18D88A34C27A464149EA6FFB /* KYDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYDrawerController.framework; path = KYDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CAA882C5BA0F54CFCF61B9C82E38EF /* FSPagerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSPagerView-umbrella.h"; sourceTree = "<group>"; };
+		7EB6C1B3883E6CEC951B3C2595F9FE89 /* UIDropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UIDropDown.modulemap; sourceTree = "<group>"; };
+		80D2EA0225CB616373C8AAD8F1DF4501 /* UIDropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDropDown-umbrella.h"; sourceTree = "<group>"; };
 		85AAAD03FB1B3E4DC5C3F68BC38DD4B3 /* Pods-Dr Samir Abbas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dr Samir Abbas.debug.xcconfig"; sourceTree = "<group>"; };
 		89BD54786A4E53EE9E3D5AD209BC74D7 /* Pods-Dr Samir Abbas-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dr Samir Abbas-acknowledgements.markdown"; sourceTree = "<group>"; };
+		92AE640CE780D4E0080EB41449F82CA9 /* KYDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYDrawerController.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97EAC3A867D43F85DC1723D02B9C5F8A /* KYEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedDrawerControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
+		A289AD880325ADFD71131B3E6E5B0E65 /* KYDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-umbrella.h"; sourceTree = "<group>"; };
+		A3684984BA92A81042940A4523A69381 /* UIDropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDropDown-prefix.pch"; sourceTree = "<group>"; };
+		A6B797C8FB8DA60F093367547D284E8A /* FSPagerViewLayoutAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerViewLayoutAttributes.swift; path = Sources/FSPagerViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		A7D2969AA9C527562D7195133A28DEFE /* FSPagerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FSPagerView.modulemap; sourceTree = "<group>"; };
+		B3728DA246C2DB636709CB3224779098 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerViewCell.swift; path = Sources/FSPagerViewCell.swift; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BC5E1DECC4C48A0238B3FC575427D8DD /* UIDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIDropDown.framework; path = UIDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0EAEB77D0C67942562578F5FA704F10 /* KYEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedDrawerControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
 		C32012D598FFA0E8E590A40BBF5BD716 /* Pods-Dr Samir Abbas-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dr Samir Abbas-resources.sh"; sourceTree = "<group>"; };
-		CB0596813B267EA9D940BB7293244B79 /* KYDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYDrawerController.framework; path = KYDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA7AA307E188375268B2988E6DEB28C /* Pods-Dr Samir Abbas-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dr Samir Abbas-frameworks.sh"; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DA1DDC4BD520AE3F9CBD7428EF2904AC /* Pods-Dr Samir Abbas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dr Samir Abbas.release.xcconfig"; sourceTree = "<group>"; };
-		E7B380212547E203C8BBA13762D21A5B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE263F93494A87A553C5294492628115 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9AD53B40384121639F67015F7CA8044 /* Pods-Dr Samir Abbas-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dr Samir Abbas-umbrella.h"; sourceTree = "<group>"; };
 		EEB5BFFF9A053BC66D6617ADEAD2EF5D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFB2A3EF54DFBF46160634C55194AAAA /* KYDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-umbrella.h"; sourceTree = "<group>"; };
-		FFFBAB551E9F52D13D2368223EF25D94 /* KYDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KYDrawerController.modulemap; sourceTree = "<group>"; };
+		F1EEE35465EBE3D298052B492E6A6343 /* KYDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYDrawerController-dummy.m"; sourceTree = "<group>"; };
+		F202A7E0E6A350AF2181E6141D221BC3 /* FSPageViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageViewLayout.swift; path = Sources/FSPageViewLayout.swift; sourceTree = "<group>"; };
+		F6B4C111F50837530C89F4FA2426823D /* FSPageControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageControl.swift; path = Sources/FSPageControl.swift; sourceTree = "<group>"; };
+		F764B229E4F501DEE0AAE71638C12412 /* UIDropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIDropDown.xcconfig; sourceTree = "<group>"; };
+		F9956F6D8ABF464EF6DAE32BDCD31EA2 /* KYDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KYDrawerController.modulemap; sourceTree = "<group>"; };
+		F9E975414B493C76D773A19D5EF26002 /* FSPagerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSPagerView-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6E070AB187E415CF4D7EB6E528000CB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				017A4EC1B38AB50FC4CB46643A0A77F9 /* Foundation.framework in Frameworks */,
+				766C44B923C22D6143C77BAC15E2B7F7 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D5504B6651AA191B9CA398DD124F315 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71699DD9B7D6F4BB3A07F6D8E5484E8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BF784C9ACDD984BEC74C092E7E2CAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE83BD1A62BD79C30B377D365E8A9800 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FB1EF2F8A9886B7F0713F557C0356DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,44 +140,76 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B68A13D452CD0739FE4DAFF62087FB40 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3DDC6788E43DD1AF24DB8FE9ABBF5A8 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3031FC2B97FDD934FD6E81209C96DB34 /* Products */ = {
+		2703CD2580DA3AE3961ED2FEF1B7D6D4 /* FSPagerView */ = {
 			isa = PBXGroup;
 			children = (
-				CB0596813B267EA9D940BB7293244B79 /* KYDrawerController.framework */,
-				4790C8BDCE800ACC6EE2A4BE8F988FE9 /* Pods_Dr_Samir_Abbas.framework */,
+				F6B4C111F50837530C89F4FA2426823D /* FSPageControl.swift */,
+				26FEFF242FF9B4ECD5C9E07A154AC777 /* FSPagerCollectionView.swift */,
+				4D1612D34674D987ECB00425C935C61F /* FSPagerView.swift */,
+				B3728DA246C2DB636709CB3224779098 /* FSPagerViewCell.swift */,
+				A6B797C8FB8DA60F093367547D284E8A /* FSPagerViewLayoutAttributes.swift */,
+				F202A7E0E6A350AF2181E6141D221BC3 /* FSPageViewLayout.swift */,
+				475C7579BE8BF18ED679F8C270A06CCA /* FSPageViewTransformer.swift */,
+				4EDADA5E76E31E960FD5B5F350E81DC7 /* Support Files */,
 			);
-			name = Products;
+			name = FSPagerView;
+			path = FSPagerView;
 			sourceTree = "<group>";
 		};
-		35BEB259A805B876077E16A50201ACE9 /* Support Files */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E7B380212547E203C8BBA13762D21A5B /* Info.plist */,
-				FFFBAB551E9F52D13D2368223EF25D94 /* KYDrawerController.modulemap */,
-				3473440A213F973952223205AE2E5910 /* KYDrawerController.xcconfig */,
-				60FF4BFB4F4575DCB87450652B5F3632 /* KYDrawerController-dummy.m */,
-				5E4F861D797B776733583592FECEC6D8 /* KYDrawerController-prefix.pch */,
-				FFB2A3EF54DFBF46160634C55194AAAA /* KYDrawerController-umbrella.h */,
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4EDADA5E76E31E960FD5B5F350E81DC7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7D2969AA9C527562D7195133A28DEFE /* FSPagerView.modulemap */,
+				048449283C163CEBE55F937E47F297D9 /* FSPagerView.xcconfig */,
+				1AD1758995809F7DFA94D8171E583BF5 /* FSPagerView-dummy.m */,
+				F9E975414B493C76D773A19D5EF26002 /* FSPagerView-prefix.pch */,
+				73CAA882C5BA0F54CFCF61B9C82E38EF /* FSPagerView-umbrella.h */,
+				33F1F8035A8429469E782CE558F5F307 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FSPagerView";
+			sourceTree = "<group>";
+		};
+		4EFAABC75C004B558E950E25F08E37FA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B3731B223EDD190ED0387178E2994F0 /* Info.plist */,
+				F9956F6D8ABF464EF6DAE32BDCD31EA2 /* KYDrawerController.modulemap */,
+				92AE640CE780D4E0080EB41449F82CA9 /* KYDrawerController.xcconfig */,
+				F1EEE35465EBE3D298052B492E6A6343 /* KYDrawerController-dummy.m */,
+				1922692A55CBD33601128482F0E69BB7 /* KYDrawerController-prefix.pch */,
+				A289AD880325ADFD71131B3E6E5B0E65 /* KYDrawerController-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KYDrawerController";
 			sourceTree = "<group>";
 		};
-		48FC5F8335DCBB6C86C4AD058E26E2C5 /* Pods */ = {
+		541AEC85FE5D9A5626584E6E8D149B78 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				776BBCB988F5D4D73B30F2E35FB92CFB /* KYDrawerController */,
+				2703CD2580DA3AE3961ED2FEF1B7D6D4 /* FSPagerView */,
+				8384A672AFD8BF3D8D2D885DEB323966 /* KYDrawerController */,
+				66740DF4C1120206C26F0154EA46926E /* UIDropDown */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -123,27 +232,48 @@
 			path = "Target Support Files/Pods-Dr Samir Abbas";
 			sourceTree = "<group>";
 		};
-		776BBCB988F5D4D73B30F2E35FB92CFB /* KYDrawerController */ = {
+		66740DF4C1120206C26F0154EA46926E /* UIDropDown */ = {
 			isa = PBXGroup;
 			children = (
-				4679AFBE979F4608FE3050B5487962B4 /* KYDrawerController.swift */,
-				97EAC3A867D43F85DC1723D02B9C5F8A /* KYEmbedDrawerControllerSegue.swift */,
-				6F5392F98C5F2DC079D2C9D80D640670 /* KYEmbedMainControllerSegue.swift */,
-				35BEB259A805B876077E16A50201ACE9 /* Support Files */,
+				0C46614BF7BF5C3BC2ED2B1064C676A1 /* UIDropDown.swift */,
+				ABF131361FFA57DE050B6368F4C8DEBB /* Support Files */,
 			);
-			name = KYDrawerController;
-			path = KYDrawerController;
+			name = UIDropDown;
+			path = UIDropDown;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				48FC5F8335DCBB6C86C4AD058E26E2C5 /* Pods */,
-				3031FC2B97FDD934FD6E81209C96DB34 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				541AEC85FE5D9A5626584E6E8D149B78 /* Pods */,
+				8109C60F3042A8B389986CBD4F088CA2 /* Products */,
 				8B23A0E7ED552E1FA5318BE4E2B15FDA /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8109C60F3042A8B389986CBD4F088CA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				583AB34F03B3C4C4E23F7AEBD168F292 /* FSPagerView.framework */,
+				6A26A2BF18D88A34C27A464149EA6FFB /* KYDrawerController.framework */,
+				630AED6359CDA75BF8032AADCCDE8B83 /* Pods_Dr_Samir_Abbas.framework */,
+				BC5E1DECC4C48A0238B3FC575427D8DD /* UIDropDown.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8384A672AFD8BF3D8D2D885DEB323966 /* KYDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				0C44D035BFE4ED5CC0E2B6589625937E /* KYDrawerController.swift */,
+				C0EAEB77D0C67942562578F5FA704F10 /* KYEmbedDrawerControllerSegue.swift */,
+				6102D700E07E8916DBC7AED3B66541A6 /* KYEmbedMainControllerSegue.swift */,
+				4EFAABC75C004B558E950E25F08E37FA /* Support Files */,
+			);
+			name = KYDrawerController;
+			path = KYDrawerController;
 			sourceTree = "<group>";
 		};
 		8B23A0E7ED552E1FA5318BE4E2B15FDA /* Targets Support Files */ = {
@@ -154,30 +284,28 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		ABF131361FFA57DE050B6368F4C8DEBB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				DE263F93494A87A553C5294492628115 /* Info.plist */,
+				7EB6C1B3883E6CEC951B3C2595F9FE89 /* UIDropDown.modulemap */,
+				F764B229E4F501DEE0AAE71638C12412 /* UIDropDown.xcconfig */,
+				5A7CD2BC31D5DC3145C7B9258A395D3E /* UIDropDown-dummy.m */,
+				A3684984BA92A81042940A4523A69381 /* UIDropDown-prefix.pch */,
+				80D2EA0225CB616373C8AAD8F1DF4501 /* UIDropDown-umbrella.h */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/UIDropDown";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		45D0F426D31D58C9AF75AAAA8152EF63 /* Headers */ = {
+		369BAADAD4DE4AF1B7B2B9396F25F59C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B44385643108D23CE7AC01FEF0B688 /* Pods-Dr Samir Abbas-umbrella.h in Headers */,
+				357D7C84290EBD2CF71498C07886F110 /* FSPagerView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,9 +317,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A406518533BB11AE0A3E020E1B4393A1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA93E7F6C4F34E7BFB0DC43D6AE828E /* UIDropDown-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE0327B917DF61E34CB91C1CF4166EE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75EB7AA3771DD0841C6C9D6078D97906 /* Pods-Dr Samir Abbas-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		73E0BFC2C9CB4FD15762BE320D9012EC /* UIDropDown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4D3E215719277C66B0803C036921EEE /* Build configuration list for PBXNativeTarget "UIDropDown" */;
+			buildPhases = (
+				900B6F36B618871BCD1445480A0B9CAD /* Sources */,
+				94BF784C9ACDD984BEC74C092E7E2CAD /* Frameworks */,
+				A406518533BB11AE0A3E020E1B4393A1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIDropDown;
+			productName = UIDropDown;
+			productReference = BC5E1DECC4C48A0238B3FC575427D8DD /* UIDropDown.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		7AF8670FDECF80EFCAA3D04318C4B4D1 /* KYDrawerController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 235787AAA4D655650FA93DB4FB2D308A /* Build configuration list for PBXNativeTarget "KYDrawerController" */;
@@ -206,25 +367,44 @@
 			);
 			name = KYDrawerController;
 			productName = KYDrawerController;
-			productReference = CB0596813B267EA9D940BB7293244B79 /* KYDrawerController.framework */;
+			productReference = 6A26A2BF18D88A34C27A464149EA6FFB /* KYDrawerController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9DA3F6636B564EF5917EB8CEB2008552 /* Pods-Dr Samir Abbas */ = {
+		9D32CBCC4CD8ACF85AF14861741EB884 /* Pods-Dr Samir Abbas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA64020FA953956C4E12A17ED8438523 /* Build configuration list for PBXNativeTarget "Pods-Dr Samir Abbas" */;
+			buildConfigurationList = 51DE59AA00B92EB1EB19A2A8C9C4EFEA /* Build configuration list for PBXNativeTarget "Pods-Dr Samir Abbas" */;
 			buildPhases = (
-				4F18D4ACA710DED408F06FBB1CA2FAD4 /* Sources */,
-				B68A13D452CD0739FE4DAFF62087FB40 /* Frameworks */,
-				45D0F426D31D58C9AF75AAAA8152EF63 /* Headers */,
+				1451A9B7C365C115B796ECF39CFE7FCC /* Sources */,
+				7D5504B6651AA191B9CA398DD124F315 /* Frameworks */,
+				AAE0327B917DF61E34CB91C1CF4166EE /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F1BE38A2EAF1D20C94D9046B5539D5A9 /* PBXTargetDependency */,
+				391F61316AB0AA3DF476993AA4D4457D /* PBXTargetDependency */,
+				F181FC8BE996913B9EF356BCC366A0BC /* PBXTargetDependency */,
+				25C4E747FF3823D87D1D7BB2214F04E5 /* PBXTargetDependency */,
 			);
 			name = "Pods-Dr Samir Abbas";
 			productName = "Pods-Dr Samir Abbas";
-			productReference = 4790C8BDCE800ACC6EE2A4BE8F988FE9 /* Pods_Dr_Samir_Abbas.framework */;
+			productReference = 630AED6359CDA75BF8032AADCCDE8B83 /* Pods_Dr_Samir_Abbas.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED279AFE7EA745A57B7B9F35AD5F2C9F /* FSPagerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBA75C9B7A7FB46E2A2B66557F47267D /* Build configuration list for PBXNativeTarget "FSPagerView" */;
+			buildPhases = (
+				A93EF77B2EC7EA05A5A8DA18484E330A /* Sources */,
+				6E070AB187E415CF4D7EB6E528000CB4 /* Frameworks */,
+				369BAADAD4DE4AF1B7B2B9396F25F59C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSPagerView;
+			productName = FSPagerView;
+			productReference = 583AB34F03B3C4C4E23F7AEBD168F292 /* FSPagerView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -244,17 +424,27 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 3031FC2B97FDD934FD6E81209C96DB34 /* Products */;
+			productRefGroup = 8109C60F3042A8B389986CBD4F088CA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				ED279AFE7EA745A57B7B9F35AD5F2C9F /* FSPagerView */,
 				7AF8670FDECF80EFCAA3D04318C4B4D1 /* KYDrawerController */,
-				9DA3F6636B564EF5917EB8CEB2008552 /* Pods-Dr Samir Abbas */,
+				9D32CBCC4CD8ACF85AF14861741EB884 /* Pods-Dr Samir Abbas */,
+				73E0BFC2C9CB4FD15762BE320D9012EC /* UIDropDown */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1451A9B7C365C115B796ECF39CFE7FCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DF94461346150F35B7BFC276C394C05 /* Pods-Dr Samir Abbas-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BA042EDEFD683F56F2F5063EC1B98EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,26 +456,89 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F18D4ACA710DED408F06FBB1CA2FAD4 /* Sources */ = {
+		900B6F36B618871BCD1445480A0B9CAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EC769B0271EA72A69F71AD1A2CA9D2C /* Pods-Dr Samir Abbas-dummy.m in Sources */,
+				20B02E4F504ACA3522D6FB3B3188B5A4 /* UIDropDown-dummy.m in Sources */,
+				C0A86AA65F460228A7466C2D6C970050 /* UIDropDown.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A93EF77B2EC7EA05A5A8DA18484E330A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				838BD1D2FCD856E3E7AAD63C498E9A92 /* FSPageControl.swift in Sources */,
+				6F16E3CF88BBD2BAE86F1B09EA55311A /* FSPagerCollectionView.swift in Sources */,
+				075CC243674F7187A841C287CA081280 /* FSPagerView-dummy.m in Sources */,
+				03BBD899B92EFE0E171DEF7B4A7DDE8B /* FSPagerView.swift in Sources */,
+				79E391C6A3429405FB63474CF7218DE3 /* FSPagerViewCell.swift in Sources */,
+				5832B6C6DF42450FCAB70E67F464E040 /* FSPagerViewLayoutAttributes.swift in Sources */,
+				FED3B2A51B9910D524980ACD078DE5AC /* FSPageViewLayout.swift in Sources */,
+				638D4086C988445EEC88BF66F3B5D3B9 /* FSPageViewTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F1BE38A2EAF1D20C94D9046B5539D5A9 /* PBXTargetDependency */ = {
+		25C4E747FF3823D87D1D7BB2214F04E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIDropDown;
+			target = 73E0BFC2C9CB4FD15762BE320D9012EC /* UIDropDown */;
+			targetProxy = 10042BE9D234799BF2312163D4998220 /* PBXContainerItemProxy */;
+		};
+		391F61316AB0AA3DF476993AA4D4457D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FSPagerView;
+			target = ED279AFE7EA745A57B7B9F35AD5F2C9F /* FSPagerView */;
+			targetProxy = CF5E0BE8F03A68D2C56F01C50D78506E /* PBXContainerItemProxy */;
+		};
+		F181FC8BE996913B9EF356BCC366A0BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KYDrawerController;
 			target = 7AF8670FDECF80EFCAA3D04318C4B4D1 /* KYDrawerController */;
-			targetProxy = 4E15208BDADE5683655946F864FFACCC /* PBXContainerItemProxy */;
+			targetProxy = 305BE44B15576EDDF7694053CE7B3DB4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1092B07F610D5E0F52B6C6809281AFE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85AAAD03FB1B3E4DC5C3F68BC38DD4B3 /* Pods-Dr Samir Abbas.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dr Samir Abbas/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Dr_Samir_Abbas;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		323A24856F1A4871A780301AF5C02A2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -349,73 +602,7 @@
 			};
 			name = Debug;
 		};
-		37F8F4E6AF39ED0EE9E4C67AA83E6BCC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3473440A213F973952223205AE2E5910 /* KYDrawerController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KYDrawerController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
-				PRODUCT_NAME = KYDrawerController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7F4E7449B41D020E053F35DD50969854 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85AAAD03FB1B3E4DC5C3F68BC38DD4B3 /* Pods-Dr Samir Abbas.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Dr Samir Abbas/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Dr_Samir_Abbas;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		971EB7E3ED2EEC9FF582D6C2B94378E6 /* Release */ = {
+		353DFE4458B9C42F8A82680FEC312B2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA1DDC4BD520AE3F9CBD7428EF2904AC /* Pods-Dr Samir Abbas.release.xcconfig */;
 			buildSettings = {
@@ -449,6 +636,163 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		37F8F4E6AF39ED0EE9E4C67AA83E6BCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92AE640CE780D4E0080EB41449F82CA9 /* KYDrawerController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYDrawerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
+				PRODUCT_NAME = KYDrawerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D2E26161477D719A038117BBA8DA307 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F764B229E4F501DEE0AAE71638C12412 /* UIDropDown.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIDropDown/UIDropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIDropDown/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UIDropDown/UIDropDown.modulemap";
+				PRODUCT_NAME = UIDropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		74726B09F55E41303A1B844FA76BA6B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 048449283C163CEBE55F937E47F297D9 /* FSPagerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FSPagerView/FSPagerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSPagerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FSPagerView/FSPagerView.modulemap";
+				PRODUCT_NAME = FSPagerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		959540DB9959412A815DEB4CAF3FF7F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 048449283C163CEBE55F937E47F297D9 /* FSPagerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FSPagerView/FSPagerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSPagerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FSPagerView/FSPagerView.modulemap";
+				PRODUCT_NAME = FSPagerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C7961DB00EEFE0553B12D93C966D00C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F764B229E4F501DEE0AAE71638C12412 /* UIDropDown.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIDropDown/UIDropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIDropDown/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UIDropDown/UIDropDown.modulemap";
+				PRODUCT_NAME = UIDropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		CA33F186435244FD0FD5B7325332656C /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -510,7 +854,7 @@
 		};
 		EADFEDAB3C6EF60A9E8C314B94786237 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3473440A213F973952223205AE2E5910 /* KYDrawerController.xcconfig */;
+			baseConfigurationReference = 92AE640CE780D4E0080EB41449F82CA9 /* KYDrawerController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -561,11 +905,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA64020FA953956C4E12A17ED8438523 /* Build configuration list for PBXNativeTarget "Pods-Dr Samir Abbas" */ = {
+		51DE59AA00B92EB1EB19A2A8C9C4EFEA /* Build configuration list for PBXNativeTarget "Pods-Dr Samir Abbas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F4E7449B41D020E053F35DD50969854 /* Debug */,
-				971EB7E3ED2EEC9FF582D6C2B94378E6 /* Release */,
+				1092B07F610D5E0F52B6C6809281AFE8 /* Debug */,
+				353DFE4458B9C42F8A82680FEC312B2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4D3E215719277C66B0803C036921EEE /* Build configuration list for PBXNativeTarget "UIDropDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7961DB00EEFE0553B12D93C966D00C6 /* Debug */,
+				6D2E26161477D719A038117BBA8DA307 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBA75C9B7A7FB46E2A2B66557F47267D /* Build configuration list for PBXNativeTarget "FSPagerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74726B09F55E41303A1B844FA76BA6B3 /* Debug */,
+				959540DB9959412A815DEB4CAF3FF7F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -64,6 +64,9 @@
 		75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656034207A7FD700D5B6FC /* TimeSlotVC.swift */; };
 		75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6838E207BD475004B90EE /* SlideMenuController.swift */; };
 		75F68391207BDB15004B90EE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68390207BDB15004B90EE /* MenuCell.swift */; };
+		75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */; };
+		75F68395207CC1EA004B90EE /* UIDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68394207CC1EA004B90EE /* UIDropDown.swift */; };
+		75F68397207CCE30004B90EE /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68396207CCE30004B90EE /* GalleryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +155,11 @@
 		75656034207A7FD700D5B6FC /* TimeSlotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotVC.swift; sourceTree = "<group>"; };
 		75F6838E207BD475004B90EE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		75F68390207BDB15004B90EE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorVC.swift; sourceTree = "<group>"; };
+		75F68394207CC1EA004B90EE /* UIDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDropDown.swift; sourceTree = "<group>"; };
+		75F68396207CCE30004B90EE /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
+		75F68399207CD6B3004B90EE /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F6839D207CD75B004B90EE /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E2750F69CD8B4D97C72CBD /* Pods-Dr Samir Abbas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr Samir Abbas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.release.xcconfig"; sourceTree = "<group>"; };
 		D3900E1F8F6ED0D60D355D6B /* Pods-Dr Samir Abbas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr Samir Abbas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,6 +284,8 @@
 		756560052079345C00D5B6FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75F6839D207CD75B004B90EE /* FSPagerView.framework */,
+				75F68399207CD6B3004B90EE /* FSPagerView.framework */,
 				756560072079345D00D5B6FC /* Alamofire.framework */,
 				756560082079345D00D5B6FC /* Material.framework */,
 				756560092079345D00D5B6FC /* Motion.framework */,
@@ -296,6 +306,8 @@
 				75656034207A7FD700D5B6FC /* TimeSlotVC.swift */,
 				754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */,
 				753B8401207BD16C0001A0F6 /* MasterVC.swift */,
+				75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */,
+				75F68396207CCE30004B90EE /* GalleryVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +331,7 @@
 				754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */,
 				75F6838E207BD475004B90EE /* SlideMenuController.swift */,
 				75F68390207BDB15004B90EE /* MenuCell.swift */,
+				75F68394207CC1EA004B90EE /* UIDropDown.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -464,11 +477,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -532,10 +549,12 @@
 				754A35DE207B88A200F59C9C /* DPDrawerViewController.swift in Sources */,
 				754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */,
 				75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */,
+				75F68395207CC1EA004B90EE /* UIDropDown.swift in Sources */,
 				754A35EC207B89B500F59C9C /* DPMenuButton.swift in Sources */,
 				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
 				754A35EA207B897800F59C9C /* DPLeftPageViewController.swift in Sources */,
 				754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */,
+				75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */,
 				75F68391207BDB15004B90EE /* MenuCell.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
 				75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */,
@@ -550,6 +569,7 @@
 				754A35F6207B8A5100F59C9C /* ScreenType.swift in Sources */,
 				754A35F4207B8A2F00F59C9C /* DPSlideMenuManager.swift in Sources */,
 				7565602F2079EF8E00D5B6FC /* BookAppointmentVC.swift in Sources */,
+				75F68397207CCE30004B90EE /* GalleryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
