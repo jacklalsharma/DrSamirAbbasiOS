@@ -25,10 +25,10 @@ class MenuCell :UITableViewCell {
         
         let main = TGRelativeLayout()
         main.tg_width.equal(270)
-        main.tg_height.equal(48)
+        main.tg_height.equal(Style.Height48)
         let flat = FlatButton(title: "", titleColor: .white)
         flat.tg_width.equal(270)
-        flat.tg_height.equal(48)
+        flat.tg_height.equal(Style.Height48)
         flat.tg_centerX.equal(0)
         flat.tg_centerY.equal(0)
         flat.backgroundColor = .white
@@ -38,7 +38,7 @@ class MenuCell :UITableViewCell {
         routeName.tg_width.equal(.wrap)
         routeName.tg_height.equal(.wrap)
         routeName.tg_centerY.equal(0)
-        routeName.tg_left.equal(80)
+        routeName.tg_left.equal(Style.Width80)
         icon = getUIImageView(sizeX: 30, sizeY: 30)
         icon.tg_left.equal(30)
         
@@ -47,7 +47,7 @@ class MenuCell :UITableViewCell {
         
         let linear = TGLinearLayout(.vert)
         linear.tg_width.equal(270)
-        linear.tg_height.equal(51)
+        linear.tg_height.equal(Style.Height50)
         linear.addSubview(main)
         
         let strip = getUIImageView(sizeX: 270, sizeY: 2)

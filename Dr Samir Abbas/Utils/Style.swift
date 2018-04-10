@@ -19,4 +19,25 @@ class Style{
     static let WarningColor = UIColor(red: CGFloat(255 / 255.0), green: CGFloat(169 / 255.0), blue: CGFloat(0 / 255.0), alpha: 1);
     static let Transparent = UIColor(red: CGFloat(255 / 255.0), green: CGFloat(169 / 255.0), blue: CGFloat(0 / 255.0), alpha: 0);
     
+    static let ScreenWidth = UIScreen.main.bounds.width
+    static let ScreenHeight = UIScreen.main.bounds.height
+    
+    static let Height60 = UIScreen.main.bounds.height / 12.26
+    static let Width60 = UIScreen.main.bounds.width / 6.9
+    
+    static let Height50 = UIScreen.main.bounds.height / 14.76
+    static let Width50 = UIScreen.main.bounds.width / 8.28
+    
+    static let Height65 = UIScreen.main.bounds.height / 11.32
+    static let Width65 = UIScreen.main.bounds.width / 6.39
+    
+    static let Height48 = UIScreen.main.bounds.height / 15.33
+    
+    static let Height90 = UIScreen.main.bounds.height / 8.17
+    static let Height30 = UIScreen.main.bounds.height / 24.36
+    static let Width80 = UIScreen.main.bounds.width / 5.15
+    static let Width90 = UIScreen.main.bounds.width / 4.6
+    
+    static let Height45 = UIScreen.main.bounds.height / 16.35
+    static let Width45 = UIScreen.main.bounds.width / 9.2
 }

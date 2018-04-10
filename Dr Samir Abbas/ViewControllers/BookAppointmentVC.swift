@@ -12,7 +12,7 @@ import TangramKit
 import UIKit
 
 class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
-    
+    var data = ["HI", "BYE", "TATA", "SEE YAA"]
     override
     func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         
         let search = DTTextField()
         search.tg_width.equal(UIScreen.main.bounds.width - 40)
-        search.tg_height.equal(48)
+        search.tg_height.equal(Style.Height48)
         search.placeholder = "Search a doctor"
         search.textAlignment = .center
         search.floatPlaceholderColor = Style.AccentColor
@@ -50,7 +50,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         
         let searchLayout = TGRelativeLayout()
         searchLayout.tg_width.equal(UIScreen.main.bounds.width - 40)
-        searchLayout.tg_height.equal(48)
+        searchLayout.tg_height.equal(Style.Height48)
         searchLayout.addSubview(search)
         searchLayout.tg_centerX.equal(0)
         searchLayout.tg_top.equal(20)
@@ -75,7 +75,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         
         let chooseLabel = UILabel()
         chooseLabel.tg_width.equal(UIScreen.main.bounds.width)
-        chooseLabel.tg_height.equal(48)
+        chooseLabel.tg_height.equal(Style.Height48)
         chooseLabel.text = "Choose Speciality"
         chooseLabel.tg_centerX.equal(0)
         chooseLabel.textAlignment = .center
@@ -89,10 +89,10 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         list.tg_height.equal(UIScreen.main.bounds.height)
         list.separatorColor = Style.Transparent
         list.backgroundColor = Style.BackgroundColor
-        list.tg_left.equal(20)
-        list.tg_right.equal(20)
+        list.tg_left.equal(19)
+        list.tg_right.equal(19)
         list.allowsSelection = false
-        list.rowHeight = 60
+        list.rowHeight = Style.Height60
         list.tg_top.equal(30)
         
         list.register(SpecialityCell.self, forCellReuseIdentifier: "cell")
@@ -111,13 +111,16 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     //the method returning each cell of the list
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         var cell:SpecialityCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SpecialityCell
-        cell.routeName.text = "Hi"
+        var val = data[indexPath.row]
+        cell.routeName.text = val
+        cell.firstLetter.text = String (val[val.startIndex])
+
         return cell
     }
     
     //the method returning size of the list
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 0
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

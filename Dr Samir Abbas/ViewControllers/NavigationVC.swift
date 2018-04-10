@@ -43,8 +43,8 @@ class NavigationVC : BaseVC {
         //BANNER VIEW....
         let banner = TGRelativeLayout()
         banner.tg_width.equal(UIScreen.main.bounds.width)
-        banner.tg_height.equal(160)
-        let bannerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 160))
+        banner.tg_height.equal(Style.ScreenHeight / 4.6)
+        let bannerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: Style.ScreenHeight / 4.6))
         bannerImageView.image = #imageLiteral(resourceName: "banner")
         bannerImageView.contentMode = UIViewContentMode.scaleToFill
         banner.addSubview(bannerImageView)
@@ -54,7 +54,7 @@ class NavigationVC : BaseVC {
         let bookAppt = TGRelativeLayout()
         bookAppt.tg_centerX.equal(0)
         bookAppt.tg_width.equal(UIScreen.main.bounds.width - 40)
-        bookAppt.tg_height.equal(150)
+        bookAppt.tg_height.equal(Style.ScreenHeight / 4.9)
         bookAppt.tg_backgroundImage = #imageLiteral(resourceName: "btn_outer")
         bookAppt.tg_top.equal(20)
         bookAppt.backgroundColor = .white
@@ -64,7 +64,7 @@ class NavigationVC : BaseVC {
         bookApptLinear.tg_height.equal(120)
         bookApptLinear.tg_centerX.equal(0)
         bookApptLinear.tg_centerY.equal(0)
-        let img = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 65))
+        let img = UIImageView(frame: CGRect(x: 0, y: 0, width: Style.Width50, height: Style.Height65))
         img.image = #imageLiteral(resourceName: "ic_aapointment")
         img.tg_centerX.equal(0)
         img.tg_top.equal(10)
@@ -76,7 +76,7 @@ class NavigationVC : BaseVC {
         
         let bookBtn = FlatButton(title: "", titleColor: .white)
         bookBtn.tg_width.equal(UIScreen.main.bounds.width - 40)
-        bookBtn.tg_height.equal(150)
+        bookBtn.tg_height.equal(Style.ScreenHeight / 4.9)
         bookBtn.tg_centerX.equal(0)
         bookBtn.addTarget(self, action: #selector(openAppointment), for: .touchUpInside)
         bookApptLinear.addSubview(bookLabel)
@@ -142,17 +142,17 @@ class NavigationVC : BaseVC {
         let bookAppt = TGRelativeLayout()
         bookAppt.tg_centerX.equal(0)
         bookAppt.tg_width.equal(UIScreen.main.bounds.width/2 - 20)
-        bookAppt.tg_height.equal(120)
+        bookAppt.tg_height.equal(Style.ScreenHeight / 6.13)
         //bookAppt.tg_backgroundImage = #imageLiteral(resourceName: "btn_outer")
         bookAppt.tg_top.equal(5)
         bookAppt.backgroundColor = .white
         
         let bookApptLinear = TGLinearLayout(.vert)
         bookApptLinear.tg_width.equal(UIScreen.main.bounds.width/2 - 20)
-        bookApptLinear.tg_height.equal(120)
+        bookApptLinear.tg_height.equal(Style.ScreenHeight/6.13)
         bookApptLinear.tg_centerX.equal(0)
         
-        let img = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        let img = UIImageView(frame: CGRect(x: 0, y: 0, width: Style.Width60, height: Style.Height60))
         img.tg_centerX.equal(0)
         img.tg_top.equal(20)
         bookApptLinear.addSubview(img)
@@ -165,7 +165,7 @@ class NavigationVC : BaseVC {
         
         let bookBtn = FlatButton(title: "", titleColor: .white)
         bookBtn.tg_width.equal(UIScreen.main.bounds.width/2 - 20)
-        bookBtn.tg_height.equal(120)
+        bookBtn.tg_height.equal(Style.ScreenHeight / 6.13)
         bookBtn.tg_centerX.equal(0)
         bookApptLinear.addSubview(bookLabel)
         bookAppt.addSubview(bookApptLinear)

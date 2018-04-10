@@ -48,7 +48,7 @@ class LeftSlideMenuVC : DPBaseEmbedViewController, UITableViewDataSource, UITabl
         list.separatorColor = Style.Transparent
         list.backgroundColor = .white
         list.allowsSelection = false
-        list.rowHeight = 56
+        list.rowHeight = Style.Height60
         list.register(MenuCell.self, forCellReuseIdentifier: "cell")
         list.dataSource = self
         list.delegate = self

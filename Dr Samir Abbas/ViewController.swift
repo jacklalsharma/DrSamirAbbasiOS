@@ -28,14 +28,15 @@ class ViewController: UIViewController {
         
         let linearLayout = TGLinearLayout(.horz)
         linearLayout.tg_width.equal(UIScreen.main.bounds.width)
-        linearLayout.tg_height.equal(48)
+        linearLayout.tg_height.equal(Style.Height48)
         linearLayout.addSubview(getRaisedButton(title: "ARABIC", isEnglish:  false))
         linearLayout.addSubview(getRaisedButton(title: "ENGLISH", isEnglish:  true))
         linearLayout.tg_centerX.equal(0)
-        linearLayout.tg_centerY.equal(UIScreen.main.bounds.height/2 - 48)
+        linearLayout.tg_centerY.equal(UIScreen.main.bounds.height/2 - Style.Height48)
         
         relativeLayout.addSubview(linearLayout)
-        
+        print(UIScreen.main.bounds.width)
+        print(UIScreen.main.bounds.height)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
         btn.pulseColor = .white ;
         btn.tg_width.equal(UIScreen.main.bounds.width/2)
         btn.tg_centerX.equal(0)
-        btn.tg_height.equal(48)
+        btn.tg_height.equal(Style.Height48)
         btn.titleLabel?.textAlignment = .left
         if(isEnglish == true){
             btn.addTarget(self, action: #selector(english), for: .touchUpInside)
@@ -68,8 +69,8 @@ class ViewController: UIViewController {
     
     @objc
     func arabic(){
-        //let time = TimeSlotVC()
-        let time = MasterVC()
+        let time = TimeSlotVC()
+        //let time = MasterVC()
         present(time, animated: true, completion: nil)
     }
 }

@@ -44,14 +44,14 @@ class TimeSlotVC : BaseVC {
         //Doctors Info...
         let doctorLayout = TGLinearLayout(.horz)
         doctorLayout.tg_width.equal(UIScreen.main.bounds.width)
-        doctorLayout.tg_height.equal(90)
+        doctorLayout.tg_height.equal(Style.Height90)
         doctorLayout.backgroundColor = .white
         doctorLayout.tg_top.equal(30)
         
         //DOCTOR IMAGE VIEW...
         let image2 = UIImage(named: "blank_profile.png")
         
-        let profile = UIImageView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
+        let profile = UIImageView(frame: CGRect(x: 0, y: 0, width: Style.Width45, height: Style.Height45))
         profile.image = image2
         profile.contentMode = UIViewContentMode.scaleAspectFill
         //....
@@ -63,13 +63,13 @@ class TimeSlotVC : BaseVC {
         leftLinear.addSubview(profile)
         leftLinear.tg_centerY.equal(0)
         leftLinear.addSubview(getUILabel(text: "MBBS", size: 18, textColor: Style.TextColor))
-        leftLinear.tg_left.equal(30)
+        leftLinear.tg_left.equal(Style.Height30)
         doctorLayout.addSubview(leftLinear)
         //....
         
         //Doctor Info....
         let rightLinear = TGLinearLayout(.vert)
-        rightLinear.tg_width.equal(UIScreen.main.bounds.width - 90)
+        rightLinear.tg_width.equal(UIScreen.main.bounds.width - Style.Width80)
         rightLinear.tg_height.equal(.wrap)
         rightLinear.tg_centerY.equal(0)
         rightLinear.addSubview(getUILabel(text: "Dr. Ayunshman Gupta", size: 18, textColor: Style.TextColor))
@@ -85,7 +85,7 @@ class TimeSlotVC : BaseVC {
         
         //===============DAY SELECTOR===========
         let dayHolder = TGLinearLayout(.vert)
-        dayHolder.tg_width.equal(UIScreen.main.bounds.width - 40)
+        dayHolder.tg_width.equal(UIScreen.main.bounds.width - Style.Width45)
         dayHolder.tg_height.equal(.wrap)
         dayHolder.tg_top.equal(20)
         dayHolder.tg_backgroundImage = #imageLiteral(resourceName: "cal_background")
@@ -113,7 +113,7 @@ class TimeSlotVC : BaseVC {
         
         //Day selector setup...
         let daysLayout = TGLinearLayout(.horz)
-        daysLayout.tg_width.equal(UIScreen.main.bounds.width - 50)
+        daysLayout.tg_width.equal(UIScreen.main.bounds.width - Style.Width45)
         daysLayout.tg_height.equal(.wrap)
         daysLayout.tg_centerX.equal(0)
         daysLayout.tg_left.equal(10)
@@ -184,13 +184,13 @@ class TimeSlotVC : BaseVC {
     
     func addNearbyVehiclesList(calendarDate : CalendarDate) -> ASHorizontalScrollView{
         
-        let horizontalScrollView:ASHorizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 80, height: 45))
+        let horizontalScrollView:ASHorizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - Style.Width90, height: Style.Height45))
         horizontalScrollView.marginSettings_320 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
         horizontalScrollView.marginSettings_480 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
         horizontalScrollView.marginSettings_414 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
         horizontalScrollView.marginSettings_736 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 2, miniAppearWidthOfLastItem: 30)
         horizontalScrollView.defaultMarginSettings = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 2, miniAppearWidthOfLastItem: 20)
-        horizontalScrollView.uniformItemSize = CGSize(width: 45, height: 45)
+        horizontalScrollView.uniformItemSize = CGSize(width: Style.Width45, height: Style.Height45)
         //horizontalScrollView.setItemsMarginOnce()
         
         
@@ -202,10 +202,10 @@ class TimeSlotVC : BaseVC {
     }
     
     func getVehicleCell(data : CalendarDate, tag : Int) -> UIView{
-        let btn = getFlatButton(width : 45, height : 45) ;
+        let btn = getFlatButton(width : Int(Style.Width45), height : Int(Style.Height45)) ;
         let relativeLayout = TGRelativeLayout();
-        relativeLayout.tg_width.equal(45) ;
-        relativeLayout.tg_height.equal(45) ;
+        relativeLayout.tg_width.equal(Style.Width45) ;
+        relativeLayout.tg_height.equal(Style.Height45) ;
         //let logo = getVehicleImage(image: data.code) ;
         let name: UILabel = getUILabel(text: data.day, size: 12, textColor: Style.TextColor) ;
         name.tg_centerY.equal(0)
@@ -213,12 +213,12 @@ class TimeSlotVC : BaseVC {
         name.tg_left.equal(20)
         
         let linearLayout = TGLinearLayout(.horz) ;
-        linearLayout.tg_width.equal(45) ;
-        linearLayout.tg_height.equal(45) ;
+        linearLayout.tg_width.equal(Style.Width45) ;
+        linearLayout.tg_height.equal(Style.Height45) ;
         //linearLayout.addSubview(logo) ;
         linearLayout.addSubview(name) ;
         
-        relativeLayout.addSubview(getRaisedButton(width : 45, height : 45))
+        relativeLayout.addSubview(getRaisedButton(width : Int(Style.Width45), height : Int(Style.Height45)))
         relativeLayout.addSubview(linearLayout)
         relativeLayout.addSubview(btn) ;
         btn.tag = tag
@@ -227,8 +227,8 @@ class TimeSlotVC : BaseVC {
         relativeLayout.tg_centerX.equal(0)
         
         let uiView = UIView()
-        uiView.tg_width.equal(45)
-        uiView.tg_height.equal(45)
+        uiView.tg_width.equal(Style.Width45)
+        uiView.tg_height.equal(Style.Height45)
         uiView.addSubview(relativeLayout)
         return uiView;
     }
