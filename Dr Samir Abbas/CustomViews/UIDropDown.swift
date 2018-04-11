@@ -31,10 +31,10 @@ public class UIDropDown: UIControl {
     public var tint: UIColor? {
         didSet {
             title.textColor = textColor ?? tint
-            arrow.backgroundColor = tint
+            arrow.backgroundColor = Style.AccentColor
         }
     }
-    public var arrowPadding: CGFloat = 7.0 {
+    public var arrowPadding: CGFloat = 12.0 {
         didSet{
             let size = arrow.superview!.frame.size.width-(arrowPadding*2)
             arrow.frame = CGRect(x: arrowPadding, y: arrowPadding, width: size, height: size)
@@ -151,14 +151,15 @@ public class UIDropDown: UIControl {
         
         arrow = Arrow(origin: CGPoint(x: arrowPadding,
                                       y: arrowPadding),
-                      size: arrowContainer.frame.width-(arrowPadding*2))
-        arrow.backgroundColor = .black
+                      size: 20)
+        arrow.backgroundColor = Style.AccentColor
         arrowContainer.addSubview(arrow)
         
         self.layer.cornerRadius = cornerRadius
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor2.cgColor
         self.addTarget(self, action: #selector(touch), for: .touchUpInside)
+        self.tg_left.equal(Style.Width60)
     }
     
     @objc fileprivate func touch() {
@@ -174,6 +175,8 @@ public class UIDropDown: UIControl {
                                           y: self.frame.minY,
                                           width: self.frame.width,
                                           height: self.frame.height))
+        table.tg_top.equal(Style.Height50)
+        table.tg_left.equal(Style.Width60)
         table.dataSource = self
         table.delegate = self
         table.alpha = 0
@@ -249,7 +252,7 @@ public class UIDropDown: UIControl {
         }
     }
     
-    fileprivate func hideTable() {
+    func hideTable() {
         
         privateTableWillDisappear()
         

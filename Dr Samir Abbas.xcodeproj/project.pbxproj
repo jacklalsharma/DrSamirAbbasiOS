@@ -67,6 +67,7 @@
 		75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */; };
 		75F68395207CC1EA004B90EE /* UIDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68394207CC1EA004B90EE /* UIDropDown.swift */; };
 		75F68397207CCE30004B90EE /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68396207CCE30004B90EE /* GalleryVC.swift */; };
+		75F683A2207D0023004B90EE /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F683A1207D0023004B90EE /* GalleryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		75F68396207CCE30004B90EE /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
 		75F68399207CD6B3004B90EE /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F6839D207CD75B004B90EE /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F683A1207D0023004B90EE /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		95E2750F69CD8B4D97C72CBD /* Pods-Dr Samir Abbas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr Samir Abbas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.release.xcconfig"; sourceTree = "<group>"; };
 		D3900E1F8F6ED0D60D355D6B /* Pods-Dr Samir Abbas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr Samir Abbas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -332,6 +334,7 @@
 				75F6838E207BD475004B90EE /* SlideMenuController.swift */,
 				75F68390207BDB15004B90EE /* MenuCell.swift */,
 				75F68394207CC1EA004B90EE /* UIDropDown.swift */,
+				75F683A1207D0023004B90EE /* GalleryCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -479,12 +482,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/ScrollableStackView/ScrollableStackView.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableStackView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +540,7 @@
 				754A35EE207B89C600F59C9C /* DPRightContentViewController.swift in Sources */,
 				75655FDD207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld in Sources */,
 				754A35E4207B892300F59C9C /* DPExtension.swift in Sources */,
+				75F683A2207D0023004B90EE /* GalleryCell.swift in Sources */,
 				7565602D2079EF6300D5B6FC /* LBZSpinner.swift in Sources */,
 				75656026207935A600D5B6FC /* Style.swift in Sources */,
 				754A35F2207B8A0C00F59C9C /* DPRightPageViewController.swift in Sources */,
