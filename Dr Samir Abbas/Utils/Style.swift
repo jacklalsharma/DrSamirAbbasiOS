@@ -35,7 +35,10 @@ class Style{
     
     static let Height100 = UIScreen.main.bounds.height / 7.36
     static let Height90 = UIScreen.main.bounds.height / 8.17
+    
     static let Height30 = UIScreen.main.bounds.height / 24.36
+    static let Width30 = UIScreen.main.bounds.width / 13.8
+    
     static let Width80 = UIScreen.main.bounds.width / 5.15
     static let Width90 = UIScreen.main.bounds.width / 4.6
     
@@ -43,4 +46,6 @@ class Style{
     static let Width45 = UIScreen.main.bounds.width / 9.2
     
     static let Height250 = UIScreen.main.bounds.height / 2.94
+    
+    
 }

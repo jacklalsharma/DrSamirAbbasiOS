@@ -190,7 +190,7 @@ class TimeSlotVC : BaseVC {
         horizontalScrollView.marginSettings_414 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
         horizontalScrollView.marginSettings_736 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 2, miniAppearWidthOfLastItem: 30)
         horizontalScrollView.defaultMarginSettings = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 2, miniAppearWidthOfLastItem: 20)
-        horizontalScrollView.uniformItemSize = CGSize(width: Style.Width45, height: Style.Height45)
+        horizontalScrollView.uniformItemSize = CGSize(width: Style.Height30, height: Style.Height30)
         //horizontalScrollView.setItemsMarginOnce()
         
         for index in 0...30{
@@ -200,23 +200,23 @@ class TimeSlotVC : BaseVC {
     }
     
     func getVehicleCell(data : CalendarDate, tag : Int) -> UIView{
-        let btn = getFlatButton(width : Int(Style.Width45), height : Int(Style.Height45)) ;
+        let btn = getFlatButton(width : Int(Style.Height30), height : Int(Style.Height30)) ;
         let relativeLayout = TGRelativeLayout();
-        relativeLayout.tg_width.equal(Style.Width45) ;
-        relativeLayout.tg_height.equal(Style.Height45) ;
+        relativeLayout.tg_width.equal(Style.Width30) ;
+        relativeLayout.tg_height.equal(Style.Height30) ;
         //let logo = getVehicleImage(image: data.code) ;
         let name: UILabel = getUILabel(text: data.day, size: 12, textColor: Style.TextColor) ;
         name.tg_centerY.equal(0)
         name.tg_centerX.equal(0)
-        name.tg_left.equal(20)
+        name.tg_left.equal(10)
         
         let linearLayout = TGLinearLayout(.horz) ;
-        linearLayout.tg_width.equal(Style.Width45) ;
-        linearLayout.tg_height.equal(Style.Height45) ;
+        linearLayout.tg_width.equal(Style.Height30) ;
+        linearLayout.tg_height.equal(Style.Height30) ;
         //linearLayout.addSubview(logo) ;
         linearLayout.addSubview(name) ;
         
-        relativeLayout.addSubview(getRaisedButton(width : Int(Style.Width45), height : Int(Style.Height45)))
+        relativeLayout.addSubview(getRaisedButton(width : Int(Style.Height30), height : Int(Style.Height30)))
         relativeLayout.addSubview(linearLayout)
         relativeLayout.addSubview(btn) ;
         btn.tag = tag
@@ -225,8 +225,8 @@ class TimeSlotVC : BaseVC {
         relativeLayout.tg_centerX.equal(0)
         
         let uiView = UIView()
-        uiView.tg_width.equal(Style.Width45)
-        uiView.tg_height.equal(Style.Height45)
+        uiView.tg_width.equal(Style.Height30)
+        uiView.tg_height.equal(Style.Height30)
         uiView.addSubview(relativeLayout)
         return uiView;
     }
@@ -235,8 +235,8 @@ class TimeSlotVC : BaseVC {
     func getFlatButton(width : Int , height : Int) -> FlatButton{
         let btn = FlatButton(title : "",  titleColor : .white)
         btn.pulseColor = Style.TextColor ;
-        btn.layer.cornerRadius = 20
-        btn.tg_width.equal(width - 10)
+        btn.layer.cornerRadius = Style.Height30 / 2
+        btn.tg_width.equal(width )
         btn.tg_height.equal(height)
         btn.tg_centerX.equal(0)
         btn.titleLabel?.textAlignment = .left
@@ -252,8 +252,8 @@ class TimeSlotVC : BaseVC {
     func getRaisedButton(width : Int, height : Int) -> RaisedButton{
         let btn = RaisedButton(title : "",  titleColor : .white)
         btn.pulseColor = .white ;
-        btn.layer.cornerRadius = 20
-        btn.tg_width.equal(width - 10)
+        btn.layer.cornerRadius = Style.Height30 / 2
+        btn.tg_width.equal(width )
         btn.tg_centerX.equal(0)
         btn.tg_height.equal(height)
         btn.titleLabel?.textAlignment = .left
