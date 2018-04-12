@@ -11,7 +11,7 @@ import TangramKit
 import Material
 
 
-class TimeSlotVC : BaseVC {
+class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate {
     
     override
     func viewDidLoad() {
@@ -144,10 +144,44 @@ class TimeSlotVC : BaseVC {
         dayHolder.addSubview(daysLayout)
         //
         
+        
+        //
+        
         relative.addSubview(dayHolder)
         
         
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 60, height: 60)
+        
+        let myCollectionView:UICollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        myCollectionView.dataSource = self
+        myCollectionView.delegate = self
+        myCollectionView.register(TimeSlotCell.self, forCellWithReuseIdentifier: "MyCell")
+        myCollectionView.backgroundColor = UIColor.white
+        relative.addSubview(myCollectionView)
+        myCollectionView.adaptBeautifulGrid(numberOfGridsPerRow: 4, gridLineSpace: 2.0)
+        
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath as IndexPath)
+        //myCell.backgroundColor = UIColor.blue
+        return myCell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        print("User tapped on item \(indexPath.row)")
+    }
+    
+    
+    
     
     @objc
     func onBackPressed(){

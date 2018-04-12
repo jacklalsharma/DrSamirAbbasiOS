@@ -62,6 +62,8 @@
 		75656031207A249B00D5B6FC /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656030207A249B00D5B6FC /* DTTextField.swift */; };
 		75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656032207A359200D5B6FC /* SpecialityCell.swift */; };
 		75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75656034207A7FD700D5B6FC /* TimeSlotVC.swift */; };
+		75964BFA207F56850098D183 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964BF9207F56850098D183 /* GridLayout.swift */; };
+		75964BFC207F5D120098D183 /* TimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964BFB207F5D120098D183 /* TimeSlotCell.swift */; };
 		75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6838E207BD475004B90EE /* SlideMenuController.swift */; };
 		75F68391207BDB15004B90EE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68390207BDB15004B90EE /* MenuCell.swift */; };
 		75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */; };
@@ -154,6 +156,8 @@
 		75656030207A249B00D5B6FC /* DTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		75656032207A359200D5B6FC /* SpecialityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityCell.swift; sourceTree = "<group>"; };
 		75656034207A7FD700D5B6FC /* TimeSlotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotVC.swift; sourceTree = "<group>"; };
+		75964BF9207F56850098D183 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		75964BFB207F5D120098D183 /* TimeSlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotCell.swift; sourceTree = "<group>"; };
 		75F6838E207BD475004B90EE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		75F68390207BDB15004B90EE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorVC.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				75F68390207BDB15004B90EE /* MenuCell.swift */,
 				75F68394207CC1EA004B90EE /* UIDropDown.swift */,
 				75F683A1207D0023004B90EE /* GalleryCell.swift */,
+				75964BF9207F56850098D183 /* GridLayout.swift */,
+				75964BFB207F5D120098D183 /* TimeSlotCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -544,9 +550,11 @@
 				7565602D2079EF6300D5B6FC /* LBZSpinner.swift in Sources */,
 				75656026207935A600D5B6FC /* Style.swift in Sources */,
 				754A35F2207B8A0C00F59C9C /* DPRightPageViewController.swift in Sources */,
+				75964BFA207F56850098D183 /* GridLayout.swift in Sources */,
 				754A35E8207B895100F59C9C /* DPLeftMenuViewController.swift in Sources */,
 				75656031207A249B00D5B6FC /* DTTextField.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
+				75964BFC207F5D120098D183 /* TimeSlotCell.swift in Sources */,
 				753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */,
 				754A35D8207B884100F59C9C /* DPBaseEmbedViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
