@@ -33,7 +33,7 @@ public extension UICollectionView {
         guard side > 0.0 else {
             return
         }
-        layout.itemSize = CGSize(width: side, height: side)
+        layout.itemSize = CGSize(width: side, height: Style.Height30)
         layout.minimumLineSpacing = space
         layout.minimumInteritemSpacing = space
         layout.sectionInset = inset

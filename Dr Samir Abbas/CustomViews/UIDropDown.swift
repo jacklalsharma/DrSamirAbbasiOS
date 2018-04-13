@@ -15,7 +15,7 @@ public enum UIDropDownAnimationType: Int {
 
 public class UIDropDown: UIControl {
     
-    fileprivate var title: UILabel!
+    var title: UILabel!
     fileprivate var arrow: Arrow!
     fileprivate var table: UITableView!
     

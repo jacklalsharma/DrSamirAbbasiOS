@@ -10,12 +10,21 @@ import Foundation
 import Material
 import TangramKit
 import UIKit
+import Alamofire
 
 class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
-    var data = ["HI", "BYE", "TATA", "SEE YAA"]
+    
+    var specialization : Specialization!
+    var list : UITableView!
+    
+    var listFetched : Bool!
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
+        
+        listFetched = false
+        
         let relative = TGLinearLayout(.vert)
         relative.tg_width.equal(UIScreen.main.bounds.width)
         relative.tg_height.equal(UIScreen.main.bounds.height)
@@ -79,9 +88,9 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         chooseLabel.backgroundColor = .white
         relative.addSubview(chooseLabel)
         
-        let list = UITableView()
+        list = UITableView()
         list.tg_width.equal(UIScreen.main.bounds.width)
-        list.tg_height.equal(UIScreen.main.bounds.height)
+        list.tg_height.equal(UIScreen.main.bounds.height - Style.Height60)
         list.separatorColor = Style.Transparent
         list.backgroundColor = Style.BackgroundColor
         list.tg_left.equal(19)
@@ -95,7 +104,17 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         list.delegate = self
         
         relative.addSubview(list)
+     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
+        if(listFetched == true){
+            return
+        }
+        //Get the specailization list
+        get_specializations()
     }
     
     @objc
@@ -106,16 +125,20 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     //the method returning each cell of the list
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         var cell:SpecialityCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SpecialityCell
-        var val = data[indexPath.row]
+        var val = specialization.data.specializations[indexPath.row].name
         cell.routeName.text = val
         cell.firstLetter.text = String (val[val.startIndex])
-
+        cell.button.tag = indexPath.row
+        cell.button.addTarget(self, action: #selector(self.specialitiClicked(sender:)), for: .touchUpInside)
         return cell
     }
     
     //the method returning size of the list
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return data.count
+        if(specialization == nil){
+            return 0
+        }
+        return specialization.data.specializations.count
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -140,5 +163,37 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     func searchDoctor(){
         let searchDoctor = SearchDoctorVC()
         self.present(searchDoctor, animated: true, completion: nil)
+    }
+    
+    func get_specializations(){
+        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting specialization", dialogMessage: "Please wait while we are getting specialization list")
+        present(dialogBox, animated: true, completion: nil)
+        
+        
+        Alamofire.request("https://hospoital.000webhostapp.com/booking-apis/apis/get_specializations").responseJSON{ response in
+            print(response)
+            dialogBox.dismiss(animated: true, completion: nil)
+            if(response.result != nil){
+                if(response.result.value != nil){
+                    let responseJSON = response.result.value as! [String:AnyObject]
+                    let decoder = JSONDecoder()
+                    self.specialization = try! decoder.decode(Specialization.self, from: response.data!)
+                    self.list.reloadData()
+                    self.listFetched = true
+                }else{
+                    //Failed...
+                }
+            }else{
+                //Failed
+            }
+        }
+    }
+    
+    @objc
+    func specialitiClicked(sender: UIButton){
+        let specialistDoctorList = SpecialistDoctorListVC()
+        specialistDoctorList.specialisationList = specialization
+        specialistDoctorList.position = sender.tag
+        present(specialistDoctorList, animated: true, completion: nil)
     }
 }

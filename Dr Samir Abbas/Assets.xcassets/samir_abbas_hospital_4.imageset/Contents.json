@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "samir_abbas_hospital_4.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

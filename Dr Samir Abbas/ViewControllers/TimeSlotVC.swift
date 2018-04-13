@@ -151,33 +151,67 @@ class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate 
         
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 60, height: 60)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        layout.itemSize = CGSize(width: 60, height: 20)
         
-        let myCollectionView:UICollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        let myCollectionView:UICollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - Style.Height25 - 20,
+                                                                               height: 100), collectionViewLayout: layout)
         myCollectionView.dataSource = self
         myCollectionView.delegate = self
+        myCollectionView.tg_height.equal(.wrap)
         myCollectionView.register(TimeSlotCell.self, forCellWithReuseIdentifier: "MyCell")
         myCollectionView.backgroundColor = UIColor.white
-        relative.addSubview(myCollectionView)
-        myCollectionView.adaptBeautifulGrid(numberOfGridsPerRow: 4, gridLineSpace: 2.0)
+        myCollectionView.backgroundColor = UIColor().HexToColor(hexString: "#f2f0f1")
+        myCollectionView.adaptBeautifulGrid(numberOfGridsPerRow: 4, gridLineSpace: 10.0)
+        
+        
+        
+        
+        
+        
+        let slotLayout = TGLinearLayout(.horz)
+        slotLayout.tg_width.equal(UIScreen.main.bounds.width)
+        slotLayout.tg_height.equal(.wrap)
+        slotLayout.backgroundColor = UIColor().HexToColor(hexString: "#e9e7e8")
+        let nightImage = getUIImageView(sizeX: Int(Style.Height25), sizeY: Int(Style.Height25))
+        nightImage.image = #imageLiteral(resourceName: "ic_night")
+        nightImage.tg_centerY.equal(0)
+        slotLayout.addSubview(nightImage)
+        nightImage.tg_left.equal(15)
+        nightImage.tg_right.equal(15)
+        
+        let timingsLayout = TGLinearLayout(.vert)
+        slotLayout.addSubview(timingsLayout)
+        
+        timingsLayout.tg_width.equal(UIScreen.main.bounds.width - Style.Height25 - 20)
+        timingsLayout.tg_height.equal(.wrap)
+        let heading = getUILabel(text: "Morning", size: 16, textColor: Style.TextColor);
+        heading.textAlignment = .center
+        heading.tg_centerX.equal(0)
+        timingsLayout.addSubview(heading)
+        timingsLayout.backgroundColor = UIColor().HexToColor(hexString: "#f2f0f1")
+        timingsLayout.addSubview(myCollectionView)
+        relative.addSubview(slotLayout)
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath as IndexPath)
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath as IndexPath) as! TimeSlotCell
         //myCell.backgroundColor = UIColor.blue
         return myCell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         print("User tapped on item \(indexPath.row)")
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath as IndexPath) as! TimeSlotCell
+        myCell.layoutMain.backgroundColor = Style.AccentColor
+        //collectionView.reloadData()
     }
     
     
@@ -240,9 +274,12 @@ class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate 
         relativeLayout.tg_height.equal(Style.Height30) ;
         //let logo = getVehicleImage(image: data.code) ;
         let name: UILabel = getUILabel(text: data.day, size: 12, textColor: Style.TextColor) ;
+        name.tg_width.equal(Style.Height30)
+        name.tg_height.equal(Style.Height30)
+        name.textAlignment = .center
         name.tg_centerY.equal(0)
         name.tg_centerX.equal(0)
-        name.tg_left.equal(10)
+        //name.tg_left.equal(10)
         
         let linearLayout = TGLinearLayout(.horz) ;
         linearLayout.tg_width.equal(Style.Height30) ;
@@ -293,4 +330,5 @@ class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate 
         btn.titleLabel?.textAlignment = .left
         return btn ;
     }
+    
 }

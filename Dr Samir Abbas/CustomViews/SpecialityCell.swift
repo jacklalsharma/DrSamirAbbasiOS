@@ -15,6 +15,9 @@ class SpecialityCell :UITableViewCell {
     
     var routeName: UILabel!
     var firstLetter : UILabel!
+    var button : FlatButton!
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -25,15 +28,16 @@ class SpecialityCell :UITableViewCell {
         let main = TGRelativeLayout()
         main.tg_width.equal(UIScreen.main.bounds.width - 40)
         main.tg_height.equal(Style.Height48)
-        let flat = FlatButton(title: "", titleColor: .white)
-        flat.tg_width.equal(UIScreen.main.bounds.width - 40)
-        flat.tg_height.equal(Style.Height48)
-        flat.tg_centerX.equal(0)
-        flat.tg_centerY.equal(0)
+        
+        button = FlatButton(title: "", titleColor: .white)
+        button.tg_width.equal(UIScreen.main.bounds.width - 40)
+        button.tg_height.equal(Style.Height48)
+        button.tg_centerX.equal(0)
+        button.tg_centerY.equal(0)
         
         
-        flat.backgroundColor = .white
-        main.addSubview(flat)
+        button.backgroundColor = .white
+        main.addSubview(button)
         
         routeName = UILabel() // not sure how to refer to the cell size here
         routeName.tg_width.equal(.wrap)
@@ -50,13 +54,23 @@ class SpecialityCell :UITableViewCell {
         firstLetter.layer.cornerRadius = firstLetter.frame.height / 2
         firstLetter.layer.masksToBounds = true
         firstLetter.tg_centerX.equal(0)
+        firstLetter.textColor = .white
         routeName.textColor = Style.TextColor
+        
+        let circle = UIView()
+        circle.tg_height.equal(Style.Height30)
+        circle.tg_width.equal(Style.Height30)
+        circle.backgroundColor = UIColor().HexToColor(hexString: "#70d8cf")
+        circle.tg_centerX.equal(0)
+        circle.tg_centerY.equal(0)
+        circle.layer.cornerRadius = Style.Height30 / 2
         
         let firstLayout = TGRelativeLayout()
         firstLayout.tg_width.equal(Style.Height48)
         firstLayout.tg_height.equal(Style.Height48)
+        firstLayout.addSubview(circle)
         firstLayout.addSubview(firstLetter)
-        firstLayout.backgroundColor = UIColor.lightGray
+        firstLayout.backgroundColor = UIColor().HexToColor(hexString: "#edf1f2")
         
         main.addSubview(firstLayout)
         main.addSubview(routeName)
