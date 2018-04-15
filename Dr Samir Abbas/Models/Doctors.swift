@@ -25,7 +25,7 @@ class Doctors: Codable {
 }
 
 class DataClassDoc: Codable {
-    let doctors: [Doctor]
+    var doctors: [Doctor]
     let paging: Paging
     
     init(doctors: [Doctor], paging: Paging) {

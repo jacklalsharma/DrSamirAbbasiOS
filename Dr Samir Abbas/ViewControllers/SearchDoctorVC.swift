@@ -13,12 +13,13 @@ import Material
 import Alamofire
 
 class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
-    var doctors : Doctors!
+    var doctors, mainDoctor : Doctors!
     var list : UITableView!
     
     var specialization : Specialization!
     var listFetched : Bool!
 
+    var msg : UILabel!
     
     override
     func viewDidLoad() {
@@ -78,6 +79,9 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         searchLayout.addSubview(searchIcon)
         relative.addSubview(searchLayout)
         
+        search.addTarget(self, action: #selector(self.textFieldDidChange(_:)),
+                         for: UIControlEvents.editingChanged)
+        
         
         list = UITableView()
         list.tg_width.equal(UIScreen.main.bounds.width)
@@ -93,6 +97,13 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         list.delegate = self
         
         relative.addSubview(list)
+        
+        
+        msg = getUILabel(text: "No doctors found", size: Style.TextSize16, textColor: Style.TextColor)
+        msg.tg_centerX.equal(0)
+        msg.tg_centerY.equal(0)
+        msg.isHidden = true
+        master.addSubview(msg)
         
         //master.addSubview(drop)
         
@@ -162,7 +173,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
                     let responseJSON = response.result.value as! [String:AnyObject]
                     let decoder = JSONDecoder()
                     self.doctors = try! decoder.decode(Doctors.self, from: response.data!)
-                    
+                    self.mainDoctor = try! decoder.decode(Doctors.self, from: response.data!)
                     self.list.reloadData()
                 }else{
                     //Failed...
@@ -244,5 +255,54 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         left = left?.resize(toHeight: resizeX)
         left = left?.resize(toWidth: resizeY)
         return left!
+    }
+    
+    //Test change Change listener
+    @objc
+    func textFieldDidChange(_ textField: UITextField) {
+        if(doctors == nil){
+            return
+        }
+        
+        if(textField.text == ""){
+            //Nothing searched... reset to defaut...
+            doctors.data.doctors.removeAll()
+            for doc in mainDoctor.data.doctors{
+                doctors.data.doctors.append(doc)
+            }
+            msg.isHidden = true
+
+            self.list.reloadData()
+            return
+        }
+        
+        doctors.data.doctors.removeAll()
+        
+        for doc in mainDoctor.data.doctors{
+            if(doc.name.uppercased().starts(with: textField.text!.uppercased())){
+                doctors.data.doctors.append(doc)
+            }
+        }
+        
+        if(doctors.data.doctors.count == 0){
+            //No match found...
+            msg.isHidden = false
+        }else{
+            msg.isHidden = true
+        }
+        
+        list.reloadData()
+        
+    }
+    
+    func getUILabel(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
+        let label = UILabel()
+        let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: size)]
+        let attributedString = NSMutableAttributedString(string: text, attributes:attrs)
+        label.tg_width.equal(.wrap)
+        label.tg_height.equal(.wrap)
+        label.textColor = textColor
+        label.attributedText = attributedString
+        return label
     }
 }
