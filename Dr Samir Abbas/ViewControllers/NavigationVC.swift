@@ -136,7 +136,8 @@ class NavigationVC : BaseVC {
     
     @objc
     func services(){
-        
+        let services = ServicesListVC()
+        present(services, animated: true, completion: nil)
     }
     
     @objc

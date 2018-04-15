@@ -72,6 +72,8 @@
 		75964C0C208344890098D183 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; };
 		75964C0D208344890098D183 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75964C0F2083A3110098D183 /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C0E2083A3110098D183 /* ViewPager.swift */; };
+		75964C112083BC5A0098D183 /* ServicesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C102083BC5A0098D183 /* ServicesListVC.swift */; };
+		75964C132083BFFC0098D183 /* ServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C122083BFFC0098D183 /* ServicesCell.swift */; };
 		75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6838E207BD475004B90EE /* SlideMenuController.swift */; };
 		75F68391207BDB15004B90EE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68390207BDB15004B90EE /* MenuCell.swift */; };
 		75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */; };
@@ -174,6 +176,8 @@
 		75964C0620833F6E0098D183 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75964C0A208344840098D183 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		75964C0E2083A3110098D183 /* ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
+		75964C102083BC5A0098D183 /* ServicesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListVC.swift; sourceTree = "<group>"; };
+		75964C122083BFFC0098D183 /* ServicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCell.swift; sourceTree = "<group>"; };
 		75F6838E207BD475004B90EE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		75F68390207BDB15004B90EE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorVC.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 				75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */,
 				75F68396207CCE30004B90EE /* GalleryVC.swift */,
 				75964BFF2080B34D0098D183 /* SpecialistDoctorListVC.swift */,
+				75964C102083BC5A0098D183 /* ServicesListVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				75964BFB207F5D120098D183 /* TimeSlotCell.swift */,
 				75964C012080BCCC0098D183 /* DoctorCell.swift */,
 				75964C0E2083A3110098D183 /* ViewPager.swift */,
+				75964C122083BFFC0098D183 /* ServicesCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				754A35EE207B89C600F59C9C /* DPRightContentViewController.swift in Sources */,
+				75964C132083BFFC0098D183 /* ServicesCell.swift in Sources */,
 				75655FDD207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld in Sources */,
 				75964C022080BCCC0098D183 /* DoctorCell.swift in Sources */,
 				754A35E4207B892300F59C9C /* DPExtension.swift in Sources */,
@@ -597,6 +604,7 @@
 				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
 				754A35EA207B897800F59C9C /* DPLeftPageViewController.swift in Sources */,
 				754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */,
+				75964C112083BC5A0098D183 /* ServicesListVC.swift in Sources */,
 				75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */,
 				75F68391207BDB15004B90EE /* MenuCell.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
