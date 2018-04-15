@@ -13,7 +13,9 @@ import KYDrawerController
 
 class NavigationVC : BaseVC {
     
-    var slideMenu : SlideMenuController! 
+    var slideMenu : SlideMenuController!
+    
+    var page : Int! = 0;
     
     override
     func viewDidLoad() {
@@ -47,8 +49,17 @@ class NavigationVC : BaseVC {
         let bannerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: Style.ScreenHeight / 4.6))
         bannerImageView.image = #imageLiteral(resourceName: "banner")
         bannerImageView.contentMode = UIViewContentMode.scaleToFill
-        banner.addSubview(bannerImageView)
+        
+        let viewPager = ViewPager()
+        viewPager.tg_width.equal(UIScreen.main.bounds.width)
+        viewPager.tg_height.equal(UIScreen.main.bounds.height / 4.6)
+        viewPager.dataSource = self;
+        banner.addSubview(viewPager)
+        viewPager.pageControl.isHidden = true
+        animateViewPager(viewPager: viewPager)
         //.....
+        
+        
         
         //BOOK APPOINTMENT...
         let bookAppt = TGRelativeLayout()
@@ -70,7 +81,7 @@ class NavigationVC : BaseVC {
         img.tg_top.equal(10)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = getUILabel(text: "Book An Appointment", size: 19, textColor: Style.TextColor)
+        let bookLabel = getUILabel(text: "Book An Appointment", size: Style.TextSize18, textColor: Style.TextColor)
         bookLabel.tg_centerX.equal(0)
         bookLabel.tg_top.equal(12)
         
@@ -159,7 +170,7 @@ class NavigationVC : BaseVC {
         img.tg_top.equal(20)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = getUILabel(text: "", size: 16, textColor: Style.TextColor)
+        let bookLabel = getUILabel(text: "", size: Style.TextSize16, textColor: Style.TextColor)
         
         bookLabel.tg_centerX.equal(0)
         bookLabel.tg_top.equal(4)
@@ -217,4 +228,56 @@ class NavigationVC : BaseVC {
         }
     }
     
+    func animateViewPager(viewPager : ViewPager){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change 2 to desired number of seconds
+            // Your code with delay
+            self.page = (self.page + 1) % 5;
+            viewPager.scrollToPage(index: self.page)
+            self.animateViewPager(viewPager: viewPager)
+        }
+    }
+    
+}
+
+
+
+extension NavigationVC :ViewPagerDataSource{
+    
+    func numberOfItems(viewPager:ViewPager) -> Int {
+        return 4;
+    }
+    
+    func viewAtIndex(viewPager:ViewPager, index:Int, view:UIView?) -> UIView {
+        //view = UIView();
+        var newView = view;
+        var label:UIImageView?
+        if(newView == nil){
+            newView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.height / 4.6))
+            
+            label = UIImageView(frame: newView!.bounds)
+            label?.contentMode = UIViewContentMode.scaleToFill
+            if(index == 0){
+                label?.image = #imageLiteral(resourceName: "banner")
+            }else if(index == 1){
+                label?.image = #imageLiteral(resourceName: "banner1")
+            }else if(index == 2){
+                label?.image = #imageLiteral(resourceName: "banner2")
+            }else if(index == 3){
+                label?.image = #imageLiteral(resourceName: "banner4")
+            }
+            
+            //label!.font =  label!.font.withSizewithSize(28)
+            newView?.addSubview(label!)
+        }else{
+            label = newView?.viewWithTag(1) as? UIImageView
+        }
+        
+        //label?.text = "Page View Pager  \(index+1)"
+        
+        return newView!
+    }
+}
+
+func didSelectedItem(index: Int) {
+    print("select index \(index)")
 }

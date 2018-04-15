@@ -228,6 +228,8 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         
         cell.qualification.attributedText = attributedString4
         
+        cell.book.tag = indexPath.row
+        cell.book.addTarget(self, action: #selector(self.book(sender:)), for: .touchUpInside)
         return cell
     }
     
@@ -241,6 +243,21 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10.0
+    }
+    
+    @objc
+    func book(sender: UIButton){
+        let timeSlot = TimeSlotVC()
+        timeSlot.doctor = doctors.data.doctors[sender.tag]
+        var spec = ""
+        for specilization in specialization.data.specializations{
+            if(doctors.data.doctors[sender.tag].speID.elementsEqual(String( specilization.id))){
+                spec = specilization.name
+            }
+        }
+        
+        timeSlot.specilization = spec
+        self.present(timeSlot, animated: true, completion: nil)
     }
     
     func getUIImageView(sizeX : Int, sizeY : Int) -> UIImageView{

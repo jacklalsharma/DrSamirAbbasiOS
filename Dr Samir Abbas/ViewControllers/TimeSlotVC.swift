@@ -13,6 +13,9 @@ import Material
 
 class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var doctor : Doctor!
+    var specilization : String!
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()

@@ -20,9 +20,13 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
     var doctors : Doctors!
     var list : UITableView!
     
+    var fetched : Bool!
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetched = false;
         
         let master = TGRelativeLayout()
         master.tg_width.equal(UIScreen.main.bounds.width)
@@ -91,8 +95,9 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        getDoctorList()
+        if(fetched == false){
+            getDoctorList()
+        }
     }
     
     @objc
@@ -123,7 +128,7 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
                     let responseJSON = response.result.value as! [String:AnyObject]
                     let decoder = JSONDecoder()
                     self.doctors = try! decoder.decode(Doctors.self, from: response.data!)
-                    
+                    self.fetched = true
                     self.list.reloadData()
                 }else{
                     //Failed...
@@ -178,6 +183,8 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
         
         cell.qualification.attributedText = attributedString4
         
+        cell.book.tag = indexPath.row
+        cell.book.addTarget(self, action: #selector(self.book(sender:)), for: .touchUpInside)
         return cell
     }
     
@@ -191,6 +198,22 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10.0
+    }
+    
+    
+    @objc
+    func book(sender: UIButton){
+        let timeSlot = TimeSlotVC()
+        timeSlot.doctor = doctors.data.doctors[sender.tag]
+        var spec = ""
+        for specilization in specialisationList.data.specializations{
+            if(doctors.data.doctors[sender.tag].speID.elementsEqual(String( specilization.id))){
+                spec = specilization.name
+            }
+        }
+        
+        timeSlot.specilization = spec
+        self.present(timeSlot, animated: true, completion: nil)
     }
 }
 

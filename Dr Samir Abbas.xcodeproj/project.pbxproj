@@ -71,6 +71,7 @@
 		75964C0B208344840098D183 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; };
 		75964C0C208344890098D183 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; };
 		75964C0D208344890098D183 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75964C0F2083A3110098D183 /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C0E2083A3110098D183 /* ViewPager.swift */; };
 		75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6838E207BD475004B90EE /* SlideMenuController.swift */; };
 		75F68391207BDB15004B90EE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68390207BDB15004B90EE /* MenuCell.swift */; };
 		75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */; };
@@ -172,6 +173,7 @@
 		75964C032080BDD00098D183 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
 		75964C0620833F6E0098D183 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75964C0A208344840098D183 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		75964C0E2083A3110098D183 /* ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
 		75F6838E207BD475004B90EE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		75F68390207BDB15004B90EE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorVC.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				75964BF9207F56850098D183 /* GridLayout.swift */,
 				75964BFB207F5D120098D183 /* TimeSlotCell.swift */,
 				75964C012080BCCC0098D183 /* DoctorCell.swift */,
+				75964C0E2083A3110098D183 /* ViewPager.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				75656031207A249B00D5B6FC /* DTTextField.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
 				75964BFC207F5D120098D183 /* TimeSlotCell.swift in Sources */,
+				75964C0F2083A3110098D183 /* ViewPager.swift in Sources */,
 				753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */,
 				754A35D8207B884100F59C9C /* DPBaseEmbedViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
