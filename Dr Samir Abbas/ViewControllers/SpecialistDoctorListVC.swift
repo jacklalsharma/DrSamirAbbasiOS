@@ -11,6 +11,7 @@ import Material
 import UIKit
 import TangramKit
 import Alamofire
+import Kingfisher
 
 class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     
@@ -122,6 +123,7 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
                     let responseJSON = response.result.value as! [String:AnyObject]
                     let decoder = JSONDecoder()
                     self.doctors = try! decoder.decode(Doctors.self, from: response.data!)
+                    
                     self.list.reloadData()
                 }else{
                     //Failed...
@@ -136,6 +138,45 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
     //the method returning each cell of the list
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         var cell:DoctorCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DoctorCell
+        let url = URL(string: doctors.data.doctors[indexPath.row].profilePictureURL)
+        cell.docImage.kf.setImage(with: url)
+        
+        if(doctors.data.doctors[indexPath.row].isAvailableToday == true){
+            cell.available.isHidden = false;
+        }else{
+            cell.available.isHidden = true;
+        }
+        
+        var docName = "Dr "
+        docName.append(doctors.data.doctors[indexPath.row].name)
+        
+        let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize18)]
+        let attributedString = NSMutableAttributedString(string: docName, attributes:attrs)
+        
+        cell.name.attributedText = attributedString
+        
+        let attrs2 = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
+        let attributedString2 = NSMutableAttributedString(string: doctors.data.doctors[indexPath.row].experience, attributes:attrs2)
+        
+        
+        cell.experience.attributedText = attributedString2
+        
+        var spec = ""
+        for specilization in specialisationList.data.specializations{
+            if(doctors.data.doctors[indexPath.row].speID.elementsEqual(String( specilization.id))){
+                spec = specilization.name
+            }
+        }
+        let attrs3 = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
+        let attributedString3 = NSMutableAttributedString(string: spec, attributes:attrs3)
+        
+        cell.specialization.attributedText = attributedString3
+        
+        
+        let attrs4 = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize14)]
+        let attributedString4 = NSMutableAttributedString(string: doctors.data.doctors[indexPath.row].degree, attributes:attrs4)
+        
+        cell.qualification.attributedText = attributedString4
         
         return cell
     }

@@ -90,7 +90,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         
         list = UITableView()
         list.tg_width.equal(UIScreen.main.bounds.width)
-        list.tg_height.equal(UIScreen.main.bounds.height - Style.Height60)
+        list.tg_height.equal(UIScreen.main.bounds.height - Style.Height48 * 5)
         list.separatorColor = Style.Transparent
         list.backgroundColor = Style.BackgroundColor
         list.tg_left.equal(19)
@@ -162,6 +162,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     @objc
     func searchDoctor(){
         let searchDoctor = SearchDoctorVC()
+        searchDoctor.specialization = specialization
         self.present(searchDoctor, animated: true, completion: nil)
     }
     

@@ -119,7 +119,8 @@ class NavigationVC : BaseVC {
     
     @objc
     func doctors(){
-        
+        let searchDoctor = SearchDoctorVC()
+        self.present(searchDoctor, animated: true, completion: nil)
     }
     
     @objc

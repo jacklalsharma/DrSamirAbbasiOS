@@ -68,6 +68,9 @@
 		75964C002080B34D0098D183 /* SpecialistDoctorListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964BFF2080B34D0098D183 /* SpecialistDoctorListVC.swift */; };
 		75964C022080BCCC0098D183 /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C012080BCCC0098D183 /* DoctorCell.swift */; };
 		75964C042080BDD00098D183 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C032080BDD00098D183 /* Doctors.swift */; };
+		75964C0B208344840098D183 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; };
+		75964C0C208344890098D183 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; };
+		75964C0D208344890098D183 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75964C0A208344840098D183 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6838E207BD475004B90EE /* SlideMenuController.swift */; };
 		75F68391207BDB15004B90EE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68390207BDB15004B90EE /* MenuCell.swift */; };
 		75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */; };
@@ -101,6 +104,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7565601D2079346400D5B6FC /* TangramKit.framework in Embed Frameworks */,
+				75964C0D208344890098D183 /* Kingfisher.framework in Embed Frameworks */,
 				7565601B2079346400D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */,
 				756560132079346400D5B6FC /* Alamofire.framework in Embed Frameworks */,
 				756560152079346400D5B6FC /* Material.framework in Embed Frameworks */,
@@ -166,6 +170,8 @@
 		75964BFF2080B34D0098D183 /* SpecialistDoctorListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistDoctorListVC.swift; sourceTree = "<group>"; };
 		75964C012080BCCC0098D183 /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		75964C032080BDD00098D183 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
+		75964C0620833F6E0098D183 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75964C0A208344840098D183 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		75F6838E207BD475004B90EE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		75F68390207BDB15004B90EE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorVC.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75964C0B208344840098D183 /* Kingfisher.framework in Frameworks */,
 				7565600C2079345D00D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
 				7565600D2079345D00D5B6FC /* Alamofire.framework in Frameworks */,
 				7565600E2079345D00D5B6FC /* Material.framework in Frameworks */,
@@ -192,6 +199,7 @@
 				7565601C2079346400D5B6FC /* TangramKit.framework in Frameworks */,
 				7565601A2079346400D5B6FC /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
 				756560142079346400D5B6FC /* Material.framework in Frameworks */,
+				75964C0C208344890098D183 /* Kingfisher.framework in Frameworks */,
 				756560102079345D00D5B6FC /* TangramKit.framework in Frameworks */,
 				756560112079345D00D5B6FC /* NVActivityIndicatorView.framework in Frameworks */,
 				756560162079346400D5B6FC /* Motion.framework in Frameworks */,
@@ -300,6 +308,8 @@
 		756560052079345C00D5B6FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75964C0620833F6E0098D183 /* Kingfisher.framework */,
+				75964C0A208344840098D183 /* Kingfisher.framework */,
 				75F6839D207CD75B004B90EE /* FSPagerView.framework */,
 				75F68399207CD6B3004B90EE /* FSPagerView.framework */,
 				756560072079345D00D5B6FC /* Alamofire.framework */,

@@ -32,7 +32,7 @@ class DoctorCell : UITableViewCell {
         //Doctors Info...
         let doctorLayout = TGRelativeLayout()
         doctorLayout.tg_width.equal(UIScreen.main.bounds.width)
-        doctorLayout.tg_height.equal(Style.Height100)
+        doctorLayout.tg_height.equal(Style.Height110)
         doctorLayout.backgroundColor = .white
         
         //DOCTOR IMAGE VIEW...
@@ -49,7 +49,7 @@ class DoctorCell : UITableViewCell {
         leftLinear.tg_height.equal(.wrap)
         leftLinear.addSubview(docImage)
         leftLinear.tg_centerY.equal(0)
-        qualification = getUILabel(text: "MBBS", size: 18, textColor: Style.TextColor)
+        qualification = getUILabel(text: "MBBS", size: Style.TextSize18, textColor: Style.TextColor)
         leftLinear.addSubview(qualification)
         leftLinear.tg_left.equal(Style.Height30)
         doctorLayout.addSubview(leftLinear)
@@ -61,13 +61,15 @@ class DoctorCell : UITableViewCell {
         rightLinear.tg_left.equal(Style.Height45 + Style.Height30 + 20)
         rightLinear.tg_height.equal(.wrap)
         rightLinear.tg_centerY.equal(0)
-        name = getUILabel(text: "Dr. Ayunshman Gupta", size: 18, textColor: Style.TextColor)
+        name = getUILabel(text: "Dr. Ayunshman Gupta", size: Style.TextSize18, textColor: Style.TextColor)
         rightLinear.addSubview(name)
         
-        specialization = getUILabel(text: "Dentist", size: 18, textColor: Style.TextColor)
+        specialization = getUILabel(text: "Dentist", size: Style.TextSize14, textColor: Style.TextColor)
+        specialization.tg_top.equal(5)
         rightLinear.addSubview(specialization)
         
-        experience = getUILabel(text: "12 years experience", size: 16, textColor: Style.TextColor)
+        experience = getUILabel(text: "12 years experience", size: Style.TextSize14, textColor: Style.TextColor)
+        experience.tg_top.equal(5)
         rightLinear.addSubview(experience)
         //rightLinear.tg_left.equal(20)
         doctorLayout.addSubview(rightLinear)
@@ -78,7 +80,7 @@ class DoctorCell : UITableViewCell {
         extRightLinear.tg_width.equal(.wrap)
         extRightLinear.tg_height.equal(.wrap)
         extRightLinear.tg_centerY.equal(0)
-        extRightLinear.tg_left.equal(UIScreen.main.bounds.width - Style.Width80 - Style.Width45)
+        extRightLinear.tg_left.equal(UIScreen.main.bounds.width - Style.Width80 - Style.Width45 + 20)
         book = FlatButton(title: "", titleColor: .white)
         book.tg_width.equal(Style.Width80)
         
@@ -90,7 +92,7 @@ class DoctorCell : UITableViewCell {
         btnLayout.tg_centerX.equal(0)
         btnLayout.addSubview(book)
         
-        let btnLabel = getUILabel(text: "BOOK", size: 14, textColor: .white)
+        let btnLabel = getUILabel(text: "BOOK", size: Style.TextSize16, textColor: .white)
         btnLabel.tg_centerX.equal(0)
         btnLabel.tg_centerY.equal(0)
         btnLayout.addSubview(btnLabel)
@@ -98,7 +100,7 @@ class DoctorCell : UITableViewCell {
         book.tg_height.equal(.wrap)
         book.backgroundColor = UIColor().HexToColor(hexString: "#3c7fd0")
         extRightLinear.addSubview(btnLayout)
-        available = getUILabel(text: "Available Today", size: 15, textColor: Style.AccentColor)
+        available = getUILabel(text: "Available Today", size: Style.TextSize14, textColor: Style.AccentColor)
         available.tg_top.equal(2)
         extRightLinear.addSubview(available)
         doctorLayout.addSubview(extRightLinear)

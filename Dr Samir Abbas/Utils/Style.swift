@@ -54,6 +54,15 @@ class Style{
     
     static let Height110  = UIScreen.main.bounds.height / 6.69
     
+    
+    
+    static let TextSize18 = UIScreen.main.bounds.height / 46
+    
+    static let TextSize16 = UIScreen.main.bounds.height / 52.57
+    
+    static let TextSize14 = UIScreen.main.bounds.height / 61.33
+
+    
 }
 
 extension UIColor{
