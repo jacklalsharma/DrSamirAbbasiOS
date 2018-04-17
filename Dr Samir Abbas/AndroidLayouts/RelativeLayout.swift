@@ -120,6 +120,7 @@ class RelativeLayout:UIBaseView{
     
     func hostScrollView()->RelativeLayout{
         scrollView = UIScrollView();
+        scrollView.isScrollEnabled = true
         add(view: scrollView, w: MATCH_PARENT, h: MATCH_PARENT)
         return self
     }

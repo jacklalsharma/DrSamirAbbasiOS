@@ -122,6 +122,7 @@ class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
         return label
     }()
     
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
@@ -181,9 +182,32 @@ class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
         
         linear.addSubview(strip)
         linear.addSubview(scrollView)
-        view.addSubview(linear)
+        //view.addSubview(linear)
         //view.addSubview()
         view.backgroundColor = Style.BackgroundColor
+        
+        let ll = LinearLayout(width: MATCH_PARENT, height: MATCH_PARENT).vertical().padding(left: 5, right : 5)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        
+        
+        
+        view.addSubview(ll.createScrollable())
+        
         menuButton.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
     }
     
