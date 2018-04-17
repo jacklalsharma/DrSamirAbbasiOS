@@ -157,7 +157,7 @@ class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate 
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         layout.itemSize = CGSize(width: 60, height: 20)
         
-        let myCollectionView:UICollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - Style.Height25 - 20,
+        let myCollectionView:UICollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - Style.Height25 - 40,
                                                                                height: 100), collectionViewLayout: layout)
         myCollectionView.dataSource = self
         myCollectionView.delegate = self
@@ -166,7 +166,7 @@ class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate 
         myCollectionView.backgroundColor = UIColor.white
         myCollectionView.backgroundColor = UIColor().HexToColor(hexString: "#f2f0f1")
         myCollectionView.adaptBeautifulGrid(numberOfGridsPerRow: 4, gridLineSpace: 10.0)
-        
+        myCollectionView.tg_right.equal(20)
         
         
         
@@ -213,7 +213,7 @@ class TimeSlotVC : BaseVC, UICollectionViewDataSource, UICollectionViewDelegate 
     {
         print("User tapped on item \(indexPath.row)")
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath as IndexPath) as! TimeSlotCell
-        myCell.layoutMain.backgroundColor = Style.AccentColor
+        //myCell.layoutMain.backgroundColor = Style.AccentColor
         //collectionView.reloadData()
     }
     

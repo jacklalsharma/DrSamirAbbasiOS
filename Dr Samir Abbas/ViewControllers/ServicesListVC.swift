@@ -54,6 +54,9 @@ class ServicesListVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         list.tg_top.equal(10)
         list.allowsSelection = false
         //list.rowHeight = Style.Height60
+        list.estimatedRowHeight = Style.Height60
+        list.rowHeight = UITableViewAutomaticDimension
+        
         
         list.register(ServicesCell.self, forCellReuseIdentifier: "cell")
         list.dataSource = self

@@ -131,12 +131,34 @@ class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
         var scrollView: UIScrollView!
         scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         
-        scrollView.addSubview(labelTwo)
+        let insideLayout = TGLinearLayout(.vert)
+        insideLayout.tg_width.equal(UIScreen.main.bounds.width)
+        insideLayout.tg_height.equal(.wrap)
         
-        NSLayoutConstraint(item: labelTwo, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leadingMargin, multiplier: 1, constant: 10).isActive = true
-        NSLayoutConstraint(item: labelTwo, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 200).isActive = true
-        NSLayoutConstraint(item: labelTwo, attribute: .top, relatedBy: .equal, toItem: scrollView, attribute: .topMargin, multiplier: 1, constant: 10).isActive = true
-        NSLayoutConstraint(item: labelTwo, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30).isActive = true
+        
+        
+        let viewPager = ViewPager()
+        viewPager.tg_width.equal(UIScreen.main.bounds.width)
+        viewPager.tg_height.equal(UIScreen.main.bounds.height / 4.6)
+        viewPager.dataSource = self;
+        viewPager.pageControl.isHidden = true
+        
+        
+        
+        for i in 0 ..< 20{
+            let header = UIImageView(frame: CGRect(x: 0, y: CGFloat(i) * Style.Height90, width: UIScreen.main.bounds.width, height: Style.Height90))
+            header.image = #imageLiteral(resourceName: "confirm_samir_abbas")
+            header.contentMode = UIViewContentMode.scaleToFill
+            scrollView.addSubview(header)
+            
+            NSLayoutConstraint(item: header, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leadingMargin, multiplier: 1, constant: 10).isActive = true
+            NSLayoutConstraint(item: header, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 200).isActive = true
+            NSLayoutConstraint(item: header, attribute: .top, relatedBy: .equal, toItem: scrollView, attribute: .topMargin, multiplier: 1, constant: 10).isActive = true
+            NSLayoutConstraint(item: header, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30).isActive = true
+            
+        }
+        
+        
         
         scrollView.contentSize = CGSize(width: screenWidth, height: 2000)
         
@@ -225,4 +247,43 @@ class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
         return bookAppt
     }
     
+    
+}
+
+
+extension GalleryVC :ViewPagerDataSource{
+    
+    func numberOfItems(viewPager:ViewPager) -> Int {
+        return 4;
+    }
+    
+    func viewAtIndex(viewPager:ViewPager, index:Int, view:UIView?) -> UIView {
+        //view = UIView();
+        var newView = view;
+        var label:UIImageView?
+        if(newView == nil){
+            newView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.height / 4.6))
+            
+            label = UIImageView(frame: newView!.bounds)
+            label?.contentMode = UIViewContentMode.scaleToFill
+            if(index == 0){
+                label?.image = #imageLiteral(resourceName: "banner")
+            }else if(index == 1){
+                label?.image = #imageLiteral(resourceName: "banner1")
+            }else if(index == 2){
+                label?.image = #imageLiteral(resourceName: "banner2")
+            }else if(index == 3){
+                label?.image = #imageLiteral(resourceName: "banner4")
+            }
+            
+            //label!.font =  label!.font.withSizewithSize(28)
+            newView?.addSubview(label!)
+        }else{
+            label = newView?.viewWithTag(1) as? UIImageView
+        }
+        
+        //label?.text = "Page View Pager  \(index+1)"
+        
+        return newView!
+    }
 }

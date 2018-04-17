@@ -74,6 +74,10 @@
 		75964C0F2083A3110098D183 /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C0E2083A3110098D183 /* ViewPager.swift */; };
 		75964C112083BC5A0098D183 /* ServicesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C102083BC5A0098D183 /* ServicesListVC.swift */; };
 		75964C132083BFFC0098D183 /* ServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C122083BFFC0098D183 /* ServicesCell.swift */; };
+		75F2176B2085FF0900430419 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2176A2085FF0900430419 /* BaseView.swift */; };
+		75F2176D2085FF5400430419 /* LinearLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2176C2085FF5400430419 /* LinearLayout.swift */; };
+		75F2176F2085FFA000430419 /* RelativeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2176E2085FFA000430419 /* RelativeLayout.swift */; };
+		75F217712085FFC500430419 /* UIBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F217702085FFC500430419 /* UIBaseView.swift */; };
 		75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6838E207BD475004B90EE /* SlideMenuController.swift */; };
 		75F68391207BDB15004B90EE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68390207BDB15004B90EE /* MenuCell.swift */; };
 		75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */; };
@@ -178,6 +182,10 @@
 		75964C0E2083A3110098D183 /* ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
 		75964C102083BC5A0098D183 /* ServicesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListVC.swift; sourceTree = "<group>"; };
 		75964C122083BFFC0098D183 /* ServicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCell.swift; sourceTree = "<group>"; };
+		75F2176A2085FF0900430419 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		75F2176C2085FF5400430419 /* LinearLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearLayout.swift; sourceTree = "<group>"; };
+		75F2176E2085FFA000430419 /* RelativeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeLayout.swift; sourceTree = "<group>"; };
+		75F217702085FFC500430419 /* UIBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseView.swift; sourceTree = "<group>"; };
 		75F6838E207BD475004B90EE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		75F68390207BDB15004B90EE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		75F68392207CBB2D004B90EE /* SearchDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorVC.swift; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 		75655FD3207930CB00D5B6FC /* Dr Samir Abbas */ = {
 			isa = PBXGroup;
 			children = (
+				75F217692085FEF600430419 /* AndroidLayouts */,
 				754A35D6207B882400F59C9C /* DPSlideMenuKit */,
 				754A35D1207B79F700F59C9C /* Models */,
 				7565602B2079EF4100D5B6FC /* CustomViews */,
@@ -374,6 +383,17 @@
 				75964C122083BFFC0098D183 /* ServicesCell.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		75F217692085FEF600430419 /* AndroidLayouts */ = {
+			isa = PBXGroup;
+			children = (
+				75F2176A2085FF0900430419 /* BaseView.swift */,
+				75F2176C2085FF5400430419 /* LinearLayout.swift */,
+				75F2176E2085FFA000430419 /* RelativeLayout.swift */,
+				75F217702085FFC500430419 /* UIBaseView.swift */,
+			);
+			path = AndroidLayouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,6 +626,8 @@
 				754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */,
 				75964C112083BC5A0098D183 /* ServicesListVC.swift in Sources */,
 				75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */,
+				75F2176F2085FFA000430419 /* RelativeLayout.swift in Sources */,
+				75F2176D2085FF5400430419 /* LinearLayout.swift in Sources */,
 				75F68391207BDB15004B90EE /* MenuCell.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
 				75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */,
@@ -613,7 +635,9 @@
 				754A35E0207B88E000F59C9C /* DPDropShadowView.swift in Sources */,
 				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
 				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
+				75F2176B2085FF0900430419 /* BaseView.swift in Sources */,
 				754A35E6207B893700F59C9C /* DPLeftContentViewController.swift in Sources */,
+				75F217712085FFC500430419 /* UIBaseView.swift in Sources */,
 				754A35F8207BACE400F59C9C /* LeftSlideMenuVC.swift in Sources */,
 				754A35DA207B886500F59C9C /* DPCenterContentViewController.swift in Sources */,
 				754A35E2207B88FA00F59C9C /* DPEnum.swift in Sources */,

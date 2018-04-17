@@ -81,7 +81,7 @@ class ServicesCell :UITableViewCell {
         banner.tg_width.equal(UIScreen.main.bounds.width)
         banner.tg_height.equal(180)
         banner.image = #imageLiteral(resourceName: "women")
-        
+        main.addSubview(banner)
         contentView.addSubview(main)
         main.backgroundColor = Style.BackgroundColor
         contentView.backgroundColor = Style.BackgroundColor
