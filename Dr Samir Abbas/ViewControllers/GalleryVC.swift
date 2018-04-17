@@ -10,162 +10,27 @@ import Foundation
 import Material
 import TangramKit
 import FSPagerView
+import MGRelativeKit
 
-class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
-    fileprivate let imageNames = ["nav_samir_abbas.png","nav_samir_abbas.png","nav_samir_abbas.png","nav_samir_abbas.png","nav_samir_abbas.png","nav_samir_abbas.png"]
+class GalleryVC : BaseVC{
 
-    let gallery = [#imageLiteral(resourceName: "samir_abbas_hospital_1"), #imageLiteral(resourceName: "samir_abbas_hospital_2"), #imageLiteral(resourceName: "samir_abbas_hospital_3"), #imageLiteral(resourceName: "samir_abbas_hospital_4")]
+    let gallery = [#imageLiteral(resourceName: "sameer_abbas_gallery_1_1"), #imageLiteral(resourceName: "sameer_abbas_gallery_2_2"), #imageLiteral(resourceName: "sameer_abbas_gallery_3_3"), #imageLiteral(resourceName: "sameer_abbas_gallery_4_4"), #imageLiteral(resourceName: "sameer_abbas_gallery_5_5"), #imageLiteral(resourceName: "sameer_abbas_gallery_6_6"), #imageLiteral(resourceName: "sameer_abbas_gallery_7_7"), #imageLiteral(resourceName: "sameer_abbas_gallery_8_8")]
     
-    var scrollView : UIScrollView!
-//    override
-//    func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        let relative = TGLinearLayout(.vert)
-//        relative.tg_width.equal(UIScreen.main.bounds.width)
-//        relative.tg_height.equal(UIScreen.main.bounds.height)
-//
-//        relative.addSubview(getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false))
-//        relative.backgroundColor = Style.BackgroundColor
-//
-//        menuButton.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
-//
-//        //STRIP VIEW...
-//        var image = UIImage(named: "strip.png")
-//        image = image?.resize(toHeight: 3)
-//        image = image?.resize(toWidth: UIScreen.main.bounds.width)
-//
-//        let strip = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 3))
-//        strip.image = image
-//        strip.contentMode = UIViewContentMode.scaleAspectFill
-//        strip.tg_top.equal(8)
-//        relative.addSubview(strip)
-//        //....
-//
-//        let header = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: Style.Height90))
-//        header.image = #imageLiteral(resourceName: "confirm_samir_abbas")
-//        header.contentMode = UIViewContentMode.scaleToFill
-//
-//        scrollView = UIScrollView(frame: UIScreen.main.bounds)
-//        //scrollView.tg_width.equal(UIScreen.main.bounds.width)
-//        //scrollView.tg_height.equal(UIScreen.main.bounds.height)
-//
-//
-//        //View Pager
-//        let pagerFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width,height: Style.Height250)
-//        let viewPager = FSPagerView(frame: pagerFrame);
-//        viewPager.dataSource = self
-//        viewPager.tg_width.equal(UIScreen.main.bounds.width)
-//        viewPager.tg_height.equal(Style.Height250)
-//        viewPager.delegate = self
-//        viewPager.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-//        viewPager.tg_centerX.equal(0)
-//        viewPager.tg_centerY.equal(0)
-//        viewPager.transformer = FSPagerViewTransformer(type: .linear)
-//
-//        let scrollLinear = TGLinearLayout(.vert)
-//        scrollLinear.tg_width.equal(UIScreen.main.bounds.width)
-//        scrollLinear.tg_height.equal(UIScreen.main.bounds.height)
-//        scrollLinear.addSubview(header)
-//        scrollLinear.addSubview(viewPager)
-//
-//        let info = getUILabel(text: "", size: 16, textColor: UIColor.blue)
-//        info.text = "FSPagerView is an elegant Screen Slide Library implemented primarily with UICollectionView. It is extremely helpful for making Banner、Product Show、Welcome/Guide Pages、Screen/ViewController Sliders."
-//        info.backgroundColor = .white
-//        info.sizeToFit()
-//        info.textAlignment = .center
-//        info.tg_top.equal(20)
-//        info.lineBreakMode = .byWordWrapping
-//        info.numberOfLines = 0
-//
-//
-//        let l1 = TGLinearLayout(.horz)
-//        l1.tg_width.equal(UIScreen.main.bounds.width - 40)
-//        l1.tg_centerX.equal(0)
-//        l1.tg_top.equal(10)
-//        l1.tg_height.equal(.wrap)
-//        l1.addSubview(getSquareButton(position : 0))
-//        l1.addSubview(getSquareButton(position : 1))
-//
-//
-//        let l2 = TGLinearLayout(.horz)
-//        l2.tg_width.equal(UIScreen.main.bounds.width - 40)
-//        l2.tg_centerX.equal(0)
-//        l2.tg_height.equal(.wrap)
-//        l2.addSubview(getSquareButton(position : 2))
-//        l2.addSubview(getSquareButton(position : 3))
-//        l2.tg_top.equal(0)
-//
-//        scrollLinear.addSubview(info)
-//        scrollLinear.addSubview(l1)
-//        scrollLinear.addSubview(l2)
-//        scrollView.addSubview(scrollLinear)
-//
-//        relative.addSubview(scrollView)
-//        view.addSubview(relative)
-//
-//    }
+    var scrollHeight : CGFloat!
     
-    let labelOne: UILabel = {
-        let label = UILabel()
-        label.text = "Scroll Top"
-        label.backgroundColor = .red
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let labelTwo: UILabel = {
-        let label = UILabel()
-        label.text = "Scroll Bottom"
-        label.backgroundColor = .green
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+    var viewPager : ViewPager!
     
     override
     func viewDidLoad() {
         super.viewDidLoad()
-        let screensize: CGRect = UIScreen.main.bounds
-        let screenWidth = screensize.width
-        let screenHeight = screensize.height
-        var scrollView: UIScrollView!
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         
-        let insideLayout = TGLinearLayout(.vert)
-        insideLayout.tg_width.equal(UIScreen.main.bounds.width)
-        insideLayout.tg_height.equal(.wrap)
+        scrollHeight = 0
         
         
-        
-        let viewPager = ViewPager()
-        viewPager.tg_width.equal(UIScreen.main.bounds.width)
-        viewPager.tg_height.equal(UIScreen.main.bounds.height / 4.6)
-        viewPager.dataSource = self;
-        viewPager.pageControl.isHidden = true
-        
-        
-        
-        for i in 0 ..< 20{
-            let header = UIImageView(frame: CGRect(x: 0, y: CGFloat(i) * Style.Height90, width: UIScreen.main.bounds.width, height: Style.Height90))
-            header.image = #imageLiteral(resourceName: "confirm_samir_abbas")
-            header.contentMode = UIViewContentMode.scaleToFill
-            scrollView.addSubview(header)
-            
-            NSLayoutConstraint(item: header, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leadingMargin, multiplier: 1, constant: 10).isActive = true
-            NSLayoutConstraint(item: header, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 200).isActive = true
-            NSLayoutConstraint(item: header, attribute: .top, relatedBy: .equal, toItem: scrollView, attribute: .topMargin, multiplier: 1, constant: 10).isActive = true
-            NSLayoutConstraint(item: header, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30).isActive = true
-            
-        }
-        
-        
-        
-        scrollView.contentSize = CGSize(width: screenWidth, height: 2000)
         
         let linear = TGLinearLayout(.vert)
         linear.tg_width.equal(UIScreen.main.bounds.width)
-        linear.tg_height.equal(UIScreen.main.bounds.height)
+        linear.tg_height.equal(.wrap)
         linear.backgroundColor = Style.BackgroundColor
         linear.addSubview(getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false))
         var image = UIImage(named: "strip.png")
@@ -178,36 +43,115 @@ class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
         strip.tg_top.equal(8)
         //....
         
-        
-        
         linear.addSubview(strip)
-        linear.addSubview(scrollView)
-        //view.addSubview(linear)
-        //view.addSubview()
         view.backgroundColor = Style.BackgroundColor
         
-        let ll = LinearLayout(width: MATCH_PARENT, height: MATCH_PARENT).vertical().padding(left: 5, right : 5)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        let banner = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: Style.Height80))
+        banner.image = #imageLiteral(resourceName: "confirm_samir_abbas")
+        banner.contentMode = UIViewContentMode.scaleAspectFill
+        scrollHeight = scrollHeight + Style.Height80
         
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
-        ll.add(view: getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false), w: MATCH_PARENT, h: WRAP_CONTENT)
+        viewPager = ViewPager()
+        viewPager.tg_width.equal(UIScreen.main.bounds.width)
+        viewPager.tg_height.equal(UIScreen.main.bounds.height / 4)
+        viewPager.dataSource = self;
+        viewPager.pageControl.isHidden = true
+        
+        let pagerLayout = TGRelativeLayout()
+        pagerLayout.tg_width.equal(UIScreen.main.bounds.width)
+        pagerLayout.tg_height.equal(UIScreen.main.bounds.height / 4)
+        pagerLayout.addSubview(viewPager)
+        
+        let left = FlatButton(image: #imageLiteral(resourceName: "left_swipe"), tintColor: Style.TextColor)
+        left.tg_width.equal(Style.Height20)
+        left.tg_height.equal(Style.Height20)
+        left.tg_left.equal(20)
+        left.tg_centerY.equal(0)
+        left.addTarget(self, action: #selector(self.left), for: .touchUpInside)
+        
+        pagerLayout.addSubview(left)
+        
+        
+        
+        
+        let right = FlatButton(image: #imageLiteral(resourceName: "right_swipe"), tintColor: Style.TextColor)
+        right.tg_width.equal(Style.Height20)
+        right.tg_height.equal(Style.Height20)
+        right.tg_left.equal(UIScreen.main.bounds.width - 40)
+        
+        right.tg_centerY.equal(0)
+        right.addTarget(self, action: #selector(self.right), for: .touchUpInside)
+        pagerLayout.addSubview(right)
+
+        
+        
+        
+        scrollHeight = scrollHeight + UIScreen.main.bounds.height / 4
+        
+        
+        
+        viewPager.tg_top.equal(10)
+        
+        let infoLayout = LinearLayout(width : MATCH_PARENT, height : Style.Height140)
+        infoLayout.margin(left: 0, right: 0, top: 20, bottom: 0)
+        infoLayout.backgroundColor = .white
+        let info = getUILabel(text: "We provide affordable, holistic quality healthcare appropriate to the needs of our clients by a team of committed, caring professionals striving through a research driven environment.Scroll down to explore our infrastructure.", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "##3c7fd1"))
+        
+        
+        
+        
+        
+        scrollHeight = scrollHeight + Style.Height140
+        
+        let inner = LinearLayout(width : MATCH_PARENT, height : Style.Height140)
+        inner.margin(left: 10, right: 10, top: 0, bottom: 0)
+        info.textAlignment = .center
+        inner.add(view: info, w: MATCH_PARENT, h: Style.Height140)
+        infoLayout.padding(left: 0, right: 0, top: 10, bottom: 10)
+        infoLayout.add(view: inner, w: MATCH_PARENT, h: Style.Height140)
+        
+        scrollHeight = scrollHeight + (Style.ScreenHeight / 6.13) * 4
+        
+        let img1 = RelativeLayout(width : MATCH_PARENT, height : Style.ScreenHeight / 6.13)
+        img1.margin(left: 15, right: 5, top: 10, bottom: 0)
+        img1.add(view: getSquareButton(position: 0), w : UIScreen.main.bounds.width , h : Style.ScreenHeight / 6.13)
+        
+        
+        
+        let img2 = RelativeLayout(width : MATCH_PARENT, height : Style.ScreenHeight / 6.13)
+        img2.margin(left: 15, right: 5, top: 5, bottom: 0)
+        img2.add(view: getSquareButton(position: 2), w : UIScreen.main.bounds.width , h : Style.ScreenHeight / 6.13)
+        
+        
+        
+        let img3 = RelativeLayout(width : MATCH_PARENT, height : Style.ScreenHeight / 6.13)
+        img3.margin(left: 15, right: 5, top: 5, bottom: 0)
+        img3.add(view: getSquareButton(position: 4), w : UIScreen.main.bounds.width , h : Style.ScreenHeight / 6.13)
+        
+        
+        
+        let img4 = RelativeLayout(width : MATCH_PARENT, height : Style.ScreenHeight / 6.13)
+        img4.margin(left: 15, right: 5, top: 5, bottom: 0)
+        img4.add(view: getSquareButton(position: 6), w : UIScreen.main.bounds.width , h : Style.ScreenHeight / 6.13)
+        
+        
+        
+        var ll = LinearLayout(width: MATCH_PARENT, height: scrollHeight).vertical()
+        ll.padding(left: 0, right: 0, top: Style.Height80, bottom: 0)
+        ll.add(view: banner, w: MATCH_PARENT, h: Style.Height80)
+        ll.add(view: pagerLayout, w: MATCH_PARENT, h: UIScreen.main.bounds.height / 4)
+        ll.add(view: infoLayout, w: MATCH_PARENT, h: Style.Height140)
+        ll.add(view: img1, w: MATCH_PARENT, h: Style.ScreenHeight / 6.13)
+        ll.add(view: img2, w: MATCH_PARENT, h: Style.ScreenHeight / 6.13)
+        ll.add(view: img3, w: MATCH_PARENT, h: Style.ScreenHeight / 6.13)
+        ll.add(view: img4, w: MATCH_PARENT, h: Style.ScreenHeight / 6.13)
+
+        
         
         
         
         view.addSubview(ll.createScrollable())
-        
+        view.addSubview(linear)
         menuButton.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
     }
     
@@ -216,39 +160,10 @@ class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = #imageLiteral(resourceName: "nav_samir_abbas") //UIImage(named: self.imageNames[index])
-        //cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
-        cell.imageView?.clipsToBounds = true
-        cell.textLabel?.text = ""
-        cell.imageView?.tg_centerX.equal(0)
-        cell.imageView?.tg_centerY.equal(0)
-        return cell
-    }
-    
-    public func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return imageNames.count
-    }
-    
-    // MARK:- FSPagerView Delegate
-    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        //        pagerView.deselectItem(at: index, animated: true)
-        //        pagerView.scrollToItem(at: index, animated: true)
-        //        self.pageControl.currentPage = index
-    }
-    
-    func pagerViewDidScroll(_ pagerView: FSPagerView) {
-        //        guard self.pageControl.currentPage != pagerView.currentIndex else {
-        //            return
-        //        }
-        //        self.pageControl.currentPage = pagerView.currentIndex // Or Use KVO with property "currentIndex"
-        //
-    }
     
     func getUILabel(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
         let label = UILabel()
-        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: size)]
+        let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: size)]
         let attributedString = NSMutableAttributedString(string: text, attributes:attrs)
         label.tg_width.equal(UIScreen.main.bounds.width)
         label.tg_height.equal(.wrap)
@@ -257,21 +172,63 @@ class GalleryVC : BaseVC, FSPagerViewDataSource,FSPagerViewDelegate {
         return label
     }
     
-    func getSquareButton(position : Int) -> TGRelativeLayout{
+    func getSquareButton(position : Int) -> TGLinearLayout{
         
-        let bookAppt = TGRelativeLayout()
+        let bookAppt = TGLinearLayout(.horz)
         bookAppt.tg_centerX.equal(0)
-        bookAppt.tg_width.equal(UIScreen.main.bounds.width/2 - 20)
+        bookAppt.tg_width.equal(UIScreen.main.bounds.width)
         bookAppt.tg_height.equal(Style.ScreenHeight / 6.13)
         //bookAppt.tg_backgroundImage = #imageLiteral(resourceName: "btn_outer")
         bookAppt.tg_top.equal(5)
-        bookAppt.backgroundColor = .white
-        bookAppt.tg_backgroundImage = gallery[position]
-        bookAppt.tg_right.equal(5)
+        
+        let flat1 = FlatButton(image: gallery[position])
+        flat1.tg_width.equal(UIScreen.main.bounds.width / 2)
+        flat1.tg_height.equal(UIScreen.main.bounds.height / 6.13)
+        flat1.tag = position
+        flat1.addTarget(self, action: #selector(self.openGallery(sender:)), for: .touchUpInside)
+        flat1.tg_right.equal(3)
+        
+        let flat2 = FlatButton(image: gallery[position + 1])
+        flat2.tg_width.equal(UIScreen.main.bounds.width / 2)
+        flat2.tg_height.equal(UIScreen.main.bounds.height / 6.13)
+        flat2.tg_left.equal(3)
+        flat2.tag = position + 1
+        flat2.addTarget(self, action: #selector(self.openGallery(sender:)), for: .touchUpInside)
+        bookAppt.addSubview(flat1)
+        bookAppt.addSubview(flat2)
+        
         return bookAppt
     }
     
+    @objc
+    func openGallery(sender : UIButton){
+        var open = ImageViewerVC()
+        open.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        open.image = gallery[sender.tag]
+        present(open, animated: true, completion: nil)
+    }
     
+    @objc
+    func left(){
+        if(viewPager.currentPosition == 0){
+            return
+        }
+        
+        var page = viewPager.currentPosition;
+        page = page - 1
+        viewPager.scrollToPage(index: page)
+    }
+    
+    @objc
+    func right(){
+        if(viewPager.currentPosition == 4){
+            return
+        }
+        
+        var page = viewPager.currentPosition;
+        page = page + 1
+        viewPager.scrollToPage(index: page)
+    }
 }
 
 
@@ -286,7 +243,7 @@ extension GalleryVC :ViewPagerDataSource{
         var newView = view;
         var label:UIImageView?
         if(newView == nil){
-            newView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.height / 4.6))
+            newView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.height / 4))
             
             label = UIImageView(frame: newView!.bounds)
             label?.contentMode = UIViewContentMode.scaleToFill

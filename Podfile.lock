@@ -1,21 +1,24 @@
 PODS:
   - FSPagerView (0.7.1)
   - KYDrawerController (2.0.4)
+  - MGRelativeKit (0.1.4)
   - ScrollableStackView (1.0.4)
   - UIDropDown (1.1.1)
 
 DEPENDENCIES:
   - FSPagerView
   - KYDrawerController
+  - MGRelativeKit
   - ScrollableStackView
   - UIDropDown
 
 SPEC CHECKSUMS:
   FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
+  MGRelativeKit: 3139b31155ee93244d849661aeb62aa47088e270
   ScrollableStackView: 03a03bf514d3b8b770841172e3ea96a5e7e0ae64
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
 
-PODFILE CHECKSUM: e52b1e5faff1707578b7681c35d1cbebf4ce1ae0
+PODFILE CHECKSUM: edeefff539b4a40d510ef089833a619d6b5be2a5
 
 COCOAPODS: 1.4.0

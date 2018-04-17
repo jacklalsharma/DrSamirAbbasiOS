@@ -6,4 +6,5 @@ pod 'KYDrawerController'
 pod 'UIDropDown'
 pod 'FSPagerView'
 pod "ScrollableStackView"
+pod 'MGRelativeKit'
 end

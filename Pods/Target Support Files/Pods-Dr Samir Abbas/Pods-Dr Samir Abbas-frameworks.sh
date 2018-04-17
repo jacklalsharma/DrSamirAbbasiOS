@@ -136,12 +136,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MGRelativeKit/MGRelativeKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ScrollableStackView/ScrollableStackView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MGRelativeKit/MGRelativeKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ScrollableStackView/ScrollableStackView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework"
 fi
