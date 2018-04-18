@@ -116,7 +116,7 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
         let result = formatter.string(from: date)
         
         print(result)
-        var url = "https://hospoital.000webhostapp.com/booking-apis/apis/get_doctors?specialization_id="
+        var url = "http://www.bhavikagarwal.com/booking/apis/get_doctors?specialization_id="
         url.append(String (specialisationList.data.specializations[position].id))
         url.append("&available_on=")
         url.append(result)

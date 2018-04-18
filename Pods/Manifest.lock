@@ -1,5 +1,10 @@
 PODS:
   - FSPagerView (0.7.1)
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
+    - GoogleMaps/Base
   - KYDrawerController (2.0.4)
   - MGRelativeKit (0.1.4)
   - ScrollableStackView (1.0.4)
@@ -7,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - FSPagerView
+  - GoogleMaps
   - KYDrawerController
   - MGRelativeKit
   - ScrollableStackView
@@ -14,11 +20,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
   MGRelativeKit: 3139b31155ee93244d849661aeb62aa47088e270
   ScrollableStackView: 03a03bf514d3b8b770841172e3ea96a5e7e0ae64
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
 
-PODFILE CHECKSUM: edeefff539b4a40d510ef089833a619d6b5be2a5
+PODFILE CHECKSUM: b8db2002782b01a44afe1dfd1ac7063e310da9b9
 
 COCOAPODS: 1.4.0

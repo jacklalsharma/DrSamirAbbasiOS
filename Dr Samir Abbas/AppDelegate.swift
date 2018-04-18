@@ -8,16 +8,18 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+//AIzaSyBQztf6H5YOUJYGvdhyXPCAIDcDSRBcvHc
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         application.isStatusBarHidden = true
+        GMSServices.provideAPIKey("AIzaSyBQztf6H5YOUJYGvdhyXPCAIDcDSRBcvHc")
         return true
     }
 

@@ -130,7 +130,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         present(dialogBox, animated: true, completion: nil)
         
         
-        Alamofire.request("https://hospoital.000webhostapp.com/booking-apis/apis/get_specializations").responseJSON{ response in
+        Alamofire.request("http://www.bhavikagarwal.com/booking/apis/get_specializations").responseJSON{ response in
             print(response)
             dialogBox.dismiss(animated: true, completion: nil)
             if(response.result != nil){
@@ -160,7 +160,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         let result = formatter.string(from: date)
         
         print(result)
-        var url = "https://hospoital.000webhostapp.com/booking-apis/apis/search_doctors?"
+        var url = "http://www.bhavikagarwal.com/booking/apis/search_doctors?"
         //url.append(String (specialisationList.data.specializations[position].id))
         url.append("available_on=")
         url.append(result)

@@ -171,7 +171,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         present(dialogBox, animated: true, completion: nil)
         
         
-        Alamofire.request("https://hospoital.000webhostapp.com/booking-apis/apis/get_specializations").responseJSON{ response in
+        Alamofire.request("http://www.bhavikagarwal.com/booking/apis/get_specializations").responseJSON{ response in
             print(response)
             dialogBox.dismiss(animated: true, completion: nil)
             if(response.result != nil){

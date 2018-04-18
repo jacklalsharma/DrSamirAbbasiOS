@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F5048A536CFCD5B41233568 /* Pods_Dr_Samir_Abbas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF76ADCF5045325056E6B3C /* Pods_Dr_Samir_Abbas.framework */; };
 		7510A9EB20864A0C0077008E /* ImageViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EA20864A0C0077008E /* ImageViewerVC.swift */; };
+		7510A9ED2087A74A0077008E /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EC2087A74A0077008E /* ContactUsVC.swift */; };
 		753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B8401207BD16C0001A0F6 /* MasterVC.swift */; };
 		754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */; };
 		754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D2207B7A0700F59C9C /* CalendarDate.swift */; };
@@ -127,6 +128,7 @@
 /* Begin PBXFileReference section */
 		2EF76ADCF5045325056E6B3C /* Pods_Dr_Samir_Abbas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dr_Samir_Abbas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7510A9EA20864A0C0077008E /* ImageViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerVC.swift; sourceTree = "<group>"; };
+		7510A9EC2087A74A0077008E /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		753B8401207BD16C0001A0F6 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
 		754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalScrollView.swift; sourceTree = "<group>"; };
 		754A35D2207B7A0700F59C9C /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				75964BFF2080B34D0098D183 /* SpecialistDoctorListVC.swift */,
 				75964C102083BC5A0098D183 /* ServicesListVC.swift */,
 				7510A9EA20864A0C0077008E /* ImageViewerVC.swift */,
+				7510A9EC2087A74A0077008E /* ContactUsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -565,9 +568,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dr Samir Abbas/Pods-Dr Samir Abbas-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -640,6 +646,7 @@
 				754A35E0207B88E000F59C9C /* DPDropShadowView.swift in Sources */,
 				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
 				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
+				7510A9ED2087A74A0077008E /* ContactUsVC.swift in Sources */,
 				75F2176B2085FF0900430419 /* BaseView.swift in Sources */,
 				754A35E6207B893700F59C9C /* DPLeftContentViewController.swift in Sources */,
 				75F217712085FFC500430419 /* UIBaseView.swift in Sources */,

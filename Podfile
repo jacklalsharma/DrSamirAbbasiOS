@@ -7,4 +7,5 @@ pod 'UIDropDown'
 pod 'FSPagerView'
 pod "ScrollableStackView"
 pod 'MGRelativeKit'
+pod 'GoogleMaps'
 end

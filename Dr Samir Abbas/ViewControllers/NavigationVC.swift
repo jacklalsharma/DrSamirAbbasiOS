@@ -142,7 +142,8 @@ class NavigationVC : BaseVC {
     
     @objc
     func facilities(){
-        
+        let contact = ContactUsVC()
+        present(contact, animated: true, completion: nil)
     }
     
     @objc
@@ -196,13 +197,13 @@ class NavigationVC : BaseVC {
             bookBtn.addTarget(self, action: #selector(services), for: .touchUpInside)
         }else if(position == 2){
             bookAppt.tg_right.equal(5)
-            bookLabel.text = "Facilities"
-            img.image = #imageLiteral(resourceName: "ic_facilities")
-            bookBtn.addTarget(self, action: #selector(facilities), for: .touchUpInside)
-        }else if(position == 3){
             bookLabel.text = "Gallery"
             img.image = #imageLiteral(resourceName: "ic_gallery")
             bookBtn.addTarget(self, action: #selector(gallery), for: .touchUpInside)
+        }else if(position == 3){
+            bookLabel.text = "Contact us"
+            img.image = #imageLiteral(resourceName: "contacticon")
+            bookBtn.addTarget(self, action: #selector(facilities), for: .touchUpInside)
         }
         return bookAppt
     }
