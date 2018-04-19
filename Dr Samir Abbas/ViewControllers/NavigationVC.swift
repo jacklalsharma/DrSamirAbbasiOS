@@ -81,7 +81,7 @@ class NavigationVC : BaseVC {
         img.tg_top.equal(10)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = getUILabel(text: "Book An Appointment", size: Style.TextSize18, textColor: Style.TextColor)
+        let bookLabel = getUILabel(text: "Book An Appointment", size: Style.TextSize20, textColor: Style.TextColor)
         bookLabel.tg_centerX.equal(0)
         bookLabel.tg_top.equal(12)
         
@@ -172,7 +172,7 @@ class NavigationVC : BaseVC {
         img.tg_top.equal(20)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = getUILabel(text: "", size: Style.TextSize16, textColor: Style.TextColor)
+        let bookLabel = getUILabel(text: "", size: Style.TextSize14, textColor: Style.TextColor)
         
         bookLabel.tg_centerX.equal(0)
         bookLabel.tg_top.equal(4)

@@ -10,6 +10,7 @@
 		3F5048A536CFCD5B41233568 /* Pods_Dr_Samir_Abbas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF76ADCF5045325056E6B3C /* Pods_Dr_Samir_Abbas.framework */; };
 		7510A9EB20864A0C0077008E /* ImageViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EA20864A0C0077008E /* ImageViewerVC.swift */; };
 		7510A9ED2087A74A0077008E /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EC2087A74A0077008E /* ContactUsVC.swift */; };
+		7510A9EF2088A2170077008E /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EE2088A2170077008E /* AboutUsVC.swift */; };
 		753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B8401207BD16C0001A0F6 /* MasterVC.swift */; };
 		754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */; };
 		754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D2207B7A0700F59C9C /* CalendarDate.swift */; };
@@ -129,6 +130,7 @@
 		2EF76ADCF5045325056E6B3C /* Pods_Dr_Samir_Abbas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dr_Samir_Abbas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7510A9EA20864A0C0077008E /* ImageViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerVC.swift; sourceTree = "<group>"; };
 		7510A9EC2087A74A0077008E /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
+		7510A9EE2088A2170077008E /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		753B8401207BD16C0001A0F6 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
 		754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalScrollView.swift; sourceTree = "<group>"; };
 		754A35D2207B7A0700F59C9C /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				75964C102083BC5A0098D183 /* ServicesListVC.swift */,
 				7510A9EA20864A0C0077008E /* ImageViewerVC.swift */,
 				7510A9EC2087A74A0077008E /* ContactUsVC.swift */,
+				7510A9EE2088A2170077008E /* AboutUsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				754A35F4207B8A2F00F59C9C /* DPSlideMenuManager.swift in Sources */,
 				7565602F2079EF8E00D5B6FC /* BookAppointmentVC.swift in Sources */,
 				75F68397207CCE30004B90EE /* GalleryVC.swift in Sources */,
+				7510A9EF2088A2170077008E /* AboutUsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

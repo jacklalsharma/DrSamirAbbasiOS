@@ -1,19 +1,18 @@
 //
-//  GalleryVC.swift
+//  AboutUsVC.swift
 //  Dr Samir Abbas
 //
-//  Created by Anurag on 10/04/18.
+//  Created by Anurag on 19/04/18.
 //  Copyright © 2018 Anurag. All rights reserved.
 //
 
 import Foundation
-import Material
 import TangramKit
-import FSPagerView
-import MGRelativeKit
-import GoogleMaps
+import Material
+import UIKit
 
-class ContactUsVC : BaseVC{
+
+class AboutUsVC : BaseVC{
     
     var scrollHeight : CGFloat!
     
@@ -29,7 +28,7 @@ class ContactUsVC : BaseVC{
         linear.tg_width.equal(UIScreen.main.bounds.width)
         linear.tg_height.equal(.wrap)
         linear.backgroundColor = Style.BackgroundColor
-        linear.addSubview(getToolbar(title: "Contact us", isBackMenu: true, addSpinner : false))
+        linear.addSubview(getToolbar(title: "About us", isBackMenu: true, addSpinner : false))
         var image = UIImage(named: "strip.png")
         image = image?.resize(toHeight: 3)
         image = image?.resize(toWidth: UIScreen.main.bounds.width)
@@ -43,10 +42,10 @@ class ContactUsVC : BaseVC{
         linear.addSubview(strip)
         view.backgroundColor = Style.BackgroundColor
         
-        let banner = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: Style.ScreenHeight / 4))
-        banner.image = #imageLiteral(resourceName: "contact_us_samir_abbas")
+        let banner = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: Style.ScreenHeight / 3.8))
+        banner.image = #imageLiteral(resourceName: "contact_us_samir_abbas2-1")
         banner.contentMode = UIViewContentMode.scaleAspectFill
-        scrollHeight = scrollHeight + Style.ScreenHeight / 4
+        scrollHeight = scrollHeight + Style.ScreenHeight / 3.8
         
         
         let address = getUILabel(text: "ADDRESS", size: Style.TextSize16, textColor: Style.AccentColor)
@@ -55,6 +54,7 @@ class ContactUsVC : BaseVC{
         addr.tg_height.equal(.wrap)
         addr.addSubview(address)
         addr.tg_top.equal(Style.ScreenHeight / 2 )
+        address.isHidden = true
         
         let navStrip = UIImageView()
         navStrip.tg_width.equal(Style.ScreenWidth - 60)
@@ -63,14 +63,15 @@ class ContactUsVC : BaseVC{
         navStrip.tg_top.equal(3)
         navStrip.tg_centerX.equal(0)
         addr.addSubview(navStrip)
+        navStrip.isHidden = true
         
-        let addrLabel = getUILabel(text: "Head Office Jeddah - Ash Shati District Alkurnaysh Road\nZip Code 23411 Tel 012 618 7777 TollFree 920012525\nEmail info@dsah.sa Website www.dsah.sa", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        let addrLabel = getUILabel(text: "Professor Samir Abbas, founder of the hospital, and owner of a number of\n women wellness centers kingdom-wise, is an authority in the field of infertility, reproductive endocrinology and women wellness.\nHe is well known international figure in the field of women's reproduction\n and assisted reproductive techniques, and was the first to facilitate a test\n tube baby in the arab and muslim world in 1986, he also performed the very\n first successful in-vitro fertilization procedure in the kingdom resulting in a\nhealthy neonate.", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
         addrLabel.tg_top.equal(10)
         addrLabel.tg_left.equal(10)
         addrLabel.tg_right.equal(10)
         addr.addSubview(addrLabel)
         
-        let ph = getUILabel(text: "PHONE NO", size: Style.TextSize16, textColor: Style.AccentColor)
+        let ph = getUILabel(text: "Mission", size: Style.TextSize16, textColor: Style.AccentColor)
         ph.tg_top.equal(Style.Height20)
         addr.addSubview(ph)
         
@@ -82,11 +83,11 @@ class ContactUsVC : BaseVC{
         navStrip2.tg_centerX.equal(0)
         addr.addSubview(navStrip2)
         
-        let no = getUILabel(text: "+ 966126187777", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        let no = getUILabel(text: "TO BE, AS WE ALWAYS WERE, PIONEER IN THE FIELD OF MEDICINE SEEKING\n DEVELOPMENT AND INITIATING CHANGE TO PROVIDE THE MOST ADVANCED SERVICES WE\n WELL EXTEND KNOWLEDGE AND CARE BEYOND THE LIMITS OF CONVENTIONAL PRACTICE AND\nCREATE A BOND OF TRUST WITH OUR PATIENTS AND THEIR FAMILIES.", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
         no.tg_top.equal(10)
         addr.addSubview(no)
         
-        let em = getUILabel(text: "EMAIL", size: Style.TextSize16, textColor: Style.AccentColor)
+        let em = getUILabel(text: "Values", size: Style.TextSize16, textColor: Style.AccentColor)
         em.tg_top.equal(Style.Height20)
         addr.addSubview(em)
         
@@ -99,29 +100,14 @@ class ContactUsVC : BaseVC{
         
         addr.addSubview(navStrip3)
         
-        let email = getUILabel(text: "badar.abbas@dshah.sa", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        let email = getUILabel(text: "• DEDICATED TO TO EVERY PATIENT.\n•CONSTANTLY SEEKING DEVELOPMENT\n•TO DEVELOP TRUST BETWEEN PATIENTS AND COLLEAGUES.\n•TO GIVE TO OUR COMMUNITY\n•TO ADHERE TO ISLAMIC MORALS AND ETHICS\n•TO DISSIPATE KNOWLEDGE AND AWARENESS.", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
         email.tg_top.equal(10)
         addr.addSubview(email)
         
         
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 16.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.tg_width.equal(Style.ScreenWidth)
-        mapView.tg_height.equal(Style.ScreenHeight / 4)
-        mapView.tg_top.equal(20)
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
-        
-        
-        addr.addSubview(mapView)
-        
-        var ll = LinearLayout(width: MATCH_PARENT, height: Style.ScreenHeight * 1.2).vertical()
-        ll.padding(left: 0, right: 0, top: Style.Height110, bottom: 0)
-        ll.add(view: banner, w: MATCH_PARENT, h: Style.ScreenHeight / 4)
+        var ll = LinearLayout(width: MATCH_PARENT, height: Style.ScreenHeight * 1.45).vertical()
+        ll.padding(left: 0, right: 0, top: Style.Height120, bottom: 0)
+        ll.add(view: banner, w: MATCH_PARENT, h: Style.ScreenHeight / 3.8)
         ll.add(view: addr, w: MATCH_PARENT, h: Style.Height20)
         
         
@@ -152,5 +138,6 @@ class ContactUsVC : BaseVC{
     
     
 }
+
 
 
