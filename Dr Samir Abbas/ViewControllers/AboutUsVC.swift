@@ -22,8 +22,6 @@ class AboutUsVC : BaseVC{
         
         scrollHeight = 0
         
-        
-        
         let linear = TGLinearLayout(.vert)
         linear.tg_width.equal(UIScreen.main.bounds.width)
         linear.tg_height.equal(.wrap)

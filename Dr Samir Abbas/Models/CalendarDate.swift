@@ -12,4 +12,14 @@ class CalendarDate {
     var day : String = "1"
     var month : String = "1"
     var year : String = "1"
+    
+    func getDate()->String{
+        var date = year;
+        date.append("-")
+        date.append(month)
+        date.append("-")
+        date.append(day)
+        
+        return date;
+    }
 }

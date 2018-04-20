@@ -115,7 +115,9 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
             if(specialization == nil){
                 get_specializations()
             }else{
-                getAllDoctors()
+                let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting doctors list", dialogMessage: "Please wait while we are getting doctors list")
+                present(dialogBox, animated: true, completion: nil)
+                getAllDoctors(dialogBox : dialogBox)
             }
         }
     }
@@ -126,32 +128,31 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
     }
     
     func get_specializations(){
-        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting specialization", dialogMessage: "Please wait while we are getting specialization list")
+        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting doctors list", dialogMessage: "Please wait while we are getting doctors list")
         present(dialogBox, animated: true, completion: nil)
         
         
         Alamofire.request("http://www.bhavikagarwal.com/booking/apis/get_specializations").responseJSON{ response in
             print(response)
-            dialogBox.dismiss(animated: true, completion: nil)
             if(response.result != nil){
                 if(response.result.value != nil){
                     let responseJSON = response.result.value as! [String:AnyObject]
                     let decoder = JSONDecoder()
                     self.specialization = try! decoder.decode(Specialization.self, from: response.data!)
                     self.listFetched = true
-                    self.getAllDoctors()
+                    self.getAllDoctors(dialogBox : dialogBox)
                 }else{
                     //Failed...
+                    dialogBox.dismiss(animated: true, completion: nil)
                 }
             }else{
                 //Failed
+                dialogBox.dismiss(animated: true, completion: nil)
             }
         }
     }
     
-    func getAllDoctors(){
-        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting doctors list", dialogMessage: "Please wait while we are getting doctors list")
-        present(dialogBox, animated: true, completion: nil)
+    func getAllDoctors(dialogBox : DialogBox){
         
         let date = Date()
         let formatter = DateFormatter()

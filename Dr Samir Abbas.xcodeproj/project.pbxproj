@@ -11,6 +11,11 @@
 		7510A9EB20864A0C0077008E /* ImageViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EA20864A0C0077008E /* ImageViewerVC.swift */; };
 		7510A9ED2087A74A0077008E /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EC2087A74A0077008E /* ContactUsVC.swift */; };
 		7510A9EF2088A2170077008E /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9EE2088A2170077008E /* AboutUsVC.swift */; };
+		7510A9F12088FD660077008E /* BookingSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9F02088FD660077008E /* BookingSlot.swift */; };
+		7510A9F3208909F00077008E /* SlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9F2208909F00077008E /* SlotCell.swift */; };
+		7510A9F52089B9140077008E /* AccordionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9F42089B9140077008E /* AccordionTableViewController.swift */; };
+		7510A9F72089B9550077008E /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7510A9F62089B9550077008E /* SectionHeaderView.xib */; };
+		7510A9F9208A02B50077008E /* PatientDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510A9F8208A02B50077008E /* PatientDetailsVC.swift */; };
 		753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B8401207BD16C0001A0F6 /* MasterVC.swift */; };
 		754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */; };
 		754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35D2207B7A0700F59C9C /* CalendarDate.swift */; };
@@ -131,6 +136,11 @@
 		7510A9EA20864A0C0077008E /* ImageViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerVC.swift; sourceTree = "<group>"; };
 		7510A9EC2087A74A0077008E /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		7510A9EE2088A2170077008E /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		7510A9F02088FD660077008E /* BookingSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSlot.swift; sourceTree = "<group>"; };
+		7510A9F2208909F00077008E /* SlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotCell.swift; sourceTree = "<group>"; };
+		7510A9F42089B9140077008E /* AccordionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionTableViewController.swift; sourceTree = "<group>"; };
+		7510A9F62089B9550077008E /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		7510A9F8208A02B50077008E /* PatientDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsVC.swift; sourceTree = "<group>"; };
 		753B8401207BD16C0001A0F6 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
 		754A35CF207B798000F59C9C /* ASHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalScrollView.swift; sourceTree = "<group>"; };
 		754A35D2207B7A0700F59C9C /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
@@ -259,6 +269,7 @@
 				754A35D2207B7A0700F59C9C /* CalendarDate.swift */,
 				75964BFD2080ABD70098D183 /* Specialization.swift */,
 				75964C032080BDD00098D183 /* Doctors.swift */,
+				7510A9F02088FD660077008E /* BookingSlot.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +371,7 @@
 				7510A9EA20864A0C0077008E /* ImageViewerVC.swift */,
 				7510A9EC2087A74A0077008E /* ContactUsVC.swift */,
 				7510A9EE2088A2170077008E /* AboutUsVC.swift */,
+				7510A9F8208A02B50077008E /* PatientDetailsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -390,6 +402,9 @@
 				75964C012080BCCC0098D183 /* DoctorCell.swift */,
 				75964C0E2083A3110098D183 /* ViewPager.swift */,
 				75964C122083BFFC0098D183 /* ServicesCell.swift */,
+				7510A9F2208909F00077008E /* SlotCell.swift */,
+				7510A9F42089B9140077008E /* AccordionTableViewController.swift */,
+				7510A9F62089B9550077008E /* SectionHeaderView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -519,6 +534,7 @@
 				75655FE2207930CB00D5B6FC /* LaunchScreen.storyboard in Resources */,
 				75655FDF207930CB00D5B6FC /* Assets.xcassets in Resources */,
 				75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */,
+				7510A9F72089B9550077008E /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +631,7 @@
 				754A35E4207B892300F59C9C /* DPExtension.swift in Sources */,
 				75F683A2207D0023004B90EE /* GalleryCell.swift in Sources */,
 				7565602D2079EF6300D5B6FC /* LBZSpinner.swift in Sources */,
+				7510A9F12088FD660077008E /* BookingSlot.swift in Sources */,
 				75656026207935A600D5B6FC /* Style.swift in Sources */,
 				754A35F2207B8A0C00F59C9C /* DPRightPageViewController.swift in Sources */,
 				75964BFA207F56850098D183 /* GridLayout.swift in Sources */,
@@ -629,6 +646,7 @@
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
 				754A35DC207B889000F59C9C /* DPCOnst.swift in Sources */,
 				75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */,
+				7510A9F52089B9140077008E /* AccordionTableViewController.swift in Sources */,
 				754A35DE207B88A200F59C9C /* DPDrawerViewController.swift in Sources */,
 				754A35D3207B7A0700F59C9C /* CalendarDate.swift in Sources */,
 				75656033207A359200D5B6FC /* SpecialityCell.swift in Sources */,
@@ -652,9 +670,11 @@
 				7510A9ED2087A74A0077008E /* ContactUsVC.swift in Sources */,
 				75F2176B2085FF0900430419 /* BaseView.swift in Sources */,
 				754A35E6207B893700F59C9C /* DPLeftContentViewController.swift in Sources */,
+				7510A9F9208A02B50077008E /* PatientDetailsVC.swift in Sources */,
 				75F217712085FFC500430419 /* UIBaseView.swift in Sources */,
 				754A35F8207BACE400F59C9C /* LeftSlideMenuVC.swift in Sources */,
 				7510A9EB20864A0C0077008E /* ImageViewerVC.swift in Sources */,
+				7510A9F3208909F00077008E /* SlotCell.swift in Sources */,
 				754A35DA207B886500F59C9C /* DPCenterContentViewController.swift in Sources */,
 				754A35E2207B88FA00F59C9C /* DPEnum.swift in Sources */,
 				75964C042080BDD00098D183 /* Doctors.swift in Sources */,
