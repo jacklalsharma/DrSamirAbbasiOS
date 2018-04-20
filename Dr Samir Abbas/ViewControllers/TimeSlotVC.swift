@@ -11,36 +11,44 @@ import TangramKit
 import Material
 import Alamofire
 
-class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
+class TimeSlotVC : BaseVC{
     
     var specilization : String!
     var doctor : Doctor!
     var dates = [CalendarDate]()
     var btns = [RaisedButton]()
     var texts = [UILabel]()
+    var slotButtons = [RaisedButton]()
     
     var list : UITableView!
     
     var slots : BookingSlot!
     
+    
+    var images = [#imageLiteral(resourceName: "ic_morning"), #imageLiteral(resourceName: "ic_afternoon"), #imageLiteral(resourceName: "ic_evening"), #imageLiteral(resourceName: "ic_night")]
+    var headings = ["Morning", "Afternoon" , "Evening" , "Night"]
+    
+    var linear : TGLinearLayout!
+    var scroll : RelativeLayout!
+    
+    var sessionHeight : CGFloat!
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
-        dates.reserveCapacity(14)
-        btns.reserveCapacity(14)
-        texts.reserveCapacity(14)
+        constructUI()
+        getAppointmentSlots(position: 0)
+
+    }
+    
+    func constructUI(){
+        sessionHeight = 0;
         
-        
-        let relative = TGLinearLayout(.vert)
-        relative.tg_width.equal(UIScreen.main.bounds.width)
-        relative.tg_height.equal(UIScreen.main.bounds.height)
-        
-        relative.addSubview(getToolbar(title: "Select a time slot", isBackMenu: true, addSpinner : false))
-        relative.backgroundColor = Style.BackgroundColor
-        
-        menuButton.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
-        
-        //STRIP VIEW...
+        linear = TGLinearLayout(.vert)
+        linear.tg_width.equal(UIScreen.main.bounds.width)
+        linear.tg_height.equal(.wrap)
+        linear.backgroundColor = Style.BackgroundColor
+        linear.addSubview(getToolbar(title: "Select a time slot", isBackMenu: true, addSpinner : false))
         var image = UIImage(named: "strip.png")
         image = image?.resize(toHeight: 3)
         image = image?.resize(toWidth: UIScreen.main.bounds.width)
@@ -49,14 +57,10 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         strip.image = image
         strip.contentMode = UIViewContentMode.scaleAspectFill
         strip.tg_top.equal(8)
-        relative.addSubview(strip)
         //....
         
-        relative.addSubview(strip)
-        
-        let main = TGLinearLayout(.vert)
-        main.tg_width.equal(Style.ScreenWidth)
-        main.tg_height.equal(Style.ScreenHeight - Style.Height50)
+        linear.addSubview(strip)
+        view.backgroundColor = Style.BackgroundColor
         
         //Doctors Info...
         let doctorLayout = TGLinearLayout(.horz)
@@ -71,6 +75,8 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         let profile = UIImageView(frame: CGRect(x: 0, y: 0, width: Style.Width45, height: Style.Height45))
         profile.image = image2
         profile.contentMode = UIViewContentMode.scaleAspectFill
+        let url = URL(string: doctor.profilePictureURL)
+        profile.kf.setImage(with: url)
         //....
         
         //Left view...
@@ -79,7 +85,7 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         leftLinear.tg_height.equal(.wrap)
         leftLinear.addSubview(profile)
         leftLinear.tg_centerY.equal(0)
-        leftLinear.addSubview(getUILabel(text: doctor.degree, size: 18, textColor: Style.TextColor))
+        leftLinear.addSubview(getUILabel(text: doctor.degree, size: Style.TextSize18, textColor: Style.TextColor))
         leftLinear.tg_left.equal(Style.Height30)
         doctorLayout.addSubview(leftLinear)
         //....
@@ -91,9 +97,9 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         rightLinear.tg_centerY.equal(0)
         var drName = "Dr "
         drName.append(doctor.name)
-        rightLinear.addSubview(getUILabel(text: drName, size: 18, textColor: Style.TextColor))
-        rightLinear.addSubview(getUILabel(text: specilization, size: 18, textColor: Style.TextColor))
-        let available = getUILabel(text: "Available Today", size: 16, textColor: Style.AccentColor)
+        rightLinear.addSubview(getUILabel(text: drName, size: Style.TextSize18, textColor: Style.TextColor))
+        rightLinear.addSubview(getUILabel(text: specilization, size: Style.TextSize18, textColor: Style.TextColor))
+        let available = getUILabel(text: "Available Today", size: Style.TextSize16, textColor: Style.AccentColor)
         rightLinear.addSubview(available)
         
         if(doctor.isAvailableToday == false){
@@ -102,20 +108,20 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         
         rightLinear.tg_left.equal(20)
         doctorLayout.addSubview(rightLinear)
-        //...
-
-        main.addSubview(doctorLayout)
-
+        doctorLayout.tg_top.equal(Style.Height80)
+        
+        
+        
         
         
         //===============DAY SELECTOR===========
         let dayHolder = TGLinearLayout(.vert)
-        dayHolder.tg_width.equal(UIScreen.main.bounds.width - Style.Width45)
+        dayHolder.tg_width.equal(UIScreen.main.bounds.width - Style.Width30)
         dayHolder.tg_height.equal(.wrap)
         dayHolder.tg_top.equal(20)
         dayHolder.tg_backgroundImage = #imageLiteral(resourceName: "cal_background")
         dayHolder.tg_centerX.equal(0)
-        let weekSchedule = getUILabel(text: "Schedule", size: 18, textColor: UIColor().HexToColor(hexString: "#ff640f"))
+        let weekSchedule = getUILabel(text: "Schedule", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#ff640f"))
         weekSchedule.tg_centerX.equal(0)
         weekSchedule.tg_top.equal(8)
         dayHolder.addSubview(weekSchedule)
@@ -137,7 +143,7 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        calLayout.addSubview(getUILabel(text: date.getMonthName().uppercased(), size: 16, textColor: UIColor().HexToColor(hexString: "#3c7fd1")))
+        calLayout.addSubview(getUILabel(text: date.getMonthName().uppercased(), size: Style.TextSize16, textColor: UIColor().HexToColor(hexString: "#3c7fd1")))
         dayHolder.addSubview(calLayout)
         //......
         
@@ -172,39 +178,67 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         daysLayout.tg_bottom.equal(20)
         
         dayHolder.addSubview(daysLayout)
-        //
-    
-        main.addSubview(dayHolder)
-//
-//        let master = LinearLayout(width: MATCH_PARENT, height: 600)
-//        master.backgroundColor = Style.AccentColor
-//        relative.addSubview(getSlotLayout(position: 0))
-//
-//        relative.addSubview(getSlotLayout(position: 0))
-//        relative.addSubview(getSlotLayout(position: 0))
-//        relative.addSubview(getSlotLayout(position: 0))
-//        relative.addSubview(getSlotLayout(position: 0))
-//
-        list = UITableView()
-        list.tg_width.equal(UIScreen.main.bounds.width)
-        list.tg_height.equal(Style.ScreenHeight / 2)
-        list.separatorColor = Style.Transparent
-        list.backgroundColor = Style.BackgroundColor
-        list.tg_top.equal(10)
-        list.allowsSelection = false
+        dayHolder.tg_top.equal(Style.Height80 + Style.Height100)
         
         
-        list.register(SlotCell.self, forCellReuseIdentifier: "cell")
-        list.dataSource = self
-        list.delegate = self
-        main.addSubview(list)
         
         
-        relative.addSubview(main)
-        view.addSubview(relative)
+        
+        let sessionsLayout = TGLinearLayout(.vert)
+        sessionsLayout.tg_width.equal(Style.ScreenWidth - Style.Width30)
+        sessionsLayout.tg_height.equal(.wrap)
+        sessionsLayout.tg_centerX.equal(0)
+        sessionsLayout.tg_left.equal(Style.Width30 / 2)
+        sessionsLayout.backgroundColor = .white
+        
+        let s0 = getSessionSlot(position: 0)
+        s0.tg_centerX.equal(0)
+        s0.tg_left.equal(Style.Width45)
+        s0.tg_top.equal(15)
+        sessionsLayout.addSubview(s0)
+        
+        let s1 = getSessionSlot(position: 1);
+        s1.tg_centerX.equal(0)
+        s1.tg_left.equal(Style.Width45)
+        s1.tg_top.equal(15)
+        sessionsLayout.addSubview(s1)
 
+        
+        let s2 = getSessionSlot(position: 2);
+        s2.tg_centerX.equal(0)
+        s2.tg_left.equal(Style.Width45)
+        s2.tg_top.equal(15)
+        sessionsLayout.addSubview(s2)
+        
+        
+        let s3 = getSessionSlot(position: 3);
+        s3.tg_centerX.equal(0)
+        s3.tg_left.equal(Style.Width45)
+        s3.tg_top.equal(15)
+        sessionsLayout.addSubview(s3)
+        
+        
+        sessionsLayout.tg_centerX.equal(0)
+        sessionsLayout.backgroundColor = .white
+        
+        sessionsLayout.tg_top.equal(Style.Height80 + Style.Height90 + Style.Height110 + Style.Height50)
+        
+        
+        var ll = LinearLayout(width: MATCH_PARENT, height: Style.ScreenHeight * 1.2).vertical()
+        ll.padding(left: 0, right: 0, top: 0, bottom: 0)
+        ll.add(view: doctorLayout, w: MATCH_PARENT, h: Style.Height90)
+        ll.add(view: dayHolder, w: MATCH_PARENT, h: Style.Height100)
+        
+        ll.add(view: sessionsLayout, w: MATCH_PARENT, h: sessionHeight)
+        
+        
+        
+        scroll = ll.createScrollable()
+        view.addSubview(scroll)
+        view.addSubview(linear)
+        menuButton.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
+        
     }
-    
     
     
     @objc
@@ -272,9 +306,11 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
             horizontalScrollView.addItem(getVehicleCell(data : cal, tag : index))
             date = date.add(days: 1)
         }
-        getAppointmentSlots(position: 0)
         return horizontalScrollView;
     }
+    
+    
+    
     
     func getVehicleCell(data : CalendarDate, tag : Int) -> UIView{
         let btn = getFlatButton(width : Int(Style.Height30), height : Int(Style.Height30)) ;
@@ -334,6 +370,9 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
             btns[i].backgroundColor = .white
             texts[i].textColor = Style.TextColor
         }
+        scroll.removeFromSuperview()
+        linear.removeFromSuperview()
+        constructUI()
         getAppointmentSlots(position : sender.tag)
     }
     
@@ -372,12 +411,20 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
                     let success = responseJSON["success"] as! Int ;
                     if(success == 0){
                         print("NULL RESULT")
+                        self.slots = nil
+                        self.linear.removeFromSuperview()
+                        self.scroll.removeFromSuperview()
+                        self.constructUI()
                         return
                     }
                     
                     let decoder = JSONDecoder()
                     self.slots = try! decoder.decode(BookingSlot.self, from: response.data!)
-                    self.list.reloadData()
+                    //self.list.reloadData()
+                    self.linear.removeFromSuperview()
+                    self.scroll.removeFromSuperview()
+                    self.scroll = nil
+                    self.constructUI()
                 }else{
                     //Failed...
                 }
@@ -390,27 +437,162 @@ class TimeSlotVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     
     
     
-    //the method returning each cell of the list
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        var cell:SlotCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SlotCell
+    func getSessionSlot(position : Int)->TGLinearLayout{
+        print("INIT")
+        
+        sessionHeight = sessionHeight + (Style.Height90)
+        var nightImage : UIImageView!
+        var heading : UILabel!;
+        
+        let slotLayout = TGLinearLayout(.horz)
+        slotLayout.tg_width.equal(UIScreen.main.bounds.width - Style.Width45)
+        slotLayout.tg_height.equal(.wrap)
+        slotLayout.backgroundColor = UIColor().HexToColor(hexString: "#e9e7e8")
+        nightImage = getUIImageView(sizeX: Int(Style.Height25), sizeY: Int(Style.Height25))
+        nightImage.image = images[position]
+        nightImage.tg_centerY.equal(0)
+        
+        let imageLayout = TGRelativeLayout()
+        imageLayout.tg_width.equal(Style.Height50)
+        imageLayout.tg_height.equal(Style.Height50)
+        imageLayout.addSubview(nightImage)
+        imageLayout.tg_centerY.equal(0)
+        
+        slotLayout.addSubview(imageLayout)
 
-        return cell;
-    }
-    
-    //the method returning size of the list
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 4
-    }
-    
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if(self.slots == nil){
-            //default height...
-            return 80;
+        let timingsLayout = TGLinearLayout(.vert)
+        slotLayout.addSubview(timingsLayout)
+        
+        timingsLayout.tg_width.equal(UIScreen.main.bounds.width - Style.Width30 - 20 - Style.Width45)
+        timingsLayout.tg_height.equal(.wrap)
+        
+        let timeSlots = TGLinearLayout(.vert)
+        timeSlots.tg_width.equal(Style.ScreenWidth)
+        timeSlots.tg_height.equal(.wrap)
+        
+        
+        var head = headings[position]
+        if(self.slots != nil){
+            if(position == 0){
+                if(slots.data?.slots?.morning != nil){
+                    for i in stride(from: 0, to: 10, by: 2) {
+                        print(i)
+                    }
+                    timeSlots.addSubview(getSlotRow(position: position))
+                    timeSlots.addSubview(getSlotRow(position: position))
+                }else{
+                    head.append("\n Not Available")
+                }
+            }else if(position == 1){
+                if(slots.data?.slots?.afternoon != nil){
+                    for i in stride(from: 0, to: 10, by: 2) {
+                        print(i)
+                    }
+                    timeSlots.addSubview(getSlotRow(position: position))
+                    timeSlots.addSubview(getSlotRow(position: position))
+                }else{
+                    head.append("\n Not Available")
+                }
+            }else if(position == 2){
+                if(slots.data?.slots?.evening != nil){
+                    for i in stride(from: 0, to: 10, by: 2) {
+                        print(i)
+                    }
+                    timeSlots.addSubview(getSlotRow(position: position))
+                    timeSlots.addSubview(getSlotRow(position: position))
+                }else{
+                    head.append("\n Not Available")
+                }
+            }else if(position == 3){
+                if(slots.data?.slots?.night != nil){
+                    for i in stride(from: 0, to: 10, by: 2) {
+                        print(i)
+                    }
+                    timeSlots.addSubview(getSlotRow(position: position))
+                    timeSlots.addSubview(getSlotRow(position: position))
+                }else{
+                    head.append("\n Not Available")
+                }
+            }
+        }else{
+            head.append("\n Not Available")
         }
         
-        return 120
+        
+        heading = getUILabel(text: head, size: Style.TextSize18, textColor: Style.TextColor);
+        
+        heading.textAlignment = .center
+        heading.tg_top.equal(5)
+        heading.tg_centerX.equal(0)
+        timingsLayout.addSubview(heading)
+        timingsLayout.backgroundColor = UIColor().HexToColor(hexString: "#f2f0f1")
+        
+        
+        
+        timingsLayout.addSubview(timeSlots)
+        
+        let main = TGLinearLayout(.vert)
+        main.tg_width.equal(Style.ScreenWidth)
+        main.tg_height.equal(.wrap)
+        
+        main.addSubview(slotLayout)
+        
+        let space = UIImageView()
+        space.tg_width.equal(Style.ScreenWidth - Style.Width45)
+        space.tg_height.equal(10)
+        main.addSubview(space)
+        
+        main.tg_centerX.equal(0)
+        return main
+    }
+    
+    
+    
+    func getSlotRow(position : Int) -> ASHorizontalScrollView{
+        
+        let horizontalScrollView:ASHorizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - Style.Width90, height: Style.Height30))
+        horizontalScrollView.marginSettings_320 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
+        horizontalScrollView.marginSettings_480 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
+        horizontalScrollView.marginSettings_414 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
+        horizontalScrollView.marginSettings_736 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 2, miniAppearWidthOfLastItem: 30)
+        horizontalScrollView.defaultMarginSettings = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 2, miniAppearWidthOfLastItem: 20)
+        horizontalScrollView.uniformItemSize = CGSize(width: UIScreen.main.bounds.width / 5 - 30, height: Style.Height20)
+        //horizontalScrollView.setItemsMarginOnce()
+        
+        
+        for index in 0..<5{
+            
+            horizontalScrollView.addItem(getTimeSlotCell(title : "9:20"))
+        }
+        //horizontalScrollView.tg_centerX.equal(0)
+        return horizontalScrollView;
+    }
+    
+    func getTimeSlotCell(title : String)->TGRelativeLayout{
+        var layoutMain = TGRelativeLayout()
+        layoutMain.tg_width.equal(UIScreen.main.bounds.width / 5 - 30)
+        layoutMain.tg_height.equal(Style.Height20)
+        
+        var label = getUILabel(text: title, size: Style.TextSize16, textColor: Style.TextColor)
+        label.tg_centerX.equal(0)
+        label.tg_centerY.equal(0)
+        //label.textColor = Style.TextColor
+        //label.tg_margin(20)
+        layoutMain.backgroundColor = .white
+        
+        layoutMain.tg_topBorderline = TGBorderline.init(color: UIColor.gray)
+        layoutMain.tg_leftBorderline = TGBorderline.init(color: UIColor.gray)
+        layoutMain.tg_rightBorderline = TGBorderline.init(color: UIColor.gray)
+        layoutMain.tg_bottomBorderline = TGBorderline.init(color: UIColor.gray)
+        
+        let flat = RaisedButton(title: "", titleColor: Style.TextColor)
+        flat.tg_width.equal(UIScreen.main.bounds.width / 5 - 30)
+        flat.tg_height.equal(Style.Height20)
+        layoutMain.addSubview(flat)
+        layoutMain.addSubview(label)
+        slotButtons.append(flat)
+
+        return layoutMain
     }
     
 }

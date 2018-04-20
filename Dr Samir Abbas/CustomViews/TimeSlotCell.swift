@@ -24,7 +24,7 @@ class TimeSlotCell : UICollectionViewCell{
         super.init(frame: frame)
         
         layoutMain = TGRelativeLayout()
-        layoutMain.tg_width.equal(UIScreen.main.bounds.width / 4 - 40)
+        layoutMain.tg_width.equal(UIScreen.main.bounds.width / 5 - 30)
         layoutMain.tg_height.equal(Style.Height20)
         
         label = UILabel()
