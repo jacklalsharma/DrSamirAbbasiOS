@@ -33,7 +33,7 @@ class ServicesListVC : BaseVC , UITableViewDataSource, UITableViewDelegate{
 
     var list : UITableView!
     
-    var heights = [Style.ScreenHeight / 1.8, Style.ScreenHeight * 1.1, Style.ScreenHeight / 1.4, Style.ScreenHeight / 1.05, Style.ScreenHeight / 1.05, Style.ScreenHeight / 0.95, Style.ScreenHeight, Style.ScreenHeight / 1.8, Style.ScreenHeight / 1.35, Style.ScreenHeight / 1.1, Style.ScreenHeight / 1.25, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.44, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.27,Style.ScreenHeight / 1.5, Style.ScreenHeight / 1.3 ,Style.ScreenHeight / 1.75, Style.ScreenHeight / 1.17, Style.ScreenHeight / 1.5]
+    var heights = [Style.ScreenHeight / 1.5, Style.ScreenHeight * 1.1, Style.ScreenHeight / 1.4, Style.ScreenHeight / 1.05, Style.ScreenHeight / 1.05, Style.ScreenHeight / 0.95, Style.ScreenHeight, Style.ScreenHeight / 1.8, Style.ScreenHeight / 1.35, Style.ScreenHeight / 1.1, Style.ScreenHeight / 1.25, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.44, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.3, Style.ScreenHeight / 1.27,Style.ScreenHeight / 1.5, Style.ScreenHeight / 1.3 ,Style.ScreenHeight / 1.75, Style.ScreenHeight / 1.17, Style.ScreenHeight / 1.5]
     
     override
     func viewDidLoad() {

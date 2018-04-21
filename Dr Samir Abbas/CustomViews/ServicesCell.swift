@@ -66,7 +66,7 @@ class ServicesCell :UITableViewCell {
         let circle = UIView()
         circle.tg_height.equal(Style.Height30)
         circle.tg_width.equal(Style.Height30)
-        circle.backgroundColor = UIColor().HexToColor(hexString: "#70d8cf")
+        circle.backgroundColor = UIColor().HexToColor(hexString: "#3c7fd1")
         circle.tg_centerX.equal(0)
         circle.tg_centerY.equal(0)
         circle.layer.cornerRadius = Style.Height30 / 2
