@@ -40,6 +40,7 @@
 		754DB5DC208B20A400673B46 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5DB208B20A400673B46 /* FloatLabelTextField.swift */; };
 		754DB5DE208B31FE00673B46 /* SummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5DD208B31FE00673B46 /* SummaryVC.swift */; };
 		754DB5E0208B563100673B46 /* ConfirmationCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5DF208B563100673B46 /* ConfirmationCV.swift */; };
+		754DB5E2208B71A100673B46 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5E1208B71A100673B46 /* Localizable.swift */; };
 		75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD4207930CB00D5B6FC /* AppDelegate.swift */; };
 		75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD6207930CB00D5B6FC /* ViewController.swift */; };
 		75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75655FD8207930CB00D5B6FC /* Main.storyboard */; };
@@ -86,6 +87,10 @@
 		75964C0F2083A3110098D183 /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C0E2083A3110098D183 /* ViewPager.swift */; };
 		75964C112083BC5A0098D183 /* ServicesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C102083BC5A0098D183 /* ServicesListVC.swift */; };
 		75964C132083BFFC0098D183 /* ServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C122083BFFC0098D183 /* ServicesCell.swift */; };
+		75F00A2C208B791D00838BD6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75F00A2B208B791D00838BD6 /* Localizable.strings */; };
+		75F00A2F208B7AD600838BD6 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F00A2E208B7AD600838BD6 /* Test.swift */; };
+		75F00A31208B7B5700838BD6 /* SectionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F00A30208B7B5700838BD6 /* SectionFactory.swift */; };
+		75F00A33208B7B7900838BD6 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F00A32208B7B7900838BD6 /* SectionViewController.swift */; };
 		75F2176B2085FF0900430419 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2176A2085FF0900430419 /* BaseView.swift */; };
 		75F2176D2085FF5400430419 /* LinearLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2176C2085FF5400430419 /* LinearLayout.swift */; };
 		75F2176F2085FFA000430419 /* RelativeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2176E2085FFA000430419 /* RelativeLayout.swift */; };
@@ -169,6 +174,7 @@
 		754DB5DB208B20A400673B46 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		754DB5DD208B31FE00673B46 /* SummaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryVC.swift; sourceTree = "<group>"; };
 		754DB5DF208B563100673B46 /* ConfirmationCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCV.swift; sourceTree = "<group>"; };
+		754DB5E1208B71A100673B46 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		75655FD1207930CB00D5B6FC /* Dr Samir Abbas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr Samir Abbas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75655FD4207930CB00D5B6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75655FD6207930CB00D5B6FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +212,10 @@
 		75964C0E2083A3110098D183 /* ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
 		75964C102083BC5A0098D183 /* ServicesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListVC.swift; sourceTree = "<group>"; };
 		75964C122083BFFC0098D183 /* ServicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCell.swift; sourceTree = "<group>"; };
+		75F00A2B208B791D00838BD6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		75F00A2E208B7AD600838BD6 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		75F00A30208B7B5700838BD6 /* SectionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFactory.swift; sourceTree = "<group>"; };
+		75F00A32208B7B7900838BD6 /* SectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		75F2176A2085FF0900430419 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		75F2176C2085FF5400430419 /* LinearLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearLayout.swift; sourceTree = "<group>"; };
 		75F2176E2085FFA000430419 /* RelativeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeLayout.swift; sourceTree = "<group>"; };
@@ -342,6 +352,7 @@
 				75655FE0207930CB00D5B6FC /* LaunchScreen.storyboard */,
 				75655FE3207930CB00D5B6FC /* Info.plist */,
 				75655FDB207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld */,
+				75F00A2B208B791D00838BD6 /* Localizable.strings */,
 			);
 			path = "Dr Samir Abbas";
 			sourceTree = "<group>";
@@ -383,6 +394,7 @@
 				7510A9F8208A02B50077008E /* PatientDetailsVC.swift */,
 				754DB5DD208B31FE00673B46 /* SummaryVC.swift */,
 				754DB5DF208B563100673B46 /* ConfirmationCV.swift */,
+				75F00A2E208B7AD600838BD6 /* Test.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -393,6 +405,9 @@
 				756560232079358800D5B6FC /* DialogBox.swift */,
 				75656025207935A600D5B6FC /* Style.swift */,
 				75656027207935C300D5B6FC /* ContructDialog.swift */,
+				754DB5E1208B71A100673B46 /* Localizable.swift */,
+				75F00A30208B7B5700838BD6 /* SectionFactory.swift */,
+				75F00A32208B7B7900838BD6 /* SectionViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -523,7 +538,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 75655FC8207930CB00D5B6FC;
@@ -543,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75F00A2C208B791D00838BD6 /* Localizable.strings in Resources */,
 				75655FE2207930CB00D5B6FC /* LaunchScreen.storyboard in Resources */,
 				75655FDF207930CB00D5B6FC /* Assets.xcassets in Resources */,
 				75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */,
@@ -652,6 +667,7 @@
 				754A35E8207B895100F59C9C /* DPLeftMenuViewController.swift in Sources */,
 				75964C002080B34D0098D183 /* SpecialistDoctorListVC.swift in Sources */,
 				75656031207A249B00D5B6FC /* DTTextField.swift in Sources */,
+				754DB5E2208B71A100673B46 /* Localizable.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
 				754DB5DC208B20A400673B46 /* FloatLabelTextField.swift in Sources */,
 				75964BFC207F5D120098D183 /* TimeSlotCell.swift in Sources */,
@@ -669,6 +685,7 @@
 				75964BFE2080ABD70098D183 /* Specialization.swift in Sources */,
 				75F68395207CC1EA004B90EE /* UIDropDown.swift in Sources */,
 				754A35EC207B89B500F59C9C /* DPMenuButton.swift in Sources */,
+				75F00A2F208B7AD600838BD6 /* Test.swift in Sources */,
 				75656028207935C300D5B6FC /* ContructDialog.swift in Sources */,
 				754A35EA207B897800F59C9C /* DPLeftPageViewController.swift in Sources */,
 				754A35D0207B798000F59C9C /* ASHorizontalScrollView.swift in Sources */,
@@ -683,9 +700,11 @@
 				754A35F0207B89F800F59C9C /* DPRightMenuViewCOntroller.swift in Sources */,
 				754A35E0207B88E000F59C9C /* DPDropShadowView.swift in Sources */,
 				7510A9FB208A7B580077008E /* SlotData.swift in Sources */,
+				75F00A33208B7B7900838BD6 /* SectionViewController.swift in Sources */,
 				7565602A20794A4A00D5B6FC /* NavigationVC.swift in Sources */,
 				756560212079352700D5B6FC /* BaseVC.swift in Sources */,
 				7510A9ED2087A74A0077008E /* ContactUsVC.swift in Sources */,
+				75F00A31208B7B5700838BD6 /* SectionFactory.swift in Sources */,
 				75F2176B2085FF0900430419 /* BaseView.swift in Sources */,
 				754A35E6207B893700F59C9C /* DPLeftContentViewController.swift in Sources */,
 				7510A9F9208A02B50077008E /* PatientDetailsVC.swift in Sources */,
@@ -757,6 +776,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -814,6 +834,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

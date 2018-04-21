@@ -213,8 +213,8 @@ final class Appearance {
     var headerTitleColor = UIColor.black
     var headerColor = UIColor.white
     var headerSeparatorColor = UIColor.black
-    var headerArrowImageOpened = #imageLiteral(resourceName: "carat")
-    var headerArrowImageClosed = #imageLiteral(resourceName: "carat-open")
+    var headerArrowImageOpened = #imageLiteral(resourceName: "Sort Down Filled-30-2")
+    var headerArrowImageClosed = #imageLiteral(resourceName: "Sort Right Filled-30-2")
     
 }
 

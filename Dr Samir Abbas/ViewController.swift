@@ -63,15 +63,16 @@ class ViewController: UIViewController {
     
     @objc
     func english(){
+        Language.language = Language.english
         let nav = MasterVC()
         present(nav, animated: true, completion: nil)
     }
     
     @objc
     func arabic(){
-        let time = ConfirmationVC()
-        //let time = MasterVC()
-        present(time, animated: true, completion: nil)
+        Language.language = Language.arabic
+        let nav = MasterVC()
+        present(nav, animated: true, completion: nil)
     }
 }
 

@@ -15,7 +15,7 @@ class LeftSlideMenuVC : DPBaseEmbedViewController{
     
     var images = [#imageLiteral(resourceName: "nav_home"), #imageLiteral(resourceName: "nav_about_us"),#imageLiteral(resourceName: "nav_services"),#imageLiteral(resourceName: "nav_gallery"), #imageLiteral(resourceName: "nav_share_app"),#imageLiteral(resourceName: "nav_contact_us")]
     
-    var titles = ["HOME", "ABOUT US", "SERVICES", "GALLERY", "SHARE APP", "CONTACT US"]
+    var titles = ["Home".localizedString, "About Us".localizedString, "Services".localizedString, "Gallery".localizedString, "Share app".localizedString, "Contact Us".localizedString]
     
     
     override init(nibName nibNameOrNil: String?,
