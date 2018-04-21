@@ -21,6 +21,8 @@ class PatientDetailsVC : BaseVC {
     var nid : TextField!
     var ins : TextField!
     
+    var selectedDate : String!
+    
     var fields = ["Name", "Mobile No", "National Id/QMA", "Insurance Number"]
     var images = [#imageLiteral(resourceName: "patient_name"), #imageLiteral(resourceName: "mobile"), #imageLiteral(resourceName: "national_id"), #imageLiteral(resourceName: "insurance_no")]
     
@@ -137,7 +139,7 @@ class PatientDetailsVC : BaseVC {
         nextBtn.tg_centerX.equal(0)
         nextBtn.tg_top.equal(Style.ScreenHeight - Style.Height48)
         view.addSubview(nextBtn)
-        
+        menuButton.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
         view.backgroundColor = Style.BackgroundColor
         
     }
@@ -256,6 +258,17 @@ class PatientDetailsVC : BaseVC {
             return
         }
         
+        let vc = SummaryVC()
+        vc.doctor = doctor
+        vc.specilization = specilization
+        vc.selectedTime = slot.getProperTime()
+        vc.selectedDate = selectedDate
+        vc.name = name.text
+        vc.no = number.text
+        vc.nid = nid.text
+        vc.ins = ins.text
+        vc.slot = slot
+        present(vc, animated: true, completion: nil)
         
     }
 }

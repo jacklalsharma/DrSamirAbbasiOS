@@ -38,6 +38,8 @@
 		754A35F6207B8A5100F59C9C /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F5207B8A5100F59C9C /* ScreenType.swift */; };
 		754A35F8207BACE400F59C9C /* LeftSlideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */; };
 		754DB5DC208B20A400673B46 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5DB208B20A400673B46 /* FloatLabelTextField.swift */; };
+		754DB5DE208B31FE00673B46 /* SummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5DD208B31FE00673B46 /* SummaryVC.swift */; };
+		754DB5E0208B563100673B46 /* ConfirmationCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5DF208B563100673B46 /* ConfirmationCV.swift */; };
 		75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD4207930CB00D5B6FC /* AppDelegate.swift */; };
 		75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD6207930CB00D5B6FC /* ViewController.swift */; };
 		75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75655FD8207930CB00D5B6FC /* Main.storyboard */; };
@@ -165,6 +167,8 @@
 		754A35F5207B8A5100F59C9C /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 		754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSlideMenuVC.swift; sourceTree = "<group>"; };
 		754DB5DB208B20A400673B46 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
+		754DB5DD208B31FE00673B46 /* SummaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryVC.swift; sourceTree = "<group>"; };
+		754DB5DF208B563100673B46 /* ConfirmationCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCV.swift; sourceTree = "<group>"; };
 		75655FD1207930CB00D5B6FC /* Dr Samir Abbas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr Samir Abbas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75655FD4207930CB00D5B6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75655FD6207930CB00D5B6FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 				7510A9EC2087A74A0077008E /* ContactUsVC.swift */,
 				7510A9EE2088A2170077008E /* AboutUsVC.swift */,
 				7510A9F8208A02B50077008E /* PatientDetailsVC.swift */,
+				754DB5DD208B31FE00673B46 /* SummaryVC.swift */,
+				754DB5DF208B563100673B46 /* ConfirmationCV.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 				753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */,
 				754A35D8207B884100F59C9C /* DPBaseEmbedViewController.swift in Sources */,
 				756560242079358800D5B6FC /* DialogBox.swift in Sources */,
+				754DB5DE208B31FE00673B46 /* SummaryVC.swift in Sources */,
 				754A35DC207B889000F59C9C /* DPCOnst.swift in Sources */,
 				75656035207A7FD700D5B6FC /* TimeSlotVC.swift in Sources */,
 				7510A9F52089B9140077008E /* AccordionTableViewController.swift in Sources */,
@@ -669,6 +676,7 @@
 				75F68393207CBB2D004B90EE /* SearchDoctorVC.swift in Sources */,
 				75F2176F2085FFA000430419 /* RelativeLayout.swift in Sources */,
 				75F2176D2085FF5400430419 /* LinearLayout.swift in Sources */,
+				754DB5E0208B563100673B46 /* ConfirmationCV.swift in Sources */,
 				75F68391207BDB15004B90EE /* MenuCell.swift in Sources */,
 				75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */,
 				75F6838F207BD475004B90EE /* SlideMenuController.swift in Sources */,

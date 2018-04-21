@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     
     @objc
     func arabic(){
-        let time = TimeSlotVC()
+        let time = ConfirmationVC()
         //let time = MasterVC()
         present(time, animated: true, completion: nil)
     }

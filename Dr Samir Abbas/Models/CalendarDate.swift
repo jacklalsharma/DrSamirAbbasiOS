@@ -13,6 +13,8 @@ class CalendarDate {
     var month : String = "1"
     var year : String = "1"
     
+    var properDate : String!
+    
     func getDate()->String{
         var date = year;
         date.append("-")

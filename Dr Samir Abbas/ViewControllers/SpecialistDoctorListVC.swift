@@ -148,8 +148,10 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
         
         if(doctors.data.doctors[indexPath.row].isAvailableToday == true){
             cell.available.isHidden = false;
+            cell.available.textColor = Style.AccentColor
         }else{
-            cell.available.isHidden = true;
+            cell.available.isHidden = false;
+            cell.available.textColor = .white
         }
         
         var docName = "Dr "

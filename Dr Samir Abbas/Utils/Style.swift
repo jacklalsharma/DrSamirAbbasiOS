@@ -69,6 +69,7 @@ class Style{
     
     static let TextSize14 = UIScreen.main.bounds.height / 61.33
 
+    static let Height10 = UIScreen.main.bounds.height / 73.6
     
 }
 

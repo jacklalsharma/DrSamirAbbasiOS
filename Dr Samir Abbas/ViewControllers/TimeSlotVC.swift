@@ -41,6 +41,7 @@ class TimeSlotVC : BaseVC{
     
     var selectedSlot : SlotData!
     var allSlots = [SlotData]()
+    var selectedDate : String!
     
     override
     func viewDidLoad() {
@@ -293,6 +294,7 @@ class TimeSlotVC : BaseVC{
         patient.doctor = doctor
         patient.specilization = specilization
         patient.slot = selectedSlot
+        patient.selectedDate = selectedDate
         present(patient, animated: true, completion: nil)
     }
     
@@ -367,6 +369,12 @@ class TimeSlotVC : BaseVC{
             cal.year = year
             cal.month = month
             cal.day = day
+            var str = day
+            str.append(" ")
+            str.append(date.getMonthName())
+            str.append(" ")
+            str.append(year)
+            cal.properDate = str
             dates.append(cal)
             horizontalScrollView.addItem(getVehicleCell(data : cal, tag : index))
             date = date.add(days: 1)
@@ -417,10 +425,6 @@ class TimeSlotVC : BaseVC{
             btns[tag].backgroundColor = UIColor().HexToColor(hexString: "#3c7fd1")
             texts[tag].textColor = .white
         }
-        
-        
-        
-        
         return uiView;
     }
     
@@ -443,6 +447,7 @@ class TimeSlotVC : BaseVC{
             btns[i].backgroundColor = .white
             texts[i].textColor = Style.TextColor
         }
+        selectedDate = dates[sender.tag].properDate
         getAppointmentSlots(position : sender.tag)
     }
     
@@ -464,7 +469,7 @@ class TimeSlotVC : BaseVC{
         texts[position].textColor = .white
         let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting appointment slots", dialogMessage: "Please wait while we are getting appointment slots...")
         present(dialogBox, animated: true, completion: nil)
-        
+        self.selectedDate = dates[position].properDate
         var url = "http://www.bhavikagarwal.com/booking/apis/get_doctor_schedule_slots?doctor_id="
         url.append(String(doctor.id))
         url.append("&")
@@ -768,6 +773,7 @@ class TimeSlotVC : BaseVC{
         }
         slotButtons[sender.tag].backgroundColor = Style.AccentColor
         slotTexts[sender.tag].textColor = .white
+        print(allSlots[sender.tag].id)
     }
     
 }

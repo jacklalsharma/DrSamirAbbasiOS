@@ -48,7 +48,7 @@ class DialogBox : UIViewController{
         
         if(progressDialog!){
             let titleLabel: UILabel = UILabel()
-            let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 17)]
+            let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize18)]
             let attributedString = NSMutableAttributedString(string: progressTitle!, attributes:attrs)
             titleLabel.attributedText = attributedString
             titleLabel.textColor = .white
@@ -59,7 +59,7 @@ class DialogBox : UIViewController{
             
             
             let messageLabel: UILabel = UILabel()
-            let attrs2 = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 15)]
+            let attrs2 = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
             let attributedString2 = NSMutableAttributedString(string: progressMessage!, attributes:attrs2)
             messageLabel.attributedText = attributedString2
             messageLabel.textColor = .white
