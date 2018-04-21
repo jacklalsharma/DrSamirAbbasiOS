@@ -45,8 +45,8 @@ class ViewController: UIViewController {
     }
     
     //Returns the raised button for bottom bar...
-    func getRaisedButton(title : String, isEnglish : Bool) -> FlatButton{
-        let btn = FlatButton(title : title,  titleColor : .white)
+    func getRaisedButton(title : String, isEnglish : Bool) -> TGRelativeLayout{
+        let btn = FlatButton(title : "",  titleColor : .white)
         
         btn.pulseColor = .white ;
         btn.tg_width.equal(UIScreen.main.bounds.width/2)
@@ -58,7 +58,28 @@ class ViewController: UIViewController {
         }else{
             btn.addTarget(self, action: #selector(arabic), for: .touchUpInside)
         }
-        return btn ;
+        
+        let main = TGRelativeLayout()
+        main.tg_width.equal(UIScreen.main.bounds.width/2)
+        main.tg_centerX.equal(0)
+        main.tg_height.equal(Style.Height48)
+        main.addSubview(btn)
+        let label = getUILabel(text: title, size: Style.TextSize18, textColor: .white)
+        label.tg_centerX.equal(0)
+        label.tg_centerY.equal(0)
+        main.addSubview(label)
+        return main ;
+    }
+    
+    func getUILabel(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
+        let label = UILabel()
+        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: size)]
+        let attributedString = NSMutableAttributedString(string: text, attributes:attrs)
+        label.tg_width.equal(.wrap)
+        label.tg_height.equal(.wrap)
+        label.textColor = textColor
+        label.attributedText = attributedString
+        return label
     }
     
     @objc

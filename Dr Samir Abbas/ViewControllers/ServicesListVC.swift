@@ -130,7 +130,7 @@ class ServicesListVC : BaseVC , UITableViewDataSource, UITableViewDelegate{
             if(status[i] == true){
                 status[i] = false
                 let indexPath = IndexPath(item: i, section: 0)
-                list.reloadRows(at: [indexPath], with: .top)
+                list.reloadRows(at: [indexPath], with: .fade)
             }
             status[i] = false
             //Collapse that view...
@@ -141,7 +141,7 @@ class ServicesListVC : BaseVC , UITableViewDataSource, UITableViewDelegate{
         //descImage[sender.tag].isHidden = false
         //list.reloadRows(at: [indexPath], with: UITableViewRowAnimation.bottom)
         let indexPath = IndexPath(item: sender.tag, section: 0)
-        list.reloadRows(at: [indexPath], with: .top)
+        list.reloadRows(at: [indexPath], with: .fade)
         //list.reloadData()
     }
     
@@ -150,8 +150,19 @@ class ServicesListVC : BaseVC , UITableViewDataSource, UITableViewDelegate{
         var cell:ServicesCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ServicesCell
         var val = heading[indexPath.row]
         cell.firstLetter.text = String (val[val.startIndex])
-        cell.routeName.text = val
-        cell.desc.text = descHeadings[indexPath.row]
+        
+        
+        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize18)]
+        let attributedString = NSMutableAttributedString(string: val, attributes:attrs)
+        cell.routeName.attributedText = attributedString
+
+        
+        let attrs2 = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize18)]
+        let attributedString2 = NSMutableAttributedString(string: descHeadings[indexPath.row], attributes:attrs2)
+        
+        
+        
+        cell.desc.attributedText = attributedString2
         if(status[indexPath.row]){
             cell.headingImage.isHidden = false
             cell.headingImage.image = images[indexPath.row]

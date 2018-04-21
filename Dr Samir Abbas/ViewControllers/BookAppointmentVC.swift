@@ -47,15 +47,26 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         relative.addSubview(strip)
         //....
         
-        let search = RaisedButton(title: "Search a doctor", titleColor: Style.TextColor)
+        let search = RaisedButton(title: "", titleColor: Style.TextColor)
         search.tg_width.equal(UIScreen.main.bounds.width - 40)
         search.tg_height.equal(Style.Height48)
         search.addTarget(self, action: #selector(searchDoctor), for: .touchUpInside)
+        
+        let chooseLabel2 = UILabel()
+        chooseLabel2.tg_width.equal(UIScreen.main.bounds.width)
+        chooseLabel2.tg_height.equal(Style.Height48)
+        let attrs2 = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize18)]
+        let attributedString2 = NSMutableAttributedString(string: "Search a doctor", attributes:attrs2)
+        chooseLabel2.attributedText = attributedString2
+        chooseLabel2.tg_centerX.equal(0)
+        chooseLabel2.textAlignment = .center
+        chooseLabel2.textColor = Style.TextColor
         
         let searchLayout = TGRelativeLayout()
         searchLayout.tg_width.equal(UIScreen.main.bounds.width - 40)
         searchLayout.tg_height.equal(Style.Height48)
         searchLayout.addSubview(search)
+        searchLayout.addSubview(chooseLabel2)
         searchLayout.tg_centerX.equal(0)
         searchLayout.tg_top.equal(20)
 
@@ -80,7 +91,9 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         let chooseLabel = UILabel()
         chooseLabel.tg_width.equal(UIScreen.main.bounds.width)
         chooseLabel.tg_height.equal(Style.Height48)
-        chooseLabel.text = "Choose Speciality"
+        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize18)]
+        let attributedString = NSMutableAttributedString(string: "Choose Speciality", attributes:attrs)
+        chooseLabel.attributedText = attributedString
         chooseLabel.tg_centerX.equal(0)
         chooseLabel.textAlignment = .center
         chooseLabel.tg_top.equal(8)
@@ -126,7 +139,9 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         var cell:SpecialityCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SpecialityCell
         var val = specialization.data.specializations[indexPath.row].name
-        cell.routeName.text = val
+        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize16)]
+        let attributedString = NSMutableAttributedString(string: val, attributes:attrs)
+        cell.routeName.attributedText = attributedString
         cell.firstLetter.text = String (val[val.startIndex])
         cell.button.tag = indexPath.row
         cell.button.addTarget(self, action: #selector(self.specialitiClicked(sender:)), for: .touchUpInside)

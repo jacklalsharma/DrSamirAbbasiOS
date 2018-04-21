@@ -78,12 +78,12 @@ class NavigationVC : BaseVC {
         let img = UIImageView(frame: CGRect(x: 0, y: 0, width: Style.Width50, height: Style.Height65))
         img.image = #imageLiteral(resourceName: "ic_aapointment")
         img.tg_centerX.equal(0)
-        img.tg_top.equal(10)
+        img.tg_top.equal(Style.Height20)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = getUILabel(text: "Book An Appointment", size: Style.TextSize20, textColor: Style.TextColor)
+        let bookLabel = getUILabelBold(text: "Book An Appointment", size: Style.TextSize20, textColor: Style.TextColor)
         bookLabel.tg_centerX.equal(0)
-        bookLabel.tg_top.equal(12)
+        bookLabel.tg_top.equal(Style.Height20)
         
         let bookBtn = FlatButton(title: "", titleColor: .white)
         bookBtn.tg_width.equal(UIScreen.main.bounds.width - 40)
@@ -187,28 +187,37 @@ class NavigationVC : BaseVC {
         bookAppt.addSubview(bookBtn)
         
         if(position == 0){
-            bookLabel.text = "Doctors"
+            let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
+            let attributedString = NSMutableAttributedString(string: "Doctors", attributes:attrs)
+
+            bookLabel.attributedText = attributedString
             bookAppt.tg_right.equal(5)
             img.image = #imageLiteral(resourceName: "ic_doctors")
             bookBtn.addTarget(self, action: #selector(doctors), for: .touchUpInside)
         }else if(position == 1){
-            bookLabel.text = "Services"
+            let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
+            let attributedString = NSMutableAttributedString(string: "Services", attributes:attrs)
+            bookLabel.attributedText = attributedString
             img.image = #imageLiteral(resourceName: "ic_services")
             bookBtn.addTarget(self, action: #selector(services), for: .touchUpInside)
         }else if(position == 2){
             bookAppt.tg_right.equal(5)
-            bookLabel.text = "Gallery"
+            let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
+            let attributedString = NSMutableAttributedString(string: "Gallery", attributes:attrs)
+            bookLabel.attributedText = attributedString
             img.image = #imageLiteral(resourceName: "ic_gallery")
             bookBtn.addTarget(self, action: #selector(gallery), for: .touchUpInside)
         }else if(position == 3){
-            bookLabel.text = "Contact us"
+            let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
+            let attributedString = NSMutableAttributedString(string: "Contact Us", attributes:attrs)
+            bookLabel.attributedText = attributedString
             img.image = #imageLiteral(resourceName: "contacticon")
             bookBtn.addTarget(self, action: #selector(facilities), for: .touchUpInside)
         }
         return bookAppt
     }
     
-    func getUILabel(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
+    func getUILabelBold(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
         let label = UILabel()
         let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: size)]
         let attributedString = NSMutableAttributedString(string: text, attributes:attrs)
@@ -218,6 +227,19 @@ class NavigationVC : BaseVC {
         label.attributedText = attributedString
         return label
     }
+    
+    func getUILabel(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
+        let label = UILabel()
+        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: size)]
+        let attributedString = NSMutableAttributedString(string: text, attributes:attrs)
+        label.tg_width.equal(.wrap)
+        label.tg_height.equal(.wrap)
+        label.textColor = textColor
+        label.attributedText = attributedString
+        return label
+    }
+    
+    
     
     @objc
     func toggleMenu(){
