@@ -262,7 +262,7 @@ class TimeSlotVC : BaseVC{
     func nextButton()->TGRelativeLayout{
         let main = TGRelativeLayout()
         let flat = RaisedButton(title: "", titleColor: .white)
-        flat.tg_width.equal(Style.Width80)
+        flat.tg_width.equal(Style.Width80 + Style.Width30)
         flat.tg_height.equal(Style.Height30)
         
         let text = getUILabel(text: "Book", size: Style.TextSize18, textColor: Style.AccentColor)

@@ -184,7 +184,7 @@ class SummaryVC : BaseVC{
     func nextButton()->TGRelativeLayout{
         let main = TGRelativeLayout()
         let flat = RaisedButton(title: "", titleColor: .white)
-        flat.tg_width.equal(Style.Width90)
+        flat.tg_width.equal(Style.Width80 + Style.Width30)
         flat.tg_height.equal(Style.Height30)
         
         let text = getUILabel(text: "CONFIRM", size: Style.TextSize18, textColor: Style.AccentColor)
