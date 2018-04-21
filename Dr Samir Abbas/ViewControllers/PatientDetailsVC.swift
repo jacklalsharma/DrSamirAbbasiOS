@@ -14,6 +14,15 @@ class PatientDetailsVC : BaseVC {
     
     var doctor : Doctor!
     var specilization : String!
+    var slot : SlotData!
+    
+    var name : TextField!
+    var number : TextField!
+    var nid : TextField!
+    var ins : TextField!
+    
+    var fields = ["Name", "Mobile No", "National Id/QMA", "Insurance Number"]
+    var images = [#imageLiteral(resourceName: "patient_name"), #imageLiteral(resourceName: "mobile"), #imageLiteral(resourceName: "national_id"), #imageLiteral(resourceName: "insurance_no")]
     
     override
     func viewDidLoad() {
@@ -21,7 +30,7 @@ class PatientDetailsVC : BaseVC {
         
         let linear = TGLinearLayout(.vert)
         linear.tg_width.equal(UIScreen.main.bounds.width)
-        linear.tg_height.equal(.wrap)
+        linear.tg_height.equal(UIScreen.main.bounds.height)
         linear.backgroundColor = Style.BackgroundColor
         linear.addSubview(getToolbar(title: "Patient Details", isBackMenu: true, addSpinner : false))
         var image = UIImage(named: "strip.png")
@@ -48,6 +57,8 @@ class PatientDetailsVC : BaseVC {
         let profile = UIImageView(frame: CGRect(x: 0, y: 0, width: Style.Width45, height: Style.Height45))
         profile.image = image2
         profile.contentMode = UIViewContentMode.scaleAspectFill
+        let url = URL(string: doctor.profilePictureURL)
+        profile.kf.setImage(with: url)
         //....
         
         //Left view...
@@ -56,7 +67,7 @@ class PatientDetailsVC : BaseVC {
         leftLinear.tg_height.equal(.wrap)
         leftLinear.addSubview(profile)
         leftLinear.tg_centerY.equal(0)
-        leftLinear.addSubview(getUILabel(text: doctor.degree, size: 18, textColor: Style.TextColor))
+        leftLinear.addSubview(getUILabel(text: doctor.degree, size: Style.TextSize18, textColor: Style.TextColor))
         leftLinear.tg_left.equal(Style.Height30)
         doctorLayout.addSubview(leftLinear)
         //....
@@ -68,9 +79,9 @@ class PatientDetailsVC : BaseVC {
         rightLinear.tg_centerY.equal(0)
         var drName = "Dr "
         drName.append(doctor.name)
-        rightLinear.addSubview(getUILabel(text: drName, size: 18, textColor: Style.TextColor))
-        rightLinear.addSubview(getUILabel(text: specilization, size: 18, textColor: Style.TextColor))
-        let available = getUILabel(text: "Available Today", size: 16, textColor: Style.AccentColor)
+        rightLinear.addSubview(getUILabel(text: drName, size: Style.TextSize18, textColor: Style.TextColor))
+        rightLinear.addSubview(getUILabel(text: specilization, size: Style.TextSize18, textColor: Style.TextColor))
+        let available = getUILabel(text: "Available Today", size: Style.TextSize16, textColor: Style.AccentColor)
         rightLinear.addSubview(available)
         
         if(doctor.isAvailableToday == false){
@@ -82,14 +93,105 @@ class PatientDetailsVC : BaseVC {
         //...
         
         linear.addSubview(doctorLayout)
+        
+        let nameLayout = TGLinearLayout(.vert)
+        nameLayout.tg_width.equal(Style.ScreenWidth - 40)
+        nameLayout.tg_height.equal(.wrap)
+        
+        nameLayout.addSubview(getUIImageView(sizeX: 5, sizeY: 10))
 
+        var heading = getUILabel(text: "ENTER PATIENT DETAILS", size: Style.TextSize18, textColor: Style.AccentColor)
+        heading.tg_centerX.equal(0)
+        nameLayout.addSubview(heading)
+        
+        //name = getEditText(position: 0)
+        nameLayout.addSubview(getUIImageView(sizeX: 5, sizeY: 15))
+
+        nameLayout.addSubview(getEditText(position: 0))
+        nameLayout.addSubview(getUIImageView(sizeX: 5, sizeY: 15))
+        //number = getEditText(position: 1)
+        nameLayout.addSubview(getEditText(position: 1))
+        nameLayout.addSubview(getUIImageView(sizeX: 5, sizeY: 15))
+
+        //nid = getEditText(position: 2)
+        nameLayout.addSubview(getEditText(position: 2))
+        nameLayout.addSubview(getUIImageView(sizeX: 5, sizeY: 15))
+
+        //ins = getEditText(position: 3)
+        nameLayout.addSubview(getEditText(position: 3))
+        nameLayout.addSubview(getUIImageView(sizeX: 5, sizeY: 25))
+
+        
+        nameLayout.tg_centerX.equal(0)
+        
+        linear.addSubview(nameLayout)
+        
+        nameLayout.tg_top.equal(Style.Height20)
+        nameLayout.backgroundColor = .white
+        
+        
+        
         view.addSubview(linear)
         
+        let nextBtn = nextButton()
+        nextBtn.tg_centerX.equal(0)
+        nextBtn.tg_top.equal(Style.ScreenHeight - Style.Height48)
+        view.addSubview(nextBtn)
+        
+        view.backgroundColor = Style.BackgroundColor
+        
+    }
+    
+    func getEditText(position : Int)->TGLinearLayout{
+        let name = TextField()
+        name.tg_width.equal(Style.ScreenWidth - Style.Width90)
+        name.tg_height.equal(Style.Height30 + 5)
+        name.placeholder = fields[position]
+        name.detail = ""
+        name.isClearIconButtonEnabled = true
+        name.isPlaceholderUppercasedWhenEditing = true
+        name.placeholderAnimation = .hidden
+        name.tg_centerX.equal(0)
+        
+        let main = TGLinearLayout(.horz)
+        main.tg_width.equal(Style.ScreenWidth - 60)
+        main.tg_height.equal(Style.Height30 + 5)
+        main.addSubview(getFrontIcon(position: position))
+        main.addSubview(name)
+        if(position == 0){
+            self.name = name
+        }else if(position == 1){
+            self.number = name
+        }else if(position == 2){
+            self.nid = name
+        }else if(position == 3){
+            self.ins = name
+        }
+        return main
+    }
+    
+    func getFrontIcon(position : Int)->TGRelativeLayout{
+        let main = TGRelativeLayout()
+        main.tg_width.equal(Style.Height30 + 5)
+        main.tg_height.equal(Style.Height30 + 5)
+        
+        let img = getUIImageView(sizeX: Int(Style.Height25), sizeY: Int(Style.Height25))
+        img.tg_centerX.equal(0)
+        img.tg_centerY.equal(0)
+        //main.addSubview(main)
+        img.image = images[position]
+        main.addSubview(img)
+        return main
+    }
+    
+    @objc
+    func onBackPressed(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     func getUILabel(text : String, size : CGFloat, textColor : UIColor) -> UILabel{
         let label = UILabel()
-        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: size)]
+        let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: size)]
         let attributedString = NSMutableAttributedString(string: text, attributes:attrs)
         label.tg_width.equal(.wrap)
         label.tg_height.equal(.wrap)
@@ -105,5 +207,55 @@ class PatientDetailsVC : BaseVC {
         image.tg_centerX.equal(0)
         image.tg_centerY.equal(0)
         return image
+    }
+    
+    
+    
+    func nextButton()->TGRelativeLayout{
+        let main = TGRelativeLayout()
+        let flat = RaisedButton(title: "", titleColor: .white)
+        flat.tg_width.equal(Style.Width80)
+        flat.tg_height.equal(Style.Height30)
+        
+        let text = getUILabel(text: "NEXT", size: Style.TextSize18, textColor: Style.AccentColor)
+        text.tg_centerX.equal(0)
+        text.tg_centerY.equal(0)
+        
+        main.tg_width.equal(.wrap)
+        main.tg_height.equal(.wrap)
+        flat.addTarget(self, action: #selector(self.nextClick), for: .touchUpInside)
+        main.addSubview(flat)
+        main.tg_topBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.tg_bottomBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.tg_leftBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.tg_rightBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        //main.borderWidthPreset = TGBorderline.init(color: UIColorStyle.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.addSubview(text)
+        return main
+    }
+    
+    @objc
+    func nextClick(){
+        if(name.text?.characters.count == 0){
+            self.view.makeToast("Enter name")
+            return
+        }
+        
+        if(number.text?.characters.count == 0){
+            self.view.makeToast("Enter number")
+            return
+        }
+        
+        if(nid.text?.characters.count == 0){
+            self.view.makeToast("Enter National Id")
+            return
+        }
+        
+        if(ins.text?.characters.count == 0){
+            self.view.makeToast("Enter insurance number")
+            return
+        }
+        
+        
     }
 }

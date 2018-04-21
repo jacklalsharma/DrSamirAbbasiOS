@@ -8,6 +8,7 @@ PODS:
   - KYDrawerController (2.0.4)
   - MGRelativeKit (0.1.4)
   - ScrollableStackView (1.0.4)
+  - Toast-Swift (3.0.1)
   - UIDropDown (1.1.1)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - KYDrawerController
   - MGRelativeKit
   - ScrollableStackView
+  - Toast-Swift (~> 3.0.1)
   - UIDropDown
 
 SPEC CHECKSUMS:
@@ -24,8 +26,9 @@ SPEC CHECKSUMS:
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
   MGRelativeKit: 3139b31155ee93244d849661aeb62aa47088e270
   ScrollableStackView: 03a03bf514d3b8b770841172e3ea96a5e7e0ae64
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
 
-PODFILE CHECKSUM: b8db2002782b01a44afe1dfd1ac7063e310da9b9
+PODFILE CHECKSUM: 46ff2c3a7b573ff37a8062ba78251059bb719e82
 
 COCOAPODS: 1.4.0

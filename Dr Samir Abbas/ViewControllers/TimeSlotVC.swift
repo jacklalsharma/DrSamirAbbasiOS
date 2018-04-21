@@ -10,6 +10,7 @@ import Foundation
 import TangramKit
 import Material
 import Alamofire
+import Toast_Swift
 
 class TimeSlotVC : BaseVC{
     
@@ -19,6 +20,7 @@ class TimeSlotVC : BaseVC{
     var btns = [RaisedButton]()
     var texts = [UILabel]()
     var slotButtons = [RaisedButton]()
+    var slotTexts = [UILabel]()
     
     var list : UITableView!
     
@@ -33,12 +35,19 @@ class TimeSlotVC : BaseVC{
     
     var sessionHeight : CGFloat!
     
+    var fetched : Bool!
+    
+    var btnPosition : Int!
+    
+    var selectedSlot : SlotData!
+    var allSlots = [SlotData]()
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
+        btnPosition = -1
+        fetched = false
         constructUI()
-        getAppointmentSlots(position: 0)
-
     }
     
     func constructUI(){
@@ -117,7 +126,7 @@ class TimeSlotVC : BaseVC{
         //===============DAY SELECTOR===========
         let dayHolder = TGLinearLayout(.vert)
         dayHolder.tg_width.equal(UIScreen.main.bounds.width - Style.Width30)
-        dayHolder.tg_height.equal(.wrap)
+        dayHolder.tg_height.equal(Style.Height120 + Style.Height20)
         dayHolder.tg_top.equal(20)
         dayHolder.tg_backgroundImage = #imageLiteral(resourceName: "cal_background")
         dayHolder.tg_centerX.equal(0)
@@ -175,11 +184,13 @@ class TimeSlotVC : BaseVC{
         rightSwipe.tg_height.equal(.wrap)
         rightSwipe.tg_centerY.equal(0)
         daysLayout.addSubview(rightSwipe)
-        daysLayout.tg_bottom.equal(20)
+        //daysLayout.tg_bottom.equal(20)
         
         dayHolder.addSubview(daysLayout)
         dayHolder.tg_top.equal(Style.Height80 + Style.Height100)
-        
+        let today = getUILabel(text: "Today", size: Style.TextSize16, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        today.tg_left.equal(Style.Width20)
+        dayHolder.addSubview(today)
         
         
         
@@ -224,7 +235,7 @@ class TimeSlotVC : BaseVC{
         sessionsLayout.tg_top.equal(Style.Height80 + Style.Height90 + Style.Height110 + Style.Height50)
         
         
-        var ll = LinearLayout(width: MATCH_PARENT, height: Style.ScreenHeight * 1.2).vertical()
+        var ll = LinearLayout(width: MATCH_PARENT, height: Style.ScreenHeight * 1.5).vertical()
         ll.padding(left: 0, right: 0, top: 0, bottom: 0)
         ll.add(view: doctorLayout, w: MATCH_PARENT, h: Style.Height90)
         ll.add(view: dayHolder, w: MATCH_PARENT, h: Style.Height100)
@@ -236,8 +247,62 @@ class TimeSlotVC : BaseVC{
         scroll = ll.createScrollable()
         view.addSubview(scroll)
         view.addSubview(linear)
+        
+        let nextBtn = nextButton()
+        nextBtn.tg_centerX.equal(0)
+        nextBtn.tg_top.equal(Style.ScreenHeight - Style.Height48)
+        view.addSubview(nextBtn)
+        
         menuButton.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
         
+    }
+    
+    
+    func nextButton()->TGRelativeLayout{
+        let main = TGRelativeLayout()
+        let flat = RaisedButton(title: "", titleColor: .white)
+        flat.tg_width.equal(Style.Width80)
+        flat.tg_height.equal(Style.Height30)
+        
+        let text = getUILabel(text: "Book", size: Style.TextSize18, textColor: Style.AccentColor)
+        text.tg_centerX.equal(0)
+        text.tg_centerY.equal(0)
+        
+        main.tg_width.equal(.wrap)
+        main.tg_height.equal(.wrap)
+        flat.addTarget(self, action: #selector(self.nextClick), for: .touchUpInside)
+        main.addSubview(flat)
+        main.tg_topBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.tg_bottomBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.tg_leftBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.tg_rightBorderline = TGBorderline.init(color: Style.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        //main.borderWidthPreset = TGBorderline.init(color: UIColorStyle.AccentColor, thick: 5, dash: 0, headIndent: 0, tailIndent: 0, offset: 0)
+        main.addSubview(text)
+        return main
+    }
+    
+    @objc
+    func nextClick(){
+        print("HERE")
+        if(selectedSlot == nil){
+            self.view.makeToast("Select booking slot")
+            return
+        }
+        
+        let patient = PatientDetailsVC()
+        patient.doctor = doctor
+        patient.specilization = specilization
+        patient.slot = selectedSlot
+        present(patient, animated: true, completion: nil)
+    }
+    
+    override
+    func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if(fetched == false){
+            getAppointmentSlots(position: 0)
+            fetched = true
+        }
     }
     
     
@@ -348,6 +413,14 @@ class TimeSlotVC : BaseVC{
         uiView.tg_width.equal(Style.Height30)
         uiView.tg_height.equal(Style.Height30)
         uiView.addSubview(relativeLayout)
+        if(btnPosition == tag){
+            btns[tag].backgroundColor = UIColor().HexToColor(hexString: "#3c7fd1")
+            texts[tag].textColor = .white
+        }
+        
+        
+        
+        
         return uiView;
     }
     
@@ -370,9 +443,6 @@ class TimeSlotVC : BaseVC{
             btns[i].backgroundColor = .white
             texts[i].textColor = Style.TextColor
         }
-        scroll.removeFromSuperview()
-        linear.removeFromSuperview()
-        constructUI()
         getAppointmentSlots(position : sender.tag)
     }
     
@@ -389,6 +459,7 @@ class TimeSlotVC : BaseVC{
     }
     
     func getAppointmentSlots(position : Int){
+        btnPosition = position
         btns[position].backgroundColor = UIColor().HexToColor(hexString: "#3c7fd1")
         texts[position].textColor = .white
         let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting appointment slots", dialogMessage: "Please wait while we are getting appointment slots...")
@@ -405,6 +476,7 @@ class TimeSlotVC : BaseVC{
             dialogBox.dismiss(animated: true, completion: nil)
             
             if(response.result != nil){
+                self.selectedSlot = nil
                 if(response.result.value != nil){
                     let responseJSON = response.result.value as! [String:AnyObject]
                     
@@ -412,8 +484,14 @@ class TimeSlotVC : BaseVC{
                     if(success == 0){
                         print("NULL RESULT")
                         self.slots = nil
+                        self.btns.removeAll()
+                        self.texts.removeAll()
+                        self.dates.removeAll()
+                        self.slotButtons.removeAll()
+                        self.allSlots.removeAll()
                         self.linear.removeFromSuperview()
                         self.scroll.removeFromSuperview()
+                        self.slotTexts.removeAll()
                         self.constructUI()
                         return
                     }
@@ -424,6 +502,12 @@ class TimeSlotVC : BaseVC{
                     self.linear.removeFromSuperview()
                     self.scroll.removeFromSuperview()
                     self.scroll = nil
+                    self.btns.removeAll()
+                    self.texts.removeAll()
+                    self.dates.removeAll()
+                    self.allSlots.removeAll()
+                    self.slotButtons.removeAll()
+                    self.slotTexts.removeAll()
                     self.constructUI()
                 }else{
                     //Failed...
@@ -453,8 +537,8 @@ class TimeSlotVC : BaseVC{
         nightImage.tg_centerY.equal(0)
         
         let imageLayout = TGRelativeLayout()
-        imageLayout.tg_width.equal(Style.Height50)
-        imageLayout.tg_height.equal(Style.Height50)
+        imageLayout.tg_width.equal(Style.Height45)
+        imageLayout.tg_height.equal(Style.Height45)
         imageLayout.addSubview(nightImage)
         imageLayout.tg_centerY.equal(0)
         
@@ -463,7 +547,7 @@ class TimeSlotVC : BaseVC{
         let timingsLayout = TGLinearLayout(.vert)
         slotLayout.addSubview(timingsLayout)
         
-        timingsLayout.tg_width.equal(UIScreen.main.bounds.width - Style.Width30 - 20 - Style.Width45)
+        timingsLayout.tg_width.equal(UIScreen.main.bounds.width - Style.Width45  - Style.Width45)
         timingsLayout.tg_height.equal(.wrap)
         
         let timeSlots = TGLinearLayout(.vert)
@@ -475,41 +559,103 @@ class TimeSlotVC : BaseVC{
         if(self.slots != nil){
             if(position == 0){
                 if(slots.data?.slots?.morning != nil){
-                    for i in stride(from: 0, to: 10, by: 2) {
-                        print(i)
+                    let count: Int = (slots.data?.slots?.morning?.count)!
+                    if (count == 0){
+                        head.append("\n Not Available")
+                    }else{
+                        var startPos : Int = 0
+                        var endPos : Int = 0
+                        for i in 0..<count{
+                            if(i % 4 == 0 && i != 0){
+                                endPos = startPos + 4
+                                timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: endPos))
+                                print(startPos)
+                                startPos = startPos + 4
+                                print(endPos)
+                            }
+                        }
+                        if(startPos < count){
+                            timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: count - 1))
+                            
+                        }
                     }
-                    timeSlots.addSubview(getSlotRow(position: position))
-                    timeSlots.addSubview(getSlotRow(position: position))
+                    
                 }else{
                     head.append("\n Not Available")
                 }
             }else if(position == 1){
                 if(slots.data?.slots?.afternoon != nil){
-                    for i in stride(from: 0, to: 10, by: 2) {
-                        print(i)
+                    let count: Int = (slots.data?.slots?.afternoon?.count)!
+                    if (count == 0){
+                        head.append("\n Not Available")
+                    }else{
+                        var startPos : Int = 0
+                        var endPos : Int = 0
+                        for i in 0..<count{
+                            if(i % 4 == 0 && i != 0){
+                                endPos = startPos + 4
+                                timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: endPos))
+                                print(startPos)
+                                startPos = startPos + 4
+                                print(endPos)
+                            }
+                        }
+                        if(startPos < count){
+                            timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: count - 1))
+                            
+                        }
                     }
-                    timeSlots.addSubview(getSlotRow(position: position))
-                    timeSlots.addSubview(getSlotRow(position: position))
                 }else{
                     head.append("\n Not Available")
                 }
             }else if(position == 2){
                 if(slots.data?.slots?.evening != nil){
-                    for i in stride(from: 0, to: 10, by: 2) {
-                        print(i)
+                    
+                    let count: Int = (slots.data?.slots?.evening?.count)!
+                    if (count == 0){
+                        head.append("\n Not Available")
+                    }else{
+                        var startPos : Int = 0
+                        var endPos : Int = 0
+                        for i in 0..<count{
+                            if(i % 4 == 0 && i != 0){
+                                endPos = startPos + 4
+                                timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: endPos))
+                                print(startPos)
+                                startPos = startPos + 4
+                                print(endPos)
+                            }
+                        }
+                        if(startPos < count){
+                            timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: count - 1))
+                    
+                        }
                     }
-                    timeSlots.addSubview(getSlotRow(position: position))
-                    timeSlots.addSubview(getSlotRow(position: position))
                 }else{
                     head.append("\n Not Available")
                 }
             }else if(position == 3){
                 if(slots.data?.slots?.night != nil){
-                    for i in stride(from: 0, to: 10, by: 2) {
-                        print(i)
+                    let count: Int = (slots.data?.slots?.night?.count)!
+                    if (count == 0){
+                        head.append("\n Not Available")
+                    }else{
+                        var startPos : Int = 0
+                        var endPos : Int = 0
+                        for i in 0..<count{
+                            if(i % 4 == 0 && i != 0){
+                                endPos = startPos + 4
+                                timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: endPos))
+                                print(startPos)
+                                startPos = startPos + 4
+                                print(endPos)
+                            }
+                        }
+                        if(startPos < count){
+                            timeSlots.addSubview(getSlotRow(position: position, start: startPos, end: count - 1))
+                            
+                        }
                     }
-                    timeSlots.addSubview(getSlotRow(position: position))
-                    timeSlots.addSubview(getSlotRow(position: position))
                 }else{
                     head.append("\n Not Available")
                 }
@@ -548,7 +694,7 @@ class TimeSlotVC : BaseVC{
     
     
     
-    func getSlotRow(position : Int) -> ASHorizontalScrollView{
+    func getSlotRow(position : Int, start: Int, end : Int) -> ASHorizontalScrollView{
         
         let horizontalScrollView:ASHorizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - Style.Width90, height: Style.Height30))
         horizontalScrollView.marginSettings_320 = MarginSettings(leftMargin: 5, miniMarginBetweenItems: 1, miniAppearWidthOfLastItem: 20)
@@ -560,9 +706,23 @@ class TimeSlotVC : BaseVC{
         //horizontalScrollView.setItemsMarginOnce()
         
         
-        for index in 0..<5{
-            
-            horizontalScrollView.addItem(getTimeSlotCell(title : "9:20"))
+        for index in start..<(end + 1){
+            var info = SlotData()
+            if(position == 0){
+                info.id = (slots.data?.slots?.morning![index].id)!
+                info.time = (slots.data?.slots?.morning![index].startTime)!
+            }else if(position == 1){
+                info.id = (slots.data?.slots?.afternoon![index].id)!
+                info.time = (slots.data?.slots?.afternoon![index].startTime)!
+            }else if(position == 2){
+                info.id = (slots.data?.slots?.evening![index].id)!
+                info.time = (slots.data?.slots?.evening![index].startTime)!
+            }else if(position == 3){
+                info.id = (slots.data?.slots?.night![index].id)!
+                info.time = (slots.data?.slots?.night![index].startTime)!
+            }
+            allSlots.append(info)
+            horizontalScrollView.addItem(getTimeSlotCell(title : info.getTime()))
         }
         //horizontalScrollView.tg_centerX.equal(0)
         return horizontalScrollView;
@@ -591,8 +751,23 @@ class TimeSlotVC : BaseVC{
         layoutMain.addSubview(flat)
         layoutMain.addSubview(label)
         slotButtons.append(flat)
+        slotTexts.append(label)
+        flat.tag = slotButtons.count - 1
+        flat.addTarget(self, action: #selector(slotCellClick(sender:)), for: .touchUpInside)
 
         return layoutMain
+    }
+    
+    @objc
+    func slotCellClick(sender : UIButton){
+        print(allSlots[sender.tag].getTime())
+        selectedSlot = allSlots[sender.tag]
+        for i in 0..<allSlots.count{
+            slotButtons[i].backgroundColor = .white
+            slotTexts[i].textColor = Style.TextColor
+        }
+        slotButtons[sender.tag].backgroundColor = Style.AccentColor
+        slotTexts[sender.tag].textColor = .white
     }
     
 }

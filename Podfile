@@ -8,4 +8,5 @@ pod 'FSPagerView'
 pod "ScrollableStackView"
 pod 'MGRelativeKit'
 pod 'GoogleMaps'
+pod 'Toast-Swift', '~> 3.0.1'
 end

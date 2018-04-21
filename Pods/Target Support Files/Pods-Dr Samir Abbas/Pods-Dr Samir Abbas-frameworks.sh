@@ -138,6 +138,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MGRelativeKit/MGRelativeKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ScrollableStackView/ScrollableStackView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -145,6 +146,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MGRelativeKit/MGRelativeKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ScrollableStackView/ScrollableStackView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

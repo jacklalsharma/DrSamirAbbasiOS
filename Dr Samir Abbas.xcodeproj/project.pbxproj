@@ -37,6 +37,7 @@
 		754A35F4207B8A2F00F59C9C /* DPSlideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F3207B8A2F00F59C9C /* DPSlideMenuManager.swift */; };
 		754A35F6207B8A5100F59C9C /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F5207B8A5100F59C9C /* ScreenType.swift */; };
 		754A35F8207BACE400F59C9C /* LeftSlideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */; };
+		754DB5DC208B20A400673B46 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DB5DB208B20A400673B46 /* FloatLabelTextField.swift */; };
 		75655FD5207930CB00D5B6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD4207930CB00D5B6FC /* AppDelegate.swift */; };
 		75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75655FD6207930CB00D5B6FC /* ViewController.swift */; };
 		75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75655FD8207930CB00D5B6FC /* Main.storyboard */; };
@@ -163,6 +164,7 @@
 		754A35F3207B8A2F00F59C9C /* DPSlideMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPSlideMenuManager.swift; sourceTree = "<group>"; };
 		754A35F5207B8A5100F59C9C /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 		754A35F7207BACE400F59C9C /* LeftSlideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSlideMenuVC.swift; sourceTree = "<group>"; };
+		754DB5DB208B20A400673B46 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		75655FD1207930CB00D5B6FC /* Dr Samir Abbas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr Samir Abbas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75655FD4207930CB00D5B6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75655FD6207930CB00D5B6FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				7510A9F2208909F00077008E /* SlotCell.swift */,
 				7510A9F42089B9140077008E /* AccordionTableViewController.swift */,
 				7510A9F62089B9550077008E /* SectionHeaderView.xib */,
+				754DB5DB208B20A400673B46 /* FloatLabelTextField.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/MGRelativeKit/MGRelativeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableStackView/ScrollableStackView.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -577,6 +581,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGRelativeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableStackView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +647,7 @@
 				75964C002080B34D0098D183 /* SpecialistDoctorListVC.swift in Sources */,
 				75656031207A249B00D5B6FC /* DTTextField.swift in Sources */,
 				75655FD7207930CB00D5B6FC /* ViewController.swift in Sources */,
+				754DB5DC208B20A400673B46 /* FloatLabelTextField.swift in Sources */,
 				75964BFC207F5D120098D183 /* TimeSlotCell.swift in Sources */,
 				75964C0F2083A3110098D183 /* ViewPager.swift in Sources */,
 				753B8402207BD16C0001A0F6 /* MasterVC.swift in Sources */,

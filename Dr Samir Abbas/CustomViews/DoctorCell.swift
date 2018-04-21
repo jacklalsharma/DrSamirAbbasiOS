@@ -101,7 +101,7 @@ class DoctorCell : UITableViewCell {
         book.backgroundColor = UIColor().HexToColor(hexString: "#3c7fd0")
         extRightLinear.addSubview(btnLayout)
         available = getUILabel(text: "Available Today", size: Style.TextSize14, textColor: Style.AccentColor)
-        available.tg_top.equal(2)
+        available.tg_top.equal(5)
         extRightLinear.addSubview(available)
         doctorLayout.addSubview(extRightLinear)
         contentView.addSubview(doctorLayout)
