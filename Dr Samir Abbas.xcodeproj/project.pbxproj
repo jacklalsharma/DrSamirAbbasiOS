@@ -87,7 +87,7 @@
 		75964C0F2083A3110098D183 /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C0E2083A3110098D183 /* ViewPager.swift */; };
 		75964C112083BC5A0098D183 /* ServicesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C102083BC5A0098D183 /* ServicesListVC.swift */; };
 		75964C132083BFFC0098D183 /* ServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75964C122083BFFC0098D183 /* ServicesCell.swift */; };
-		75F00A2C208B791D00838BD6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75F00A2B208B791D00838BD6 /* Localizable.strings */; };
+		75EE36FB208CE1A6005A54C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75EE36F9208CE1A6005A54C1 /* Localizable.strings */; };
 		75F00A2F208B7AD600838BD6 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F00A2E208B7AD600838BD6 /* Test.swift */; };
 		75F00A31208B7B5700838BD6 /* SectionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F00A30208B7B5700838BD6 /* SectionFactory.swift */; };
 		75F00A33208B7B7900838BD6 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F00A32208B7B7900838BD6 /* SectionViewController.swift */; };
@@ -212,7 +212,8 @@
 		75964C0E2083A3110098D183 /* ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
 		75964C102083BC5A0098D183 /* ServicesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListVC.swift; sourceTree = "<group>"; };
 		75964C122083BFFC0098D183 /* ServicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCell.swift; sourceTree = "<group>"; };
-		75F00A2B208B791D00838BD6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		75EE36FA208CE1A6005A54C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Dr Samir Abbas/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		75EE36FC208CE1CA005A54C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = "Dr Samir Abbas/ar.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		75F00A2E208B7AD600838BD6 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		75F00A30208B7B5700838BD6 /* SectionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFactory.swift; sourceTree = "<group>"; };
 		75F00A32208B7B7900838BD6 /* SectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +320,7 @@
 		75655FC8207930CB00D5B6FC = {
 			isa = PBXGroup;
 			children = (
+				75EE36F9208CE1A6005A54C1 /* Localizable.strings */,
 				75655FD3207930CB00D5B6FC /* Dr Samir Abbas */,
 				75655FD2207930CB00D5B6FC /* Products */,
 				756560052079345C00D5B6FC /* Frameworks */,
@@ -352,7 +354,6 @@
 				75655FE0207930CB00D5B6FC /* LaunchScreen.storyboard */,
 				75655FE3207930CB00D5B6FC /* Info.plist */,
 				75655FDB207930CB00D5B6FC /* Dr_Samir_Abbas.xcdatamodeld */,
-				75F00A2B208B791D00838BD6 /* Localizable.strings */,
 			);
 			path = "Dr Samir Abbas";
 			sourceTree = "<group>";
@@ -539,6 +540,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				en,
+				ar,
 			);
 			mainGroup = 75655FC8207930CB00D5B6FC;
 			productRefGroup = 75655FD2207930CB00D5B6FC /* Products */;
@@ -557,7 +560,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75F00A2C208B791D00838BD6 /* Localizable.strings in Resources */,
+				75EE36FB208CE1A6005A54C1 /* Localizable.strings in Resources */,
 				75655FE2207930CB00D5B6FC /* LaunchScreen.storyboard in Resources */,
 				75655FDF207930CB00D5B6FC /* Assets.xcassets in Resources */,
 				75655FDA207930CB00D5B6FC /* Main.storyboard in Resources */,
@@ -773,6 +776,15 @@
 				75655FE1207930CB00D5B6FC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		75EE36F9208CE1A6005A54C1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75EE36FA208CE1A6005A54C1 /* en */,
+				75EE36FC208CE1CA005A54C1 /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
