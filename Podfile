@@ -9,4 +9,6 @@ pod "ScrollableStackView"
 pod 'MGRelativeKit'
 pod 'GoogleMaps'
 pod 'Toast-Swift', '~> 3.0.1'
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
 end
