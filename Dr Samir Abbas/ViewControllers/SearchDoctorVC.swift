@@ -34,7 +34,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         relative.tg_width.equal(UIScreen.main.bounds.width)
         relative.tg_height.equal(UIScreen.main.bounds.height)
         
-        relative.addSubview(getToolbar(title: "Search a doctor", isBackMenu: true, addSpinner : false))
+        relative.addSubview(getToolbar(title: "search_doc".localizedString, isBackMenu: true, addSpinner : false))
         master.addSubview(relative)
         view.addSubview(master)
         relative.backgroundColor = Style.BackgroundColor
@@ -57,7 +57,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         search.tg_width.equal(UIScreen.main.bounds.width - 40)
         search.tg_height.equal(Style.Height48)
         //search.tg_top.equal(20)
-        search.placeholder = "Search a doctor"
+        search.placeholder = "search_doc".localizedString
         search.textAlignment = .center
         search.floatPlaceholderColor = Style.AccentColor
         search.floatPlaceholderActiveColor = Style.AccentColor
@@ -99,7 +99,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         relative.addSubview(list)
         
         
-        msg = getUILabel(text: "No doctors found", size: Style.TextSize16, textColor: Style.TextColor)
+        msg = getUILabel(text: "no_doctors_found".localizedString, size: Style.TextSize16, textColor: Style.TextColor)
         msg.tg_centerX.equal(0)
         msg.tg_centerY.equal(0)
         msg.isHidden = true
@@ -115,7 +115,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
             if(specialization == nil){
                 get_specializations()
             }else{
-                let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting doctors list", dialogMessage: "Please wait while we are getting doctors list")
+                let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "getting_doctor".localizedString, dialogMessage: "getting_doctor_msg".localizedString)
                 present(dialogBox, animated: true, completion: nil)
                 getAllDoctors(dialogBox : dialogBox)
             }
@@ -128,7 +128,7 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
     }
     
     func get_specializations(){
-        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting doctors list", dialogMessage: "Please wait while we are getting doctors list")
+        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "getting_doctor".localizedString, dialogMessage: "getting_doctor_msg".localizedString)
         present(dialogBox, animated: true, completion: nil)
         
         
@@ -201,7 +201,11 @@ class SearchDoctorVC : BaseVC, UITableViewDataSource, UITableViewDelegate  {
         }
         
         var docName = "Dr "
-        docName.append(doctors.data.doctors[indexPath.row].name)
+        if(Language.language == Language.arabic){
+            docName.append(doctors.data.doctors[indexPath.row].name_ar)
+        }else{
+            docName.append(doctors.data.doctors[indexPath.row].name)
+        }
         
         let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize18)]
         let attributedString = NSMutableAttributedString(string: docName, attributes:attrs)

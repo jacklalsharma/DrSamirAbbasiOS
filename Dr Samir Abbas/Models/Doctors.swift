@@ -36,7 +36,7 @@ class DataClassDoc: Codable {
 
 class Doctor: Codable {
     let id: Int
-    let speID, name, degree, experience: String
+    let speID, name, degree, experience, name_ar: String
     let image, date: String
     let isAvailableToday: Bool
     let profilePictureURL: String
@@ -44,12 +44,12 @@ class Doctor: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case speID = "spe_id"
-        case name, degree, experience, image, date
+        case name, degree, experience, image, date, name_ar
         case isAvailableToday = "is_available_today"
         case profilePictureURL = "profile_picture_url"
     }
     
-    init(id: Int, speID: String, name: String, degree: String, experience: String, image: String, date: String, isAvailableToday: Bool, profilePictureURL: String) {
+    init(id: Int, speID: String, name: String, degree: String, experience: String, image: String, date: String, isAvailableToday: Bool, profilePictureURL: String,name_ar : String) {
         self.id = id
         self.speID = speID
         self.name = name
@@ -59,6 +59,7 @@ class Doctor: Codable {
         self.date = date
         self.isAvailableToday = isAvailableToday
         self.profilePictureURL = profilePictureURL
+        self.name_ar = name_ar
     }
 }
 
@@ -157,7 +158,7 @@ extension DataClassDoc {
 extension Doctor {
     convenience init(data: Data) throws {
         let me = try JSONDecoder().decode(Doctor.self, from: data)
-        self.init(id: me.id, speID: me.speID, name: me.name, degree: me.degree, experience: me.experience, image: me.image, date: me.date, isAvailableToday: me.isAvailableToday, profilePictureURL: me.profilePictureURL)
+        self.init(id: me.id, speID: me.speID, name: me.name, degree: me.degree, experience: me.experience, image: me.image, date: me.date, isAvailableToday: me.isAvailableToday, profilePictureURL: me.profilePictureURL, name_ar : me.name_ar)
     }
     
     convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {

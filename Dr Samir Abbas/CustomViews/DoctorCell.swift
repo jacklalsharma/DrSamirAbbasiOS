@@ -92,7 +92,7 @@ class DoctorCell : UITableViewCell {
         btnLayout.tg_centerX.equal(0)
         btnLayout.addSubview(book)
         
-        let btnLabel = getUILabel(text: "BOOK", size: Style.TextSize16, textColor: .white)
+        let btnLabel = getUILabel(text: "book_simple".localizedString, size: Style.TextSize16, textColor: .white)
         btnLabel.tg_centerX.equal(0)
         btnLabel.tg_centerY.equal(0)
         btnLayout.addSubview(btnLabel)
@@ -100,7 +100,7 @@ class DoctorCell : UITableViewCell {
         book.tg_height.equal(.wrap)
         book.backgroundColor = UIColor().HexToColor(hexString: "#3c7fd0")
         extRightLinear.addSubview(btnLayout)
-        available = getUILabel(text: "Available Today", size: Style.TextSize14, textColor: Style.AccentColor)
+        available = getUILabel(text: "available".localizedString, size: Style.TextSize14, textColor: Style.AccentColor)
         available.tg_top.equal(5)
         extRightLinear.addSubview(available)
         doctorLayout.addSubview(extRightLinear)

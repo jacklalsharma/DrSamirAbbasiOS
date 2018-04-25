@@ -33,12 +33,15 @@ class DataClass: Codable {
 
 class SpecializationElement: Codable {
     let id: Int
-    let name, date: String
+    var name: String
+    let date, name_ar: String
     
-    init(id: Int, name: String, date: String) {
+    init(id: Int, name: String, date: String, name_ar : String) {
         self.id = id
         self.name = name
         self.date = date
+        self.name_ar = name_ar
+        
     }
 }
 
@@ -125,7 +128,8 @@ extension DataClass {
 extension SpecializationElement {
     convenience init(data: Data) throws {
         let me = try JSONDecoder().decode(SpecializationElement.self, from: data)
-        self.init(id: me.id, name: me.name, date: me.date)
+        self.init(id: me.id, name: me.name, date: me.date, name_ar: me.name_ar)
+        
     }
     
     convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {

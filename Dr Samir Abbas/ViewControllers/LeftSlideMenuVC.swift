@@ -15,7 +15,7 @@ class LeftSlideMenuVC : DPBaseEmbedViewController{
     
     var images = [#imageLiteral(resourceName: "nav_home"), #imageLiteral(resourceName: "nav_about_us"),#imageLiteral(resourceName: "nav_services"),#imageLiteral(resourceName: "nav_gallery"), #imageLiteral(resourceName: "nav_share_app"),#imageLiteral(resourceName: "nav_contact_us")]
     
-    var titles = ["Home".localizedString, "About Us".localizedString, "Services".localizedString, "Gallery".localizedString, "Share app".localizedString, "Contact Us".localizedString]
+    var titles = ["home".localizedString, "About_us".localizedString, "services".localizedString, "gallery".localizedString, "share_app".localizedString, "contact_us".localizedString]
     
     
     override init(nibName nibNameOrNil: String?,
@@ -94,7 +94,7 @@ class LeftSlideMenuVC : DPBaseEmbedViewController{
         main.tg_height.equal(.wrap)
         let flat = FlatButton(title: "", titleColor: .white)
         flat.tg_width.equal(270)
-        flat.tg_height.equal(Style.Height48)
+        flat.tg_height.equal(Style.Height60)
         flat.tg_centerX.equal(0)
         flat.tg_centerY.equal(0)
         flat.backgroundColor = .white
@@ -114,7 +114,7 @@ class LeftSlideMenuVC : DPBaseEmbedViewController{
         
         let linear = TGLinearLayout(.vert)
         linear.tg_width.equal(270)
-        linear.tg_height.equal(Style.Height50)
+        linear.tg_height.equal(Style.Height60)
         linear.addSubview(main)
         
         let strip = getUIImageView(sizeX: 270, sizeY: 2)

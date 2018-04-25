@@ -28,7 +28,7 @@ class TimeSlotVC : BaseVC{
     
     
     var images = [#imageLiteral(resourceName: "ic_morning"), #imageLiteral(resourceName: "ic_afternoon"), #imageLiteral(resourceName: "ic_evening"), #imageLiteral(resourceName: "ic_night")]
-    var headings = ["Morning", "Afternoon" , "Evening" , "Night"]
+    var headings = ["morning".localizedString, "afternoon".localizedString , "evening".localizedString , "night".localizedString]
     
     var linear : TGLinearLayout!
     var scroll : RelativeLayout!
@@ -58,7 +58,7 @@ class TimeSlotVC : BaseVC{
         linear.tg_width.equal(UIScreen.main.bounds.width)
         linear.tg_height.equal(.wrap)
         linear.backgroundColor = Style.BackgroundColor
-        linear.addSubview(getToolbar(title: "Select a time slot", isBackMenu: true, addSpinner : false))
+        linear.addSubview(getToolbar(title: "slot_not_selected".localizedString, isBackMenu: true, addSpinner : false))
         var image = UIImage(named: "strip.png")
         image = image?.resize(toHeight: 3)
         image = image?.resize(toWidth: UIScreen.main.bounds.width)
@@ -106,10 +106,14 @@ class TimeSlotVC : BaseVC{
         rightLinear.tg_height.equal(.wrap)
         rightLinear.tg_centerY.equal(0)
         var drName = "Dr "
-        drName.append(doctor.name)
+        if(Language.language == Language.arabic){
+            drName.append(doctor.name_ar)
+        }else{
+            drName.append(doctor.name)
+        }
         rightLinear.addSubview(getUILabel(text: drName, size: Style.TextSize18, textColor: Style.TextColor))
         rightLinear.addSubview(getUILabel(text: specilization, size: Style.TextSize18, textColor: Style.TextColor))
-        let available = getUILabel(text: "Available Today", size: Style.TextSize16, textColor: Style.AccentColor)
+        let available = getUILabel(text: "available".localizedString, size: Style.TextSize16, textColor: Style.AccentColor)
         rightLinear.addSubview(available)
         
         if(doctor.isAvailableToday == false){
@@ -131,7 +135,7 @@ class TimeSlotVC : BaseVC{
         dayHolder.tg_top.equal(20)
         dayHolder.tg_backgroundImage = #imageLiteral(resourceName: "cal_background")
         dayHolder.tg_centerX.equal(0)
-        let weekSchedule = getUILabel(text: "Schedule", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#ff640f"))
+        let weekSchedule = getUILabel(text: "weekly_schedule".localizedString, size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#ff640f"))
         weekSchedule.tg_centerX.equal(0)
         weekSchedule.tg_top.equal(8)
         dayHolder.addSubview(weekSchedule)
@@ -189,7 +193,7 @@ class TimeSlotVC : BaseVC{
         
         dayHolder.addSubview(daysLayout)
         dayHolder.tg_top.equal(Style.Height80 + Style.Height100)
-        let today = getUILabel(text: "Today", size: Style.TextSize16, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        let today = getUILabel(text: "selected_date".localizedString, size: Style.TextSize16, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
         today.tg_left.equal(Style.Width20)
         dayHolder.addSubview(today)
         
@@ -265,7 +269,7 @@ class TimeSlotVC : BaseVC{
         flat.tg_width.equal(Style.Width80 + Style.Width30)
         flat.tg_height.equal(Style.Height30)
         
-        let text = getUILabel(text: "Book", size: Style.TextSize18, textColor: Style.AccentColor)
+        let text = getUILabel(text: "book_simple".localizedString, size: Style.TextSize18, textColor: Style.AccentColor)
         text.tg_centerX.equal(0)
         text.tg_centerY.equal(0)
         
@@ -286,7 +290,7 @@ class TimeSlotVC : BaseVC{
     func nextClick(){
         print("HERE")
         if(selectedSlot == nil){
-            self.view.makeToast("Select booking slot")
+            self.view.makeToast("appoinment_time_slot".localizedString)
             return
         }
         
@@ -467,7 +471,7 @@ class TimeSlotVC : BaseVC{
         btnPosition = position
         btns[position].backgroundColor = UIColor().HexToColor(hexString: "#3c7fd1")
         texts[position].textColor = .white
-        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting appointment slots", dialogMessage: "Please wait while we are getting appointment slots...")
+        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "getting_slot".localizedString, dialogMessage: "getting_slot_msg".localizedString)
         present(dialogBox, animated: true, completion: nil)
         self.selectedDate = dates[position].properDate
         var url = "http://www.bhavikagarwal.com/booking/apis/get_doctor_schedule_slots?doctor_id="
@@ -566,7 +570,8 @@ class TimeSlotVC : BaseVC{
                 if(slots.data?.slots?.morning != nil){
                     let count: Int = (slots.data?.slots?.morning?.count)!
                     if (count == 0){
-                        head.append("\n Not Available")
+                        head.append("\n")
+                        head.append("not_available".localizedString)
                     }else{
                         var startPos : Int = 0
                         var endPos : Int = 0
@@ -586,13 +591,15 @@ class TimeSlotVC : BaseVC{
                     }
                     
                 }else{
-                    head.append("\n Not Available")
+                    head.append("\n")
+                    head.append("not_available".localizedString)
                 }
             }else if(position == 1){
                 if(slots.data?.slots?.afternoon != nil){
                     let count: Int = (slots.data?.slots?.afternoon?.count)!
                     if (count == 0){
-                        head.append("\n Not Available")
+                        head.append("\n")
+                        head.append("not_available".localizedString)
                     }else{
                         var startPos : Int = 0
                         var endPos : Int = 0
@@ -611,14 +618,16 @@ class TimeSlotVC : BaseVC{
                         }
                     }
                 }else{
-                    head.append("\n Not Available")
+                    head.append("\n")
+                    head.append("not_available".localizedString)
                 }
             }else if(position == 2){
                 if(slots.data?.slots?.evening != nil){
                     
                     let count: Int = (slots.data?.slots?.evening?.count)!
                     if (count == 0){
-                        head.append("\n Not Available")
+                        head.append("\n")
+                        head.append("not_available".localizedString)
                     }else{
                         var startPos : Int = 0
                         var endPos : Int = 0
@@ -637,13 +646,15 @@ class TimeSlotVC : BaseVC{
                         }
                     }
                 }else{
-                    head.append("\n Not Available")
+                    head.append("\n")
+                    head.append("not_available".localizedString)
                 }
             }else if(position == 3){
                 if(slots.data?.slots?.night != nil){
                     let count: Int = (slots.data?.slots?.night?.count)!
                     if (count == 0){
-                        head.append("\n Not Available")
+                        head.append("\n")
+                        head.append("not_available".localizedString)
                     }else{
                         var startPos : Int = 0
                         var endPos : Int = 0
@@ -662,11 +673,13 @@ class TimeSlotVC : BaseVC{
                         }
                     }
                 }else{
-                    head.append("\n Not Available")
+                    head.append("\n")
+                    head.append("not_available".localizedString)
                 }
             }
         }else{
-            head.append("\n Not Available")
+            head.append("\n")
+            head.append("not_available".localizedString)
         }
         
         

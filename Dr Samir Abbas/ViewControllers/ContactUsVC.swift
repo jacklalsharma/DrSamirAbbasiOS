@@ -29,7 +29,7 @@ class ContactUsVC : BaseVC{
         linear.tg_width.equal(UIScreen.main.bounds.width)
         linear.tg_height.equal(.wrap)
         linear.backgroundColor = Style.BackgroundColor
-        linear.addSubview(getToolbar(title: "Contact us", isBackMenu: true, addSpinner : false))
+        linear.addSubview(getToolbar(title: "contact_us".localizedString, isBackMenu: true, addSpinner : false))
         var image = UIImage(named: "strip.png")
         image = image?.resize(toHeight: 3)
         image = image?.resize(toWidth: UIScreen.main.bounds.width)
@@ -49,7 +49,7 @@ class ContactUsVC : BaseVC{
         scrollHeight = scrollHeight + Style.ScreenHeight / 4
         
         
-        let address = getUILabel(text: "ADDRESS", size: Style.TextSize16, textColor: Style.AccentColor)
+        let address = getUILabel(text: "adress".localizedString, size: Style.TextSize16, textColor: Style.AccentColor)
         let addr = TGLinearLayout(.vert)
         addr.tg_width.equal(Style.ScreenWidth)
         addr.tg_height.equal(.wrap)
@@ -64,13 +64,17 @@ class ContactUsVC : BaseVC{
         navStrip.tg_centerX.equal(0)
         addr.addSubview(navStrip)
         
-        let addrLabel = getUILabel(text: "Head Office Jeddah - Ash Shati District Alkurnaysh Road\nZip Code 23411 Tel 012 618 7777 TollFree 920012525\nEmail info@dsah.sa Website www.dsah.sa", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        var addressStr = "head_office_jeddah".localizedString
+        addressStr.append("\n")
+        addressStr.append("address".localizedString)
+        
+        let addrLabel = getUILabel(text: addressStr, size: Style.TextSize18, textColor: Style.TextColor)
         addrLabel.tg_top.equal(10)
         addrLabel.tg_left.equal(10)
         addrLabel.tg_right.equal(10)
         addr.addSubview(addrLabel)
         
-        let ph = getUILabel(text: "PHONE NO", size: Style.TextSize16, textColor: Style.AccentColor)
+        let ph = getUILabel(text: "phone_no".localizedString, size: Style.TextSize16, textColor: Style.AccentColor)
         ph.tg_top.equal(Style.Height20)
         addr.addSubview(ph)
         
@@ -82,11 +86,11 @@ class ContactUsVC : BaseVC{
         navStrip2.tg_centerX.equal(0)
         addr.addSubview(navStrip2)
         
-        let no = getUILabel(text: "+ 966126187777", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        let no = getUILabel(text: "number".localizedString, size: Style.TextSize18, textColor: Style.TextColor)
         no.tg_top.equal(10)
         addr.addSubview(no)
         
-        let em = getUILabel(text: "EMAIL", size: Style.TextSize16, textColor: Style.AccentColor)
+        let em = getUILabel(text: "email".localizedString, size: Style.TextSize16, textColor: Style.AccentColor)
         em.tg_top.equal(Style.Height20)
         addr.addSubview(em)
         
@@ -99,16 +103,44 @@ class ContactUsVC : BaseVC{
         
         addr.addSubview(navStrip3)
         
-        let email = getUILabel(text: "badar.abbas@dshah.sa", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "#3c7fd1"))
+        var str = "info@dsah.sa"
+        str.append("\n")
+        str.append("badar.abbas@dshah.sa")
+        let email = getUILabel(text: str, size: Style.TextSize18, textColor: Style.TextColor)
         email.tg_top.equal(10)
         addr.addSubview(email)
         
         
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 16.0)
+        
+        
+        let em2 = getUILabel(text: "website".localizedString, size: Style.TextSize16, textColor: Style.AccentColor)
+        em2.tg_top.equal(Style.Height20)
+        addr.addSubview(em2)
+        
+        let navStrip4 = UIImageView()
+        navStrip4.tg_width.equal(Style.ScreenWidth - 60)
+        navStrip4.tg_height.equal(3)
+        navStrip4.image = #imageLiteral(resourceName: "nav_strip")
+        navStrip4.tg_top.equal(3)
+        navStrip4.tg_centerX.equal(0)
+        
+        addr.addSubview(navStrip4)
+        
+        var str1 = "http://www.dsah.sa"
+        
+        let email1 = getUILabel(text: str1, size: Style.TextSize18, textColor: Style.TextColor)
+        email1.tg_top.equal(10)
+        addr.addSubview(email1)
+        
+        
+        
+        
+        
+        let camera = GMSCameraPosition.camera(withLatitude:21.554039, longitude: 39.124523, zoom: 16.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.tg_width.equal(Style.ScreenWidth)
-        mapView.tg_height.equal(Style.ScreenHeight / 4)
-        mapView.tg_top.equal(20)
+        mapView.tg_height.equal(Style.ScreenHeight / 3.5)
+        mapView.tg_top.equal(40)
         
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
@@ -119,7 +151,7 @@ class ContactUsVC : BaseVC{
         
         addr.addSubview(mapView)
         
-        var ll = LinearLayout(width: MATCH_PARENT, height: Style.ScreenHeight * 1.2).vertical()
+        var ll = LinearLayout(width: MATCH_PARENT, height: Style.ScreenHeight * 1.3).vertical()
         ll.padding(left: 0, right: 0, top: Style.Height110, bottom: 0)
         ll.add(view: banner, w: MATCH_PARENT, h: Style.ScreenHeight / 4)
         ll.add(view: addr, w: MATCH_PARENT, h: Style.Height20)

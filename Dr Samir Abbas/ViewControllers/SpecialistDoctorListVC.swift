@@ -36,7 +36,7 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
         relative.tg_width.equal(UIScreen.main.bounds.width)
         relative.tg_height.equal(UIScreen.main.bounds.height)
         
-        relative.addSubview(getToolbar(title: "Find & Book", isBackMenu: true, addSpinner : true))
+        relative.addSubview(getToolbar(title: "find_and_book".localizedString, isBackMenu: true, addSpinner : true))
         master.addSubview(relative)
         view.addSubview(master)
         relative.backgroundColor = Style.BackgroundColor
@@ -58,11 +58,20 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
         drop.title.textColor = Style.AccentColor
         
         drop.center = CGPoint(x: self.view.frame.midX, y: self.view.frame.midY)
-        drop.placeholder = specialisationList.data.specializations[position].name
+        
+        if(Language.language == Language.arabic){
+            drop.placeholder = specialisationList.data.specializations[position].name_ar
+        }else{
+            drop.placeholder = specialisationList.data.specializations[position].name
+        }
         
         drop.options = []
         for name in specialisationList.data.specializations{
-            drop.options.append(name.name)
+            if(Language.language == Language.arabic){
+                drop.options.append(name.name_ar)
+            }else{
+                drop.options.append(name.name)
+            }
         }
         drop.didSelect { (option, index) in
             //self.label.text = "You just select \(option) at index: \(index)"
@@ -106,7 +115,7 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
     }
     
     func getDoctorList(){
-        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting doctors list", dialogMessage: "Please wait while we are getting doctors list")
+        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "getting_doctor".localizedString, dialogMessage: "getting_doctor_msg".localizedString)
         present(dialogBox, animated: true, completion: nil)
      
         let date = Date()
@@ -155,7 +164,11 @@ class SpecialistDoctorListVC : BaseVC, UITableViewDataSource, UITableViewDelegat
         }
         
         var docName = "Dr "
-        docName.append(doctors.data.doctors[indexPath.row].name)
+        if(Language.language == Language.arabic){
+            docName.append(doctors.data.doctors[indexPath.row].name_ar)
+        }else{
+            docName.append(doctors.data.doctors[indexPath.row].name)
+        }
         
         let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize18)]
         let attributedString = NSMutableAttributedString(string: docName, attributes:attrs)

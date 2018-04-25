@@ -32,7 +32,7 @@ class GalleryVC : BaseVC{
         linear.tg_width.equal(UIScreen.main.bounds.width)
         linear.tg_height.equal(.wrap)
         linear.backgroundColor = Style.BackgroundColor
-        linear.addSubview(getToolbar(title: "Gallery", isBackMenu: true, addSpinner : false))
+        linear.addSubview(getToolbar(title: "gallery".localizedString, isBackMenu: true, addSpinner : false))
         var image = UIImage(named: "strip.png")
         image = image?.resize(toHeight: 3)
         image = image?.resize(toWidth: UIScreen.main.bounds.width)
@@ -95,7 +95,7 @@ class GalleryVC : BaseVC{
         let infoLayout = LinearLayout(width : MATCH_PARENT, height : Style.Height140)
         infoLayout.margin(left: 0, right: 0, top: 20, bottom: 0)
         infoLayout.backgroundColor = .white
-        let info = getUILabel(text: "We provide affordable, holistic quality healthcare appropriate to the needs of our clients by a team of committed, caring professionals striving through a research driven environment.Scroll down to explore our infrastructure.", size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "##3c7fd1"))
+        let info = getUILabel(text: "gallery_desc".localizedString, size: Style.TextSize18, textColor: UIColor().HexToColor(hexString: "##3c7fd1"))
         
         
         

@@ -29,7 +29,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         relative.tg_width.equal(UIScreen.main.bounds.width)
         relative.tg_height.equal(UIScreen.main.bounds.height)
         
-        relative.addSubview(getToolbar(title: "Find & Book", isBackMenu: true, addSpinner : false))
+        relative.addSubview(getToolbar(title: "find_and_book".localizedString, isBackMenu: true, addSpinner : false))
         view.addSubview(relative)
         relative.backgroundColor = Style.BackgroundColor
         
@@ -56,7 +56,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         chooseLabel2.tg_width.equal(UIScreen.main.bounds.width)
         chooseLabel2.tg_height.equal(Style.Height48)
         let attrs2 = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize18)]
-        let attributedString2 = NSMutableAttributedString(string: "Search a doctor", attributes:attrs2)
+        let attributedString2 = NSMutableAttributedString(string: "search_doc".localizedString, attributes:attrs2)
         chooseLabel2.attributedText = attributedString2
         chooseLabel2.tg_centerX.equal(0)
         chooseLabel2.textAlignment = .center
@@ -81,7 +81,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         let bookLabel = UILabel()
         bookLabel.tg_width.equal(.wrap)
         bookLabel.tg_height.equal(.wrap)
-        bookLabel.text = "Or"
+        bookLabel.text = "or".localizedString
         bookLabel.tg_centerX.equal(0)
         bookLabel.tg_top.equal(8)
         bookLabel.textColor = Style.TextColor
@@ -92,7 +92,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
         chooseLabel.tg_width.equal(UIScreen.main.bounds.width)
         chooseLabel.tg_height.equal(Style.Height48)
         let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize18)]
-        let attributedString = NSMutableAttributedString(string: "Choose Speciality", attributes:attrs)
+        let attributedString = NSMutableAttributedString(string: "choose_specialist".localizedString, attributes:attrs)
         chooseLabel.attributedText = attributedString
         chooseLabel.tg_centerX.equal(0)
         chooseLabel.textAlignment = .center
@@ -139,6 +139,11 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         var cell:SpecialityCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SpecialityCell
         var val = specialization.data.specializations[indexPath.row].name
+        
+        if(Language.language == Language.arabic){
+            val = specialization.data.specializations[indexPath.row].name_ar
+        }
+        
         let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: Style.TextSize16)]
         let attributedString = NSMutableAttributedString(string: val, attributes:attrs)
         cell.routeName.attributedText = attributedString
@@ -182,7 +187,7 @@ class BookAppointmentVC : BaseVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     func get_specializations(){
-        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "Getting specialization", dialogMessage: "Please wait while we are getting specialization list")
+        let dialogBox = ConstructDialog.ConstructProgressDialog(dialogTitle: "getting_special".localizedString, dialogMessage: "getting_special_msg".localizedString)
         present(dialogBox, animated: true, completion: nil)
         
         

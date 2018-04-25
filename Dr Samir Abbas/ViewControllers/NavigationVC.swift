@@ -25,7 +25,7 @@ class NavigationVC : BaseVC {
         relative.tg_width.equal(UIScreen.main.bounds.width)
         relative.tg_height.equal(UIScreen.main.bounds.height)
 
-        relative.addSubview(getToolbar(title: "HOME", isBackMenu: false, showNotification : true))
+        relative.addSubview(getToolbar(title: "home".localizedString, isBackMenu: false, showNotification : true))
         view.addSubview(relative)
         relative.backgroundColor = Style.BackgroundColor
         
@@ -81,7 +81,7 @@ class NavigationVC : BaseVC {
         img.tg_top.equal(Style.Height20)
         bookApptLinear.addSubview(img)
         
-        let bookLabel = getUILabelBold(text: "Book An Appointment", size: Style.TextSize20, textColor: Style.TextColor)
+        let bookLabel = getUILabelBold(text: "book_appointment".localizedString, size: Style.TextSize20, textColor: Style.TextColor)
         bookLabel.tg_centerX.equal(0)
         bookLabel.tg_top.equal(Style.Height20)
         
@@ -188,7 +188,7 @@ class NavigationVC : BaseVC {
         
         if(position == 0){
             let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
-            let attributedString = NSMutableAttributedString(string: "Doctors", attributes:attrs)
+            let attributedString = NSMutableAttributedString(string: "doctors".localizedString, attributes:attrs)
 
             bookLabel.attributedText = attributedString
             bookAppt.tg_right.equal(5)
@@ -196,20 +196,20 @@ class NavigationVC : BaseVC {
             bookBtn.addTarget(self, action: #selector(doctors), for: .touchUpInside)
         }else if(position == 1){
             let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
-            let attributedString = NSMutableAttributedString(string: "Services", attributes:attrs)
+            let attributedString = NSMutableAttributedString(string: "services".localizedString, attributes:attrs)
             bookLabel.attributedText = attributedString
             img.image = #imageLiteral(resourceName: "ic_services")
             bookBtn.addTarget(self, action: #selector(services), for: .touchUpInside)
         }else if(position == 2){
             bookAppt.tg_right.equal(5)
             let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
-            let attributedString = NSMutableAttributedString(string: "Gallery", attributes:attrs)
+            let attributedString = NSMutableAttributedString(string: "gallery".localizedString, attributes:attrs)
             bookLabel.attributedText = attributedString
             img.image = #imageLiteral(resourceName: "ic_gallery")
             bookBtn.addTarget(self, action: #selector(gallery), for: .touchUpInside)
         }else if(position == 3){
             let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: Style.TextSize16)]
-            let attributedString = NSMutableAttributedString(string: "Contact Us", attributes:attrs)
+            let attributedString = NSMutableAttributedString(string: "contact_us".localizedString, attributes:attrs)
             bookLabel.attributedText = attributedString
             img.image = #imageLiteral(resourceName: "contacticon")
             bookBtn.addTarget(self, action: #selector(facilities), for: .touchUpInside)

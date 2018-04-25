@@ -36,7 +36,7 @@ class ImageViewerVC : BaseVC{
         layout.tg_centerY.equal(0)
         layout.tg_top.equal(200)
         
-        layout.addSubview(getToolbar(title: "Gallery Image", isBackMenu: true, addSpinner : false))
+        layout.addSubview(getToolbar(title: "gallery".localizedString, isBackMenu: true, addSpinner : false))
         var image2 = UIImage(named: "strip.png")
         image2 = image2?.resize(toHeight: 3)
         image2 = image2?.resize(toWidth: UIScreen.main.bounds.width)

@@ -103,7 +103,7 @@ public class UIDropDown: UIControl {
     
     // Table Configurations
     public var animationType: UIDropDownAnimationType = .Default
-    public var tableHeight: CGFloat = 100.0
+    public var tableHeight: CGFloat = Style.Height100 * 3
     public var rowHeight: CGFloat?
     public var rowBackgroundColor: UIColor?
     
